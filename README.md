@@ -2,7 +2,7 @@
 
 ## Keybindings
 Key 					| Action
------------------------------------------------
+------------------------|----------------------
 mod4+p					| open rofi drun
 mod4+o					| toggle eww
 mod4+shift+return		| open st
