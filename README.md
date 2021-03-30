@@ -25,12 +25,16 @@ Incomplete list
 ### Inside Scripts
 - python
 	- psutil
+- playerctl
+- pactl
+
+### Optional
+- spotify for the eww widget
 
 ## Cool Stuff
 - `n` for filebrowser
 - `bat` for coloured cat
 - `batman`
-
 
 ## Keybindings
 Key 					| Action
@@ -85,3 +89,4 @@ media keys				| .xbindkeysrc
 - sort out vim autoclose tags
 - vim indent block and comment block
 - make or find airline nord theme
+- mess around with neofetch
