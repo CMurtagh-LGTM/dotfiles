@@ -6,7 +6,7 @@ If you have any suggestions or improvements please make a issue or pull request.
 
 ## Dependencies
 
-Incomplete
+Incomplete list
 
 ### Main
 - LeftWM
