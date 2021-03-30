@@ -1,4 +1,36 @@
-# Cameron's dotfiles
+# CMurtagh-LGTM's dotfiles
+
+The nord theme is pretty cool :P.
+
+If you have any suggestions or improvements please make a issue or pull request.
+
+## Dependencies
+
+Incomplete
+
+### Main
+- LeftWM
+- polybar
+- dunst
+- zsh
+- powerlevel 10k
+- feh
+- xbindkeys
+- rofi
+- neovim
+- eww
+- delta
+- nnn
+
+### Inside Scripts
+- python
+	- psutil
+
+## Cool Stuff
+- `n` for filebrowser
+- `bat` for coloured cat
+- `batman`
+
 
 ## Keybindings
 Key 					| Action
@@ -42,3 +74,14 @@ mod4+shift+ctrl+space	| notification context menu
 Key 					| Action
 ------------------------|----------------------
 media keys				| .xbindkeysrc
+
+## TODO
+- fix nord rofi symlink
+- setup pass
+- add volume to eww
+- work out how to control where eww appears
+- look into nnn more
+- work out all the neovim binary dependencies
+- sort out vim autoclose tags
+- vim indent block and comment block
+- make or find airline nord theme
