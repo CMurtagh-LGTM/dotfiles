@@ -28,6 +28,10 @@ Incomplete list
 - playerctl
 - pactl
 
+### Neovim
+- fzf
+- Universal ctags
+
 ### Font
 - Hack
 	- Patched with nerdfont
