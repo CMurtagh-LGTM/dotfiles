@@ -25,6 +25,7 @@ Incomplete list
 ### Inside Scripts
 - python
 	- psutil
+	- pilsectl
 - playerctl
 - pactl
 

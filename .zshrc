@@ -26,7 +26,7 @@ alias dotfile='/usr/bin/git --git-dir=$HOME/Documents/dotfiles/ --work-tree=$HOM
 
 # nnn
 
-export NNN_PLUG='p:dragdrop;o:fzopen;g:_git log --oneline --graph'
+export NNN_PLUG='p:dragdrop;f:fzcd;o:fzopen;g:_git log --oneline --graph'
 
 n ()
 {
@@ -56,6 +56,27 @@ n ()
     fi
 }
 
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+#####################################################################################################
+# Uncomment / edit the following environment variables when the corresponding software is installed #
+#####################################################################################################
+
+# export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64  # Defines the path to Java home.
+# export ROS_DISTRO=kinetic
+
+#######################################################
+# Edit these WEBOTS environment variables when needed #
+#######################################################
+
+export WEBOTS_DISABLE_SAVE_SCREEN_PERSPECTIVE_ON_CLOSE=1  # If defined, Webots will not save screen specific perspective changes when closed.
+export WEBOTS_ALLOW_MODIFY_INSTALLATION=1                 # If defined, you are allowed to modify files in the Webots home using Webots.
+# export WEBOTS_DISABLE_WORLD_LOADING_DIALOG=1            # If defined, the loading world progress dialog will never be displayed.
+
+#########################################################################
+# These environment variables are necessaries to compile and run Webots #
+#########################################################################
+
+export WEBOTS_HOME=$HOME/Documents/webots                                  # Defines the path to Webots home.
+export LD_LIBRARY_PATH=$WEBOTS_HOME/lib/webots:$LD_LIBRARY_PATH  # Add the Webots libraries to the library path (useful when launching Webots directly without using the launcher).

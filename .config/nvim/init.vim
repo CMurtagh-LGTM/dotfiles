@@ -8,39 +8,58 @@ Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'deoplete-plugins/deoplete-tag'
 Plug 'deoplete-plugins/deoplete-dictionary'
 Plug 'zchee/deoplete-clang'
+" Better tab complete
+Plug 'ervandew/supertab'
+
 " Files
 Plug 'preservim/nerdtree' |
 	\ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
 " Powerline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
 " Bracket Pairs
 Plug 'jiangmiao/auto-pairs'
+
 " Comment <leader>cc
 Plug 'scrooloose/nerdcommenter'
+
 " Icons
 Plug 'ryanoasis/vim-devicons'
+
 " Format
 Plug 'sbdchd/neoformat'
+
 " Code Check
 Plug 'neomake/neomake'
+
 " Multicursor ctrl n
 Plug 'terryma/vim-multiple-cursors'
+
 " Highlight copy
 Plug 'machakann/vim-highlightedyank'
+
 " Git
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter' " Did this do the thing with \\ to ⏎ in latex?
+Plug 'airblade/vim-gitgutter'
+
 " Tags
 Plug 'preservim/tagbar'
+
 " Syntax Highlighting
 Plug 'vim-syntastic/syntastic'
+
 " Fuzzy finding
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+
 " Documentation
 Plug 'sunaku/vim-dasht'
+
+" Undo tree
+Plug 'mbbill/undotree'
 
 " Tex
 Plug 'lervag/vimtex'
@@ -53,14 +72,14 @@ autocmd VimEnter * TagbarOpen
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
 " Exit Vim if NERDTree is the only window left.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
-    \ quit | endif
+" autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+"    \ quit | endif
 augroup END
 
-augroup fmt
-  autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
-augroup END
+" augroup fmt
+"  autocmd!
+"  autocmd BufWritePre * undojoin | Neoformat
+" augroup END
 
 
 " Theme
@@ -122,6 +141,9 @@ let g:dasht_filetype_docsets = {}
 " search related docsets
 nnoremap <silent> <Leader>K :call Dasht(dasht#cursor_search_terms())<Return>
 
+" UndoTree
+" Put it on the right
+let g:undotree_WindowLayout = 3
 
 " clang
 g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
