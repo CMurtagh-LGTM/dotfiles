@@ -44,6 +44,7 @@ Incomplete list
 - `n` for filebrowser
 - `bat` for coloured cat
 - `batman`
+- [libxft-bgra](https://aur.archlinux.org/packages/libxft-bgra/) so `st` can display coloured emoji
 
 ## Keybindings
 Key 					| Action
@@ -91,13 +92,14 @@ media keys				| .xbindkeysrc
 ## TODO
 - fix nord rofi symlink
 - setup pass
+- add sinks to eww
 - add volume to eww
 - work out how to control where eww appears
 - look into nnn more
 - nnn opener
 - work out all the neovim binary dependencies
 - make vim python not slow
-- sort out vim autoclose tags
+- sort out vim autoclose brackets
 - vim indent block and comment block
 - make or find airline nord theme
 - mess around with neofetch
