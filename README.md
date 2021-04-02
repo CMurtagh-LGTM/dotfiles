@@ -29,6 +29,14 @@ Incomplete list
 - playerctl
 - pactl
 
+### Neovim
+- fzf
+- Universal ctags
+
+### Font
+- Hack
+	- Patched with nerdfont
+
 ### Optional
 - spotify for the eww widget
 
@@ -86,7 +94,9 @@ media keys				| .xbindkeysrc
 - add volume to eww
 - work out how to control where eww appears
 - look into nnn more
+- nnn opener
 - work out all the neovim binary dependencies
+- make vim python not slow
 - sort out vim autoclose tags
 - vim indent block and comment block
 - make or find airline nord theme
