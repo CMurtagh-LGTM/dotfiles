@@ -21,6 +21,7 @@ Incomplete list
 - eww
 - delta
 - nnn
+- picom
 
 ### Inside Scripts
 - python
