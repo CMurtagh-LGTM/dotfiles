@@ -94,6 +94,7 @@ media keys				| .xbindkeysrc
 - fix nord rofi symlink
 - setup pass
 - add sinks to eww
+- Add lock screen slock or xscreensaver
 - add volume to eww
 - work out how to control where eww appears
 - look into nnn more
