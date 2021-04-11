@@ -20,7 +20,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Bracket Pairs
+" Bracket Pairs - look into more
 Plug 'jiangmiao/auto-pairs'
 
 " Comment <leader>cc
@@ -65,22 +65,29 @@ Plug 'mbbill/undotree'
 Plug 'lervag/vimtex'
 call plug#end()
 
-augroup cameron_initialisation
-autocmd!
+"augroup cameron_initialisation
+"autocmd!
 " Start tagbar
-autocmd VimEnter * TagbarOpen
+"autocmd VimEnter * TagbarOpen
 " Start NERDTree and put the cursor back in the other window.
-autocmd VimEnter * NERDTree | wincmd p
+"autocmd VimEnter * NERDTree | wincmd p
 " Exit Vim if NERDTree is the only window left.
 " autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
 "    \ quit | endif
-augroup END
+"augroup END
 
 " augroup fmt
 "  autocmd!
 "  autocmd BufWritePre * undojoin | Neoformat
 " augroup END
 
+function BarToggle()
+    TagbarToggle
+    UndotreeToggle
+    NERDTreeToggle
+endfunction
+
+command BarToggle call BarToggle()
 
 " Theme
 let g:airline_theme='dark'
