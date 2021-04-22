@@ -7,7 +7,7 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'deoplete-plugins/deoplete-tag'
 Plug 'deoplete-plugins/deoplete-dictionary'
-Plug 'zchee/deoplete-clang'
+Plug 'deoplete-plugins/deoplete-clang'
 " Better tab complete
 Plug 'ervandew/supertab'
 
@@ -35,8 +35,9 @@ Plug 'sbdchd/neoformat'
 " Code Check
 Plug 'neomake/neomake'
 
-" Multicursor ctrl n
-Plug 'terryma/vim-multiple-cursors'
+" Multicursor
+" Installed from AUR
+" Plug 'git@github.com:mg979/vim-visual-multi.git', {'branch': 'master'}
 
 " Highlight copy
 Plug 'machakann/vim-highlightedyank'
