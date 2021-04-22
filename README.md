@@ -22,6 +22,7 @@ Incomplete list
 - delta
 - nnn
 - picom
+- cbonsai
 
 ### Inside Scripts
 - python
@@ -93,7 +94,7 @@ media keys				| .xbindkeysrc
 ## TODO
 - fix nord rofi symlink
 - setup pass
-- add sinks to eww
+- add audio sinks to eww
 - Add lock screen slock or xscreensaver
 - add volume to eww
 - work out how to control where eww appears
