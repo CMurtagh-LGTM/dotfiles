@@ -21,6 +21,9 @@ compinit
 # End of lines added by compinstall
 
 alias ls='ls --color=auto'
+alias bonsai='cbonsai -p'
+
+alias git-graph='git log -decorate --oneline --graph'
 
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 

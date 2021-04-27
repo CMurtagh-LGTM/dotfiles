@@ -23,6 +23,7 @@ Incomplete list
 - nnn
 - picom
 - cbonsai
+- rofi-todo https://github.com/samedamci/rofi-todo
 
 ### Inside Scripts
 - python
@@ -46,6 +47,7 @@ Incomplete list
 - `n` for filebrowser
 - `bat` for coloured cat
 - `batman`
+- `git-graph` alias to `git log --oneline --decorate --graph`
 - [libxft-bgra](https://aur.archlinux.org/packages/libxft-bgra/) so `st` can display coloured emoji
 
 ## Keybindings
@@ -53,6 +55,7 @@ Key 					| Action
 ------------------------|----------------------
 mod4+p					| open rofi drun
 mod4+o					| toggle eww
+mod4+i                  | rofi todo
 mod4+shift+return		| open st
 
 Key 					| Action
@@ -94,6 +97,7 @@ media keys				| .xbindkeysrc
 ## TODO
 - fix nord rofi symlink
 - setup pass
+- Make notes better
 - add audio sinks to eww
 - Add lock screen slock or xscreensaver
 - add volume to eww

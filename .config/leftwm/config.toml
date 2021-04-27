@@ -10,6 +10,12 @@ key = "p"
 
 [[keybind]]
 command = "Execute"
+value = "rofi-todo -f ~/.local/notes.json"
+modifier = ["modkey"]
+key = "i"
+
+[[keybind]]
+command = "Execute"
 value = "python /home/cameron/.config/leftwm/themes/current/eww/toggle.py"
 modifier = ["modkey"]
 key = "o"
