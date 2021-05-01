@@ -1,0 +1,20 @@
+[user]
+	email = cameron.murtagh00@gmail.com
+	name = cameron
+
+[core]
+    pager = delta
+
+[delta]
+    plus-style = "syntax"
+    minus-style = "syntax"
+	syntax-theme = Nord
+	side-by-side = true
+
+[alias]
+    graph = log --graph --decorate --oneline
+
+[interactive]
+    diffFilter = delta --color-only
+[init]
+	defaultBranch = master

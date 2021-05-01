@@ -9,7 +9,7 @@ Plug 'deoplete-plugins/deoplete-tag'
 Plug 'deoplete-plugins/deoplete-dictionary'
 Plug 'deoplete-plugins/deoplete-clang'
 " Better tab complete
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
 
 " Files
 Plug 'preservim/nerdtree' |

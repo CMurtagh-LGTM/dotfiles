@@ -25,6 +25,7 @@ Incomplete list
 - cbonsai
 - rofi-todo https://github.com/samedamci/rofi-todo
 
+
 ### Inside Scripts
 - python
 	- psutil
@@ -35,6 +36,11 @@ Incomplete list
 ### Neovim
 - fzf
 - Universal ctags
+
+### Zim
+- zim
+- fzf
+- exa
 
 ### Font
 - Hack
@@ -47,7 +53,7 @@ Incomplete list
 - `n` for filebrowser
 - `bat` for coloured cat
 - `batman`
-- `git-graph` alias to `git log --oneline --decorate --graph`
+- `git graph` alias to `git log --oneline --decorate --graph`
 - [libxft-bgra](https://aur.archlinux.org/packages/libxft-bgra/) so `st` can display coloured emoji
 
 ## Keybindings
