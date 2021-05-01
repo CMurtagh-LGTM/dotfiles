@@ -131,9 +131,10 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 cbonsai -p
 
-alias ls='ls --color=auto'
+alias exa='exa --header --icons --git'
 alias bonsai='cbonsai -p'
 
+# Dotfile repo
 alias dotfile='/usr/bin/git --git-dir=$HOME/Documents/dotfiles/ --work-tree=$HOME'
 
 # nnn
