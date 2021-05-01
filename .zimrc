@@ -42,9 +42,6 @@ zmodule zsh-users/zsh-history-substring-search
 # Faster completion
 zmodule fzf
 
-# Use exa
-zmodule exa
-
 # Custom prompt
 zmodule romkatv/powerlevel10k
 
