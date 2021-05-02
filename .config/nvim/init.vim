@@ -7,9 +7,6 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'deoplete-plugins/deoplete-tag'
 Plug 'deoplete-plugins/deoplete-dictionary'
-Plug 'deoplete-plugins/deoplete-clang'
-" Better tab complete
-" Plug 'ervandew/supertab'
 
 " Files
 Plug 'preservim/nerdtree' |
@@ -64,6 +61,9 @@ Plug 'mbbill/undotree'
 
 " Tex
 Plug 'lervag/vimtex'
+
+" Nord colour theme
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 "augroup cameron_initialisation
@@ -91,8 +91,8 @@ endfunction
 command BarToggle call BarToggle()
 
 " Theme
-let g:airline_theme='dark'
-
+" let g:airline_theme='dark'
+colorscheme nord
 
 " Line numbers
 set number
@@ -105,7 +105,6 @@ set shiftwidth=4
 set expandtab
 " Hide the mode text
 set noshowmode
-
 
 " Remove borders between windows, note the white-space
 set fillchars+=vert:\ 
@@ -153,12 +152,6 @@ nnoremap <silent> <Leader>K :call Dasht(dasht#cursor_search_terms())<Return>
 " UndoTree
 " Put it on the right
 let g:undotree_WindowLayout = 3
-
-" clang
-g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
-g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
-g:deoplete#sources#clang#std = {'c': 'c11', 'cpp': 'c++17', 'objc': 'c11', 'objcpp': 'c++1z'}
-
 
 " python
 let g:neomake_python_enabled_makers = ['pylint']

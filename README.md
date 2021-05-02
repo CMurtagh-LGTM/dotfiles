@@ -43,8 +43,7 @@ Incomplete list
 - exa
 
 ### Font
-- Hack
-	- Patched with nerdfont
+- Hack Nerd Font
 
 ### Optional
 - spotify for the eww widget
