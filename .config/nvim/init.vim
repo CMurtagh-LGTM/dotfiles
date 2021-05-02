@@ -14,8 +14,7 @@ Plug 'preservim/nerdtree' |
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Powerline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 
 " Bracket Pairs - look into more
 Plug 'jiangmiao/auto-pairs'
@@ -66,17 +65,6 @@ Plug 'lervag/vimtex'
 Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
-"augroup cameron_initialisation
-"autocmd!
-" Start tagbar
-"autocmd VimEnter * TagbarOpen
-" Start NERDTree and put the cursor back in the other window.
-"autocmd VimEnter * NERDTree | wincmd p
-" Exit Vim if NERDTree is the only window left.
-" autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
-"    \ quit | endif
-"augroup END
-
 " augroup fmt
 "  autocmd!
 "  autocmd BufWritePre * undojoin | Neoformat
@@ -91,8 +79,11 @@ endfunction
 command BarToggle call BarToggle()
 
 " Theme
-" let g:airline_theme='dark'
 colorscheme nord
+let g:nord_cursor_line_number_background = 1
+let g:lightline = {
+            \ 'colorscheme': 'nord',
+            \ }
 
 " Line numbers
 set number
