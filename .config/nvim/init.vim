@@ -17,10 +17,10 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'itchyny/lightline.vim'
 
 " Bracket Pairs - look into more
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 
 " Comment <leader>cc
-Plug 'scrooloose/nerdcommenter'
+" Plug 'scrooloose/nerdcommenter'
 
 " Icons
 Plug 'ryanoasis/vim-devicons'
