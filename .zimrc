@@ -46,4 +46,4 @@ zmodule fzf
 zmodule romkatv/powerlevel10k
 
 # Folder History
-zmodule tymm/zsh-directory-history
+zmodule tymm/zsh-directory-history -s directory-history.plugin.zsh
