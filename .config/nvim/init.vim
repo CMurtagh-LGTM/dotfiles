@@ -8,13 +8,11 @@ Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'deoplete-plugins/deoplete-tag'
 Plug 'deoplete-plugins/deoplete-dictionary'
 
-" Files
-Plug 'preservim/nerdtree' |
-	\ Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
 " Powerline
 Plug 'itchyny/lightline.vim'
+
+" File selector
+Plug 'mcchrish/nnn.vim'
 
 " Bracket Pairs - look into more
 " Plug 'jiangmiao/auto-pairs'
@@ -73,10 +71,18 @@ call plug#end()
 function BarToggle()
     TagbarToggle
     UndotreeToggle
-    NERDTreeToggle
 endfunction
 
 command BarToggle call BarToggle()
+
+" nnn
+let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
+let g:nnn#action = {
+      \ '<c-t>': 'tab split',
+      \ '<c-x>': 'split',
+      \ '<c-v>': 'vsplit' }
+nmap nnn :Nnn
+
 
 " Theme
 colorscheme nord
@@ -117,8 +123,12 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | silent! pclose | endif
 " Plugin key-mappings.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
 " SuperTab like snippets behavior.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 imap <expr><TAB>
  \ pumvisible() ? "\<C-n>" :
  \ neosnippet#expandable_or_jumpable() ?

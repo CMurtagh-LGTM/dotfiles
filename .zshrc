@@ -1,9 +1,4 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+export ZIM_HOME=~/.zim
 
 # Start configuration added by Zim install {{{
 #
@@ -131,7 +126,15 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 cbonsai -p
 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 alias exa='exa --header --icons --git'
+alias ls='exa --header --icons --git'
 alias bonsai='cbonsai -p'
 
 # Dotfile repo
@@ -139,7 +142,7 @@ alias dotfile='/usr/bin/git --git-dir=$HOME/Documents/dotfiles/ --work-tree=$HOM
 
 # nnn
 
-export NNN_PLUG='p:dragdrop;f:fzcd;o:fzopen;g:_git log --oneline --graph'
+export NNN_PLUG='p:dragdrop;f:fzcd;o:fzopen;d:_git diff;g:_git log --oneline --graph;v:_vim $nnn'
 
 n ()
 {
