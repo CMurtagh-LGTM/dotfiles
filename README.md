@@ -102,6 +102,7 @@ media keys				| .xbindkeysrc
 ## TODO
 - fix nord rofi symlink
 - setup pass
+- nvim telescope
 - Make notes better
 - add audio sinks to eww
 - Add lock screen slock or xscreensaver
