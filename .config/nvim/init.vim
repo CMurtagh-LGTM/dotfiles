@@ -50,9 +50,6 @@ Plug 'vim-syntastic/syntastic'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
-" Documentation
-Plug 'sunaku/vim-dasht'
-
 " Undo tree
 Plug 'mbbill/undotree'
 
@@ -81,7 +78,7 @@ let g:nnn#action = {
       \ '<c-t>': 'tab split',
       \ '<c-x>': 'split',
       \ '<c-v>': 'vsplit' }
-nmap nnn :Nnn<CR>
+nmap mmm :Nnn<CR>
 
 
 " Theme
@@ -102,6 +99,8 @@ set shiftwidth=4
 set expandtab
 " Hide the mode text
 set noshowmode
+" Use system clipboard
+set clipboard=unnamedplus
 
 " Remove borders between windows, note the white-space
 set fillchars+=vert:\ 
@@ -144,12 +143,6 @@ set updatetime=100
 " [[B]Commits] Customize the options used by 'git log':
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 
-
-" Dasht
-let g:dasht_filetype_docsets = {}
-" search related docsets
-nnoremap <silent> <Leader>K :call Dasht(dasht#cursor_search_terms())<Return>
-
 " UndoTree
 " Put it on the right
 let g:undotree_WindowLayout = 3
@@ -157,9 +150,6 @@ let g:undotree_WindowLayout = 3
 " python
 let g:neomake_python_enabled_makers = ['pylint']
 call neomake#configure#automake('nrwi', 500)
-" When in Python, also search NumPy, SciPy, and Pandas:
-let g:dasht_filetype_docsets['python'] = ['(num|sci)py', 'pandas']
-
 
 
 " Set rofi config syntax
