@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Discord
+Exec=/usr/bin/vieb --erwic=~/.config/erwic/discord/discord.json --datafolder=~/.config/erwic/discord/
+Terminal=false
+Type=Application
+#Icon=/path/to/icon.png
+Comment=Easily Run Websites In Containers
+Categories=Network;WebBrowser;
