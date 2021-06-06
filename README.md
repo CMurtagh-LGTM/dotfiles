@@ -36,6 +36,7 @@ Incomplete list
 ### Neovim
 - fzf
 - Universal ctags
+- python-jedi
 
 ### Zim
 - zim
