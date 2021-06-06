@@ -56,6 +56,9 @@ Plug 'mbbill/undotree'
 " Tex
 Plug 'lervag/vimtex'
 
+" sxhkd
+Plug 'kovetskiy/sxhkd-vim'
+
 " Nord colour theme
 Plug 'arcticicestudio/nord-vim'
 call plug#end()
