@@ -9,7 +9,7 @@ If you have any suggestions or improvements please make a issue or pull request.
 Incomplete list
 
 ### Main
-- LeftWM
+- LeftWM or bspwm and sxhkd
 - polybar
 - dunst
 - zsh
@@ -18,6 +18,7 @@ Incomplete list
 - xbindkeys
 - rofi
 - neovim
+- Vieb
 - eww
 - delta
 - nnn
