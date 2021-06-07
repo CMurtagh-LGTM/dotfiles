@@ -1,0 +1,35 @@
+" Options
+set adblocker=update
+set devtoolsposition=split
+set downloadmethod=ask
+set firefoxmode=always
+set fontsize=14
+set mintabwidth=250
+set mousenewtabswitch=false
+" set nativenotification=always
+set norestoretabs
+set permissioncamera=ask
+set permissionclipboardread=ask
+set permissiondisplaycapture=ask
+set permissionmediadevices=ask
+set permissionmicrophone=ask
+set permissionnotifications=ask
+set permissionpersistentstorage=ask
+set permissionsallowed+=discord.com~microphone~mediadevices
+set redirecttohttp=false
+set restorewindowmaximize=false
+set restorewindowposition=false
+set restorewindowsize=false
+set search=https://duckduckgo.com/?q=%s
+set startuppages=https://duckduckgo.com
+set suggesttopsites=0
+set favoritepages=https://duckduckgo.com
+set vimcommand="st -- nvim" 
+
+colorscheme nord
+
+cmap <Up> <action.commandHistoryPrevious>
+cmap <Down> <action.commandHistoryNext>
+emap <Up> <action.exploreHistoryPrevious>
+emap <Down> <action.exploreHistoryNext>
+

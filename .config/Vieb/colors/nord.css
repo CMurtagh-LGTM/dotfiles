@@ -1,0 +1,73 @@
+/*
+* Vieb - Vim Inspired Electron Browser
+* Copyright (C) 2020-2021 Jelmer van Arnhem
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+/* colors */
+:root {
+    /* general */
+    --bg: #2e3440;
+    --fg: #eceff4;
+    --tab-background: #2e3440;
+    --tab-suspended: #5e81ac;
+    --visible-tab: #8fbcbb;
+    --tab-crashed: #bf616a;
+    --mode-normal-fg: #88c0d0;
+    --mode-insert-fg: #e5e9f0;
+    --mode-explore-fg: #b48ead;
+    --mode-search-fg: #a3be8c;
+    --mode-pointer-fg: #81a1c1;
+    --mode-pointer-bg: none;
+    --mode-visual-fg: #81a1c1;
+    --mode-visual-bg: #eceff4;
+    --url-default: #88c0d0;
+    --url-search: #d08770;
+    --url-searchwords: #ebcb8b;
+    --url-url: #5e81ac;
+    --url-suggest: #88c0d0;
+    --url-file: #a3be8c;
+    --suggestions-border: #3b4252;
+    --suggestions-bg: #2e3440;
+    --suggestions-selected: #88c0d0;
+    --suggestions-url: #5e81ac;
+    --suggestions-file: #a3be8c;
+    --notification-border: #88c0d0;
+    --notification-date: #eceff4;
+    --notification-permission: #eceff4;
+    --notification-error: #bf616a;
+    --notification-warning: #d08770;
+    --notification-info: #ebcb8b;
+    --notification-success: #a3be8c;
+    /* special pages */
+    --link-color: #5e81ac;
+    --link-underline: #5e81ac;
+    --scrollbar-bg: #2e3440;
+    --scrollbar-thumb: #eceff4;
+    --tab-scrollbar: #eceff4;
+    --button-disabled: #434c5e;
+    --code-fg: #eceff4;
+    --code-bg: #2e3440;
+    --special-page-element-bg: #3b4252;
+    --special-page-element-border: #81a1c1;
+    --input-unfocused: #d8dee9;
+    --input-focused: #eceff4;
+    --download-progress-fg: #eceff4;
+    --download-progress-bg: #3b4252;
+    --helppage-countable: #eceff4;
+}
+
+#logo {display:none;}
+#repeat-counter, #pressed-keys {line-height:1em;}
+
