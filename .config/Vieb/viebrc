@@ -6,7 +6,7 @@ set firefoxmode=always
 set fontsize=14
 set mintabwidth=250
 set mousenewtabswitch=false
-" set nativenotification=always
+set nativenotification=always
 set norestoretabs
 set permissioncamera=ask
 set permissionclipboardread=ask
