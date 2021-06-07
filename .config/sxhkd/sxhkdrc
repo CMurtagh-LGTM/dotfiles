@@ -15,6 +15,12 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 #
+# media keys
+#
+
+
+
+#
 # bspwm hotkeys
 #
 
