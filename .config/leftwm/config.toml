@@ -33,13 +33,13 @@ key = "c"
 
 [[keybind]]
 command = "SoftReload"
-modifier = ["modkey", "Shift"]
+modifier = ["modkey", "Alt"]
 key = "r"
 
 [[keybind]]
 command = "Execute"
 value = "pkill leftwm"
-modifier = ["modkey", "Shift"]
+modifier = ["modkey", "Alt"]
 key = "q"
 
 [[keybind]]
