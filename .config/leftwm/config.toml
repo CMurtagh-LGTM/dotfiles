@@ -5,19 +5,25 @@ tags = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "", "w", "e", "r", 
 [[keybind]]
 command = "Execute"
 value = "rofi -show drun"
-modifier = ["modkey"]
+modifier = ["modkey", "Shift"]
 key = "p"
 
 [[keybind]]
 command = "Execute"
+value = "rofi-pass"
+modifier = ["modkey", "Shift"]
+key = "l"
+
+[[keybind]]
+command = "Execute"
 value = "rofi-todo -f ~/.local/notes.json"
-modifier = ["modkey"]
+modifier = ["modkey", "Shift"]
 key = "i"
 
 [[keybind]]
 command = "Execute"
 value = "python /home/cameron/.config/leftwm/themes/current/eww/toggle.py"
-modifier = ["modkey"]
+modifier = ["modkey", "Shift"]
 key = "o"
 
 [[keybind]]
