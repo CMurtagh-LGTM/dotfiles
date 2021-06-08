@@ -102,8 +102,7 @@ Key 					| Action
 media keys				| .xbindkeysrc
 
 ## TODO
-- fix nord rofi symlink
-- setup pass
+- Erwik discord, slack and spotify
 - nvim telescope
 - Make notes better
 - add audio sinks to eww
@@ -115,6 +114,5 @@ media keys				| .xbindkeysrc
 - work out all the neovim binary dependencies
 - make vim python not slow
 - sort out vim autoclose brackets
-- vim indent block and comment block
-- make or find airline nord theme
+- vim comment block
 - mess around with neofetch
