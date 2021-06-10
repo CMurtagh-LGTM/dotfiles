@@ -1,1 +1,51 @@
-set guitabbar=onupdate
+set guitabbar=never
+
+" No vsplit
+nunmap <C-w><C-v>
+nunmap <C-w>v
+
+" No split
+nunmap <C-w><C-n>
+nunmap <C-w><C-s>
+nunmap <C-w>n
+nunmap <C-w>s
+
+" No close
+nunmap <C-w><C-c>
+nunmap <C-w>c
+nunmap d
+
+" No explore
+nunmap E
+nunmap e
+
+" No follow newtab
+nunmap F
+
+" No newtab
+nunmap <C-t>
+nunmap E
+nunmap P
+nunmap t
+nunmap T
+nunmap P
+nunmap p
+
+" No newtab from pointer
+punmap na
+punmap nf
+punmap ni
+punmap <S-CR>
+punmap nl
+punmap nn
+punmap nv
+
+" No replacing tab from pointer
+punmap oa
+punmap of
+punmap oi
+punmap ol
+punmap oo
+punmap ov
+
+
