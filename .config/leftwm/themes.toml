@@ -8,6 +8,7 @@ repository = "https://github.com/PVautour/leftwm-theme-orange-forest/"
 commit = "*"
 version = "0.0.1"
 leftwm_versions = "*"
+current = false
 
 [[repos.themes]]
 name = "Coffee"
@@ -15,6 +16,7 @@ repository = "https://github.com/lex148/leftwm-coffee/"
 commit = "*"
 version = "0.0.1"
 leftwm_versions = "*"
+current = false
 
 [[repos.themes]]
 name = "Soothe"
@@ -22,6 +24,7 @@ repository = "https://github.com/b4skyx/leftwm-soothe/"
 commit = "*"
 version = "0.0.1"
 leftwm_versions = "*"
+current = false
 
 [[repos.themes]]
 name = "TNG"
@@ -29,6 +32,7 @@ repository = "https://github.com/lex148/leftwm-tng/"
 commit = "*"
 version = "0.0.1"
 leftwm_versions = "*"
+current = false
 
 [[repos.themes]]
 name = "Windows XP"
@@ -36,6 +40,7 @@ repository = "https://github.com/lex148/leftwm-windowsxp/"
 commit = "*"
 version = "0.0.1"
 leftwm_versions = "*"
+current = false
 
 [[repos.themes]]
 name = "Dracula Rounded"
@@ -43,8 +48,15 @@ repository = "https://github.com/AethanFoot/leftwm-theme-dracula-rounded/"
 commit = "*"
 version = "0.0.1"
 leftwm_versions = "*"
+current = false
 
 [[repos]]
 url = "localhost"
 name = "LOCAL"
-themes = []
+
+[[repos.themes]]
+name = "laptop"
+directory = "/home/cameron/.config/leftwm/themes/laptop"
+version = "0.0.0"
+leftwm_versions = "*"
+current = true
