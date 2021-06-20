@@ -26,6 +26,8 @@ if [ -x "$(command -v feh)" ]; then
   feh --bg-scale $SCRIPTPATH/background.jpg
 fi
 
+# xrandr --listactivemonitors | tain -n 2
+
 ~/.config/polybar/launch.sh
 
 eww --config $SCRIPTPATH/eww/eww.xml daemon
