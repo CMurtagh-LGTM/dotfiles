@@ -3,8 +3,11 @@
 #
 
 # terminal emulator
-super + shift + Return
+super + shift + s
 	st
+
+super + shift + Return
+	alacritty
 
 # program launcher
 super + shift + @p
