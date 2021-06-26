@@ -28,6 +28,8 @@ fi
 
 # xrandr --listactivemonitors | tain -n 2
 
+sxhkd &
+
 ~/.config/polybar/launch.sh
 
 eww --config $SCRIPTPATH/eww/eww.xml daemon
