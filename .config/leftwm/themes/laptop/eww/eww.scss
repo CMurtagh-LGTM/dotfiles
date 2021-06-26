@@ -1,0 +1,16 @@
+window {
+	font-family:Hack;
+	font-size: 12pt;
+	border-radius: 10px;
+}
+
+window > * {
+	margin-left:10px;
+	margin-right:10px;
+}
+
+button {
+	border: none;
+	background: none;
+}
+
