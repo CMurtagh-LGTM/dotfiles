@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-scale '/home/cameron/.config/leftwm/themes/basic_polybar/background.jpg' 
+feh --no-fehbg --bg-scale '/home/cameron/.config/leftwm/themes/nord/background.jpg' 
