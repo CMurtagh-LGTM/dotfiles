@@ -9,7 +9,8 @@ If you have any suggestions or improvements please make a issue or pull request.
 Incomplete list
 
 ### Main
-- LeftWM or bspwm and sxhkd
+- LeftWM
+- sxhkd
 - polybar
 - dunst
 - zsh
