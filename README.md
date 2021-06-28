@@ -13,6 +13,7 @@ Incomplete list
 - sxhkd
 - polybar
 - dunst
+- Alacritty
 - zsh
 - powerlevel 10k
 - feh
