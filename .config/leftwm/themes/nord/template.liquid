@@ -7,6 +7,10 @@
 %{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
 %{F#2E3440}%{B#5E81AC} {{tag.name}} %{B-}%{F-}
 %{A}
+{% elsif tag.busy %}
+%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
+%{F#8FBCBB} {{tag.name}} %{F-}
+%{A}
 {% else tag.visible  %}
 %{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
 %{F#ECEff4} {{tag.name}} %{F-}
@@ -14,4 +18,3 @@
 {% endif %}
 {% endfor %}
 %{c}
-{{ window_title }}

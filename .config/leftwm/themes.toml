@@ -65,7 +65,6 @@ commit = "*"
 version = "0.0.1"
 leftwm_versions = "*"
 current = false
-<<<<<<< HEAD
 
 [[repos.themes]]
 name = "Red Moon"
@@ -104,7 +103,6 @@ url = "localhost"
 name = "LOCAL"
 
 [[repos.themes]]
-<<<<<<< HEAD
 name = "nord"
 directory = "/home/cameron/.config/leftwm/themes/nord"
 version = "0.0.0"
@@ -118,6 +116,7 @@ version = "0.0.0"
 leftwm_versions = "*"
 current = false
 
+[[repos.themes]]
 name = "laptop"
 directory = "/home/cameron/.config/leftwm/themes/laptop"
 version = "0.0.0"

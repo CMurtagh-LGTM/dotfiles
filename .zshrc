@@ -172,6 +172,8 @@ n ()
     fi
 }
 
+export R_PROFILE_USER=$HOME/.config/R/profile
+
 #####################################################################################################
 # Uncomment / edit the following environment variables when the corresponding software is installed #
 #####################################################################################################

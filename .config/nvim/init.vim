@@ -56,7 +56,10 @@ Plug 'mbbill/undotree'
 " Tex
 Plug 'lervag/vimtex'
 
-" sxhkd
+" R
+Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
+
+" sxhkd highlighting
 Plug 'kovetskiy/sxhkd-vim'
 
 " Nord colour theme
