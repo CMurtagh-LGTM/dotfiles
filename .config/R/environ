@@ -1,5 +1,1 @@
-R_HOME_USER = ${HOME}/.local/share/R
-R_PROFILE_USER = ${HOME}/.config/R/profile
-R_LIBS_USER = ${HOME}/.local/share/R/library
-R_HISTFILE = ${HOME}/.local/share/R/history.Rhistory
 

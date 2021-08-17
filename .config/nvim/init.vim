@@ -66,6 +66,8 @@ Plug 'kovetskiy/sxhkd-vim'
 Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
+packadd termdebug
+
 " augroup fmt
 "  autocmd!
 "  autocmd BufWritePre * undojoin | Neoformat
@@ -165,6 +167,11 @@ au BufNewFile,BufRead /*.rasi setf css
 " Latex
 let g:vimtex_view_general_viewer = 'zathura'
 
+" R
+" If there is X open pdf viewer when we first compile
+if $DISPLAY != ""
+    let R_openpdf = 1
+endif
 
 " Tagbar extra languages
 let g:tagbar_type_markdown = {
