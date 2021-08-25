@@ -27,7 +27,6 @@ Incomplete list
 - sad
 - picom
 - cbonsai
-- rofi-todo https://github.com/samedamci/rofi-todo
 - pass and rofi-pass
 
 ### Inside Scripts
