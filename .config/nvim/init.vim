@@ -1,4 +1,3 @@
-
 call plug#begin('~/.local/share/nvim/plugged')
 " Autocomplete
 Plug 'neovim/nvim-lspconfig' " TODO
@@ -37,9 +36,10 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
-" Fuzzy finding
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
+" Finder 
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 " Undo tree
 Plug 'mbbill/undotree'
@@ -177,22 +177,40 @@ require('bufferline').setup {
   }
 }
 EOF
+
 " These commands will navigate through buffers in order regardless of which mode you are using
 nnoremap <silent>b] :BufferLineCycleNext<CR>
 nnoremap <silent>b[ :BufferLineCyclePrev<CR>
-
-" fuzzy finding options
-" [[B]Commits] Customize the options used by 'git log':
-let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 
 " UndoTree
 " Put it on the right
 let g:undotree_WindowLayout = 3
 
+" Telescope TODO work out more pickers
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-" Set rofi config syntax
-" au BufNewFile,BufRead /*.rasi setf css
-
+lua << EOF
+require('telescope').setup{
+  defaults = {
+    vimgrep_arguments = {
+      'rg',
+      '--color=never',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case'
+    },
+    selection_strategy = "reset",
+    use_less = false,
+    set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil, 
+  }
+}
+require('telescope').load_extension('fzy_native')
+EOF
 
 "Latex
 let g:vimtex_view_general_viewer = 'zathura'

@@ -37,7 +37,7 @@ Incomplete list
 - pactl
 
 ### Neovim
-- fzf
+- fzy
 - Universal ctags
 
 #### Language servers
@@ -107,7 +107,6 @@ media keys				| .xbindkeysrc
 
 ## TODO
 - Fix eww image size
-- nvim telescope
 - Make notes - possible scratchpad from left
 - rofi modi
     - browser bookmarks
