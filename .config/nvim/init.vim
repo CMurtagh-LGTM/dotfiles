@@ -1,6 +1,9 @@
 call plug#begin('~/.local/share/nvim/plugged')
-" Autocomplete
+" Language server protocol client
 Plug 'neovim/nvim-lspconfig' " TODO
+Plug 'folke/lsp-colors.nvim'
+
+" Autocomplete 
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 
@@ -26,8 +29,7 @@ Plug 'tpope/vim-commentary' " gc
 Plug 'ludovicchabant/vim-gutentags'
 
 " Multicursor
-" Installed from AUR
-" Plug 'git@github.com:mg979/vim-visual-multi.git', {'branch': 'master'}
+Plug 'mg979/vim-visual-multi'
 
 " Highlight copy
 Plug 'machakann/vim-highlightedyank'
@@ -62,6 +64,8 @@ Plug 'kovetskiy/sxhkd-vim'
 " Nord colour theme
 Plug 'arcticicestudio/nord-vim'
 call plug#end()
+
+" TODO Checkout barbar and which-key
 
 " gdb in vim
 " packadd termdebug
