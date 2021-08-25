@@ -40,6 +40,9 @@ Incomplete list
 - fzf
 - Universal ctags
 
+#### Language servers
+- ccls
+
 ### Zim
 - zim
 - fzf
