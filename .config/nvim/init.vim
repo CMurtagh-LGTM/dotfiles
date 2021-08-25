@@ -1,12 +1,12 @@
 
 call plug#begin('~/.local/share/nvim/plugged')
 " Autocomplete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
-Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'deoplete-plugins/deoplete-tag'
-Plug 'deoplete-plugins/deoplete-dictionary'
+Plug 'neovim/nvim-lspconfig' " TODO
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+
+" Syntax
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': '0.5-compat' }
 
 " Powerline
 Plug 'itchyny/lightline.vim'
@@ -14,20 +14,17 @@ Plug 'itchyny/lightline.vim'
 " File selector
 Plug 'mcchrish/nnn.vim'
 
-" Bracket Pairs - look into more
-" Plug 'jiangmiao/auto-pairs'
-
-" Comment <leader>cc
-" Plug 'scrooloose/nerdcommenter'
-
 " Icons
-Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
 
 " Format
 Plug 'sbdchd/neoformat'
 
-" Code Check
-Plug 'neomake/neomake'
+" Comments
+Plug 'tpope/vim-commentary' " gc
+
+" Tag manager
+Plug 'ludovicchabant/vim-gutentags'
 
 " Multicursor
 " Installed from AUR
@@ -40,18 +37,18 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
-" Tags
-Plug 'preservim/tagbar'
-
-" Syntax Highlighting
-Plug 'vim-syntastic/syntastic'
-
 " Fuzzy finding
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
 " Undo tree
 Plug 'mbbill/undotree'
+
+" Intent markers
+Plug 'lukas-reineke/indent-blankline.nvim'
+
+" Pretty tabs
+Plug 'akinsho/bufferline.nvim'
 
 " Tex
 Plug 'lervag/vimtex'
@@ -66,15 +63,10 @@ Plug 'kovetskiy/sxhkd-vim'
 Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
-packadd termdebug
-
-" augroup fmt
-"  autocmd!
-"  autocmd BufWritePre * undojoin | Neoformat
-" augroup END
+" gdb in vim
+" packadd termdebug
 
 function BarToggle()
-    TagbarToggle
     UndotreeToggle
 endfunction
 
@@ -114,38 +106,48 @@ set clipboard=unnamedplus
 set fillchars+=vert:\ 
 highlight VertSplit cterm=NONE
 
+" Coq
+autocmd VimEnter * COQnow --shut-up
 
-" Syntastic
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
-" deoplete autoclose preview
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | silent! pclose | endif
-
-
-" Deoplete neopsnippet
-" Plugin key-mappings.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-imap <expr><TAB>
- \ pumvisible() ? "\<C-n>" :
- \ neosnippet#expandable_or_jumpable() ?
- \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
+" Tree sitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  indent = {
+    enable = true
+  }
+}
+EOF
 
 " Git
 " Git gutter update time in ms
 set updatetime=100
 
+
+" bufferline
+set termguicolors
+lua << EOF
+require('bufferline').setup {
+  options = {
+    numbers = "buffer_id",
+    number_style = "",
+    show_buffer_close_icons = false,
+    show_close_icon =  false,
+  }
+}
+
+EOF
 
 " fuzzy finding options
 " [[B]Commits] Customize the options used by 'git log':
@@ -155,13 +157,9 @@ let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %
 " Put it on the right
 let g:undotree_WindowLayout = 3
 
-" python
-let g:neomake_python_enabled_makers = ['pylint']
-call neomake#configure#automake('nrwi', 500)
-
 
 " Set rofi config syntax
-au BufNewFile,BufRead /*.rasi setf css
+" au BufNewFile,BufRead /*.rasi setf css
 
 
 " Latex
@@ -173,49 +171,3 @@ if $DISPLAY != ""
     let R_openpdf = 1
 endif
 
-" Tagbar extra languages
-let g:tagbar_type_markdown = {
-  \ 'ctagstype'	: 'markdown',
-  \ 'kinds'		: [
-    \ 'c:chapter:0:1',
-    \ 's:section:0:1',
-    \ 'S:subsection:0:1',
-	\ 't:subsubsection:0:1',
-    \ 'T:l4subsection:0:1',
-    \ 'u:l5subsection:0:1',
-  \ ],
-  \ 'sro'			: '""',
-  \ 'kind2scope'	: {
-    \ 'c' : 'chapter',
-    \ 's' : 'section',
-    \ 'S' : 'subsection',
-    \ 't' : 'subsubsection',
-    \ 'T' : 'l4subsection',
-  \ },
-  \ 'scope2kind'	: {
-    \ 'chapter' : 'c',
-    \ 'section' : 's',
-    \ 'subsection' : 'S',
-    \ 'subsubsection' : 't',
-    \ 'l4subsection' : 'T',
-  \ },
-\ }
-
-let g:tagbar_type_yaml = {
-    \ 'ctagstype' : 'yaml',
-    \ 'kinds' : [
-        \ 'a:anchors',
-        \ 's:section',
-        \ 'e:entry'
-    \ ],
-  \ 'sro' : '.',
-    \ 'scope2kind': {
-      \ 'section': 's',
-      \ 'entry': 'e'
-    \ },
-    \ 'kind2scope': {
-      \ 's': 'section',
-      \ 'e': 'entry'
-    \ },
-    \ 'sort' : 0
-    \ }

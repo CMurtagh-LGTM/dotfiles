@@ -24,6 +24,7 @@ Incomplete list
 - eww
 - delta
 - nnn
+- sad
 - picom
 - cbonsai
 - rofi-todo https://github.com/samedamci/rofi-todo
@@ -39,7 +40,6 @@ Incomplete list
 ### Neovim
 - fzf
 - Universal ctags
-- python-jedi
 
 ### Zim
 - zim
