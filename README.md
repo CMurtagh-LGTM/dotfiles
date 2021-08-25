@@ -106,17 +106,21 @@ Key 					| Action
 media keys				| .xbindkeysrc
 
 ## TODO
-- Erwik discord, slack and spotify
+- Fix eww image size
 - nvim telescope
-- Make notes better
+- Make notes - possible scratchpad from left
+- rofi modi
+    - browser bookmarks
+    - browser seach ddgr
+    - rofi steam?
+    - rofi spotify?
 - add audio sinks to eww
 - Add lock screen slock or xscreensaver
 - add volume to eww
-- work out how to control where eww appears
-- look into nnn more
-- nnn opener
+- look into nnn more & nnn opener
 - work out all the neovim binary dependencies
-- make vim python not slow
+- python language server
 - sort out vim autoclose brackets
-- vim comment block
+- Erwik discord, slack and spotify - wait for a later version
 - mess around with neofetch
+- work out how to control where eww appears - given up on this
