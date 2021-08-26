@@ -43,6 +43,12 @@ Incomplete list
 #### Language servers
 - efm-langserver
     - black
+    - isort
+    - flake8
+        - isort
+        - docstrings
+        - blind except
+    - mypy
 - ccls
 - jedi-language-server
 
@@ -121,7 +127,6 @@ media keys				| .xbindkeysrc
 - add volume to eww
 - look into nnn more & nnn opener
 - work out all the neovim binary dependencies
-- python language server
 - sort out vim autoclose brackets
 - Erwik discord, slack and spotify - wait for a later version
 - mess around with neofetch

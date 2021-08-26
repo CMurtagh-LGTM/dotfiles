@@ -65,7 +65,7 @@ Plug 'kovetskiy/sxhkd-vim'
 Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
-" TODO Checkout barbar and which-key
+" TODO Checkout barbar
 
 " gdb in vim
 " packadd termdebug
@@ -105,6 +105,8 @@ set expandtab
 set noshowmode
 " Use system clipboard
 set clipboard=unnamedplus
+" Set ruler for code length
+set colorcolumn=120
 
 " Remove borders between windows, note the white-space
 set fillchars+=vert:\ 
@@ -176,8 +178,10 @@ nvim_lsp.efm.setup {
     settings = {
         languages = {
             python = {
-                -- TODO isort, flake8 and mypy
-                {formatCommand = "black --quiet -", formatStdin = true}
+                {formatCommand = "black --quiet -", formatStdin = true},
+                {formatCommand = "isort --quiet -", formatStdin = true},
+                {lintCommand = "flake8 --stdin-display-name={$INPUT} -", lintStdin = true},
+                {lintCommand = "mypy --show-column-numbers"}, 
             }
         }
     }
