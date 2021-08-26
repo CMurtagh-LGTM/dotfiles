@@ -34,6 +34,7 @@ Incomplete list
 	- pilsectl
 - playerctl
 - pactl
+- imagemagick
 
 ### Neovim
 - fzy
