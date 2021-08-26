@@ -41,7 +41,10 @@ Incomplete list
 - Universal ctags
 
 #### Language servers
+- efm-langserver
+    - black
 - ccls
+- jedi-language-server
 
 ### Zim
 - zim

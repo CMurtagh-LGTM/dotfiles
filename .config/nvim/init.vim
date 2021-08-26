@@ -1,6 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 " Language server protocol client
-Plug 'neovim/nvim-lspconfig' " TODO
+Plug 'neovim/nvim-lspconfig'
 Plug 'folke/lsp-colors.nvim'
 
 " Autocomplete 
@@ -18,9 +18,6 @@ Plug 'mcchrish/nnn.vim'
 
 " Icons
 Plug 'kyazdani42/nvim-web-devicons'
-
-" Format
-Plug 'sbdchd/neoformat'
 
 " Comments
 Plug 'tpope/vim-commentary' " gc
@@ -148,7 +145,7 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
     buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
     buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-    buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+    buf_set_keymap('n', '<leader>c', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
 -- C++
@@ -159,6 +156,22 @@ nvim_lsp.ccls.setup {
         },
         clang = {
             extraArgs = {"-std=c++20"}
+        }
+    }
+}
+
+-- Python
+nvim_lsp.jedi_language_server.setup {}
+
+-- efm Allows for formatters
+nvim_lsp.efm.setup {
+    init_options = {documentFormatting = true},
+    settings = {
+        languages = {
+            python = {
+                -- TODO isort, flake8 and mypy
+                {formatCommand = "black --quiet -", formatStdin = true}
+            }
         }
     }
 }
