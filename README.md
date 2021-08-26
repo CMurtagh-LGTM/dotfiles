@@ -17,7 +17,6 @@ Incomplete list
 - zsh
 - powerlevel 10k
 - feh
-- xbindkeys
 - rofi
 - neovim
 - Vieb

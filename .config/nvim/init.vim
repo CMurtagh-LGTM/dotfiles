@@ -181,7 +181,7 @@ nvim_lsp.efm.setup {
                 {formatCommand = "black --quiet -", formatStdin = true},
                 {formatCommand = "isort --quiet -", formatStdin = true},
                 {lintCommand = "flake8 --stdin-display-name={$INPUT} -", lintStdin = true},
-                {lintCommand = "mypy --show-column-numbers"}, 
+                {lintCommand = "mypy --show-column-numbers"},
             }
         }
     }
