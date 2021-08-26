@@ -10,9 +10,14 @@ super + shift + Return
 	alacritty
 
 # program launcher
-super + shift + @p
+super + shift + p
 	rofi -show drun
 
+# Web search
+super + shift + k
+	rofi -lines 5 -eh 3 -show search
+
+# Passwords
 super + shift + l
 	rofi-pass
 

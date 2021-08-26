@@ -1,5 +1,5 @@
 configuration {
-	modi: "drun";
+	modi: "drun,search:ddgr_search.sh";
 /*	width: 50;*/
 /*	lines: 15;*/
 	columns: 2;

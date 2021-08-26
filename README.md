@@ -36,6 +36,9 @@ Incomplete list
 - pactl
 - imagemagick
 
+### rofi-modi
+- rofi-ddgr
+
 ### Neovim
 - fzy
 - Universal ctags
