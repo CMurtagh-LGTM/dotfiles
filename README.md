@@ -115,7 +115,6 @@ Key 					| Action
 media keys				| .xbindkeysrc
 
 ## TODO
-- Fix eww image size
 - Make notes - possible scratchpad from left
 - rofi modi
     - browser bookmarks
