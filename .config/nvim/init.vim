@@ -49,6 +49,9 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 " Pretty tabs
 Plug 'akinsho/bufferline.nvim'
 
+" Key shortcut explainer
+Plug 'folke/which-key.nvim'
+
 " Tex
 Plug 'lervag/vimtex'
 
@@ -150,6 +153,7 @@ end
 
 -- C++
 nvim_lsp.ccls.setup {
+    on_attach = on_attach,  
     init_options = {
         cache = {
             directory = ".ccls-cache"
@@ -161,10 +165,13 @@ nvim_lsp.ccls.setup {
 }
 
 -- Python
-nvim_lsp.jedi_language_server.setup {}
+nvim_lsp.jedi_language_server.setup {
+    on_attach = on_attach
+}
 
 -- efm Allows for formatters
 nvim_lsp.efm.setup {
+    on_attach = on_attach,  
     init_options = {documentFormatting = true},
     settings = {
         languages = {
@@ -227,6 +234,20 @@ require('telescope').setup{
   }
 }
 require('telescope').load_extension('fzy_native')
+EOF
+
+" Which Key
+set timeoutlen=250
+lua << EOF
+require("which-key").setup {
+    plugins = {
+        spelling = {
+            enabled = true,
+            suggestions = 20
+        }
+    },
+}
+-- TODO document mappings
 EOF
 
 "Latex
