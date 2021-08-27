@@ -36,7 +36,7 @@ Plug 'machakann/vim-highlightedyank'
 " CursorHold time changer
 Plug 'antoinemadec/FixCursorHold.nvim'
 
-" Dependency
+" Dependency for telescope and git signs
 Plug 'nvim-lua/plenary.nvim'
 
 " Finder 
@@ -48,6 +48,9 @@ Plug 'lewis6991/gitsigns.nvim'
 
 " Undo tree
 Plug 'mbbill/undotree'
+
+" Better wildmenu
+Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Intent markers
 Plug 'lukas-reineke/indent-blankline.nvim'
@@ -71,10 +74,10 @@ Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
 Plug 'kovetskiy/sxhkd-vim'
 
 " Nord colour theme
-Plug 'arcticicestudio/nord-vim'
+Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
-" TODO Checkout nvim-dap
+" TODO Checkout nvim-dap and nvim-lsputils
 
 " gdb in vim
 " packadd termdebug
@@ -240,6 +243,42 @@ nnoremap <silent>b[ :BufferLineCyclePrev<CR>
 " UndoTree
 " Put it on the right
 let g:undotree_WindowLayout = 3
+
+" Wilder
+call wilder#setup({'modes': [':', '/', '?']})
+call wilder#set_option('pipeline', [
+      \   wilder#branch(
+      \     [
+      \       wilder#check({_, x -> empty(x)}),
+      \       wilder#history(),
+      \     ],
+      \     wilder#python_file_finder_pipeline({
+      \       'file_command': ['find', '.', '-type', 'f', '-printf', '%P\n'],
+      \       'dir_command': ['find', '.', '-type', 'd', '-printf', '%P\n'],
+      \       'filters': ['fuzzy_filter', 'difflib_sorter'],
+      \     }),
+      \     wilder#cmdline_pipeline({
+      \       'fuzzy': 1,
+      \     }),
+      \     wilder#python_search_pipeline({
+      \         'pattern': 'fuzzy',
+      \     }),
+      \   ),
+      \ ])
+call wilder#set_option('renderer', wilder#popupmenu_renderer({
+      \ 'highlighter': [
+      \   wilder#pcre2_highlighter(),
+      \   wilder#basic_highlighter(),
+      \ ],
+      \ 'left': [
+      \   wilder#popupmenu_devicons(),
+      \   wilder#popupmenu_buffer_flags(),
+      \ ],
+      \ 'right': [
+      \   ' ',
+      \   wilder#popupmenu_scrollbar(),
+      \ ],
+      \ }))
 
 " Telescope TODO work out more pickers
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
