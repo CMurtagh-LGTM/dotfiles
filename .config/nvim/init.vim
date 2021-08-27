@@ -79,12 +79,6 @@ call plug#end()
 " gdb in vim
 " packadd termdebug
 
-function BarToggle()
-    UndotreeToggle
-endfunction
-
-command BarToggle call BarToggle()
-
 " Theme
 colorscheme nord
 let g:nord_cursor_line_number_background = 1
@@ -107,6 +101,12 @@ set noshowmode
 set clipboard=unnamedplus
 " Set ruler for code length
 set colorcolumn=120
+
+" Some easy mappings
+nnoremap Y y$
+nnoremap <leader>v <cmd>vsplit<cr>
+nnoremap <leader>s <cmd>split<cr>
+nnoremap <leader>b <cmd>exe "b " . v:count1<cr>
 
 " Remove borders between windows, note the white-space
 set fillchars+=vert:\ 
