@@ -149,6 +149,7 @@ local on_attach = function(client, bufnr)
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
     local opts = { noremap=true, silent=true }
+    --TODO add telescope lsp commands
     buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
     buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
@@ -275,11 +276,16 @@ call wilder#set_option('renderer', wilder#popupmenu_renderer({
       \ ],
       \ }))
 
-" Telescope TODO work out more pickers
+" Telescope
+nnoremap <leader>p <cmd>Telescope git_files<cr>  
 nnoremap <leader>ff <cmd>Telescope file_browser<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>ft <cmd>Telescope tags<cr>
+nnoremap <leader>fm <cmd>Telescope man_pages<cr>
+nnoremap <leader>fq <cmd>Telescope quickfix<cr> 
+nnoremap <leader>f<space> <cmd>Telescope builtin<cr>  
 
 lua << EOF
 require('telescope').setup{
@@ -300,6 +306,9 @@ require('telescope').setup{
 }
 require('telescope').load_extension('fzy_native')
 EOF
+
+" gutentags
+let g:gutentags_file_list_command = "git ls-files" 
 
 " Which Key
 set timeoutlen=250
