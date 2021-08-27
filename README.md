@@ -47,6 +47,7 @@ Incomplete list
 - efm-langserver
     - black
     - isort
+    - doq
     - flake8
         - isort
         - docstrings
@@ -54,6 +55,7 @@ Incomplete list
     - mypy
 - ccls
 - jedi-language-server
+- java_language-server
 
 ### Zim
 - zim
@@ -65,6 +67,10 @@ Incomplete list
 
 ### Optional
 - spotify for the eww widget
+
+## Setting up Neovim
+- `:PlugInstall`
+- `:TSInstall <language-name>`
 
 ## Cool Stuff
 - `n` for filebrowser

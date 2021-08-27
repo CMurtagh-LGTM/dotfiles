@@ -211,12 +211,16 @@ nvim_lsp.efm.setup {
             python = {
                 {formatCommand = "black --quiet -", formatStdin = true},
                 {formatCommand = "isort --quiet -", formatStdin = true},
+                {formatCommand = "doq", formatStdin = true},  
                 {lintCommand = "flake8 --stdin-display-name={$INPUT} -", lintStdin = true},
                 {lintCommand = "mypy --show-column-numbers"},
             }
         }
     }
 }
+
+-- Java :vomit:
+nvim_lsp.java_language_server.setup{} 
 EOF
 
 " Code action lightbulb
