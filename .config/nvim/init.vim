@@ -15,9 +15,6 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': '0.5-compa
 " Powerline
 Plug 'itchyny/lightline.vim'
 
-" File selector
-Plug 'mcchrish/nnn.vim'
-
 " Icons
 Plug 'kyazdani42/nvim-web-devicons'
 
@@ -87,15 +84,6 @@ function BarToggle()
 endfunction
 
 command BarToggle call BarToggle()
-
-" nnn
-let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
-let g:nnn#action = {
-      \ '<c-t>': 'tab split',
-      \ '<c-x>': 'split',
-      \ '<c-v>': 'vsplit' }
-nmap mmm :Nnn<CR>
-
 
 " Theme
 colorscheme nord
@@ -288,7 +276,7 @@ call wilder#set_option('renderer', wilder#popupmenu_renderer({
       \ }))
 
 " Telescope TODO work out more pickers
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>ff <cmd>Telescope file_browser<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
