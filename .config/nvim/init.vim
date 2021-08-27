@@ -31,14 +31,15 @@ Plug 'mg979/vim-visual-multi'
 " Highlight copy
 Plug 'machakann/vim-highlightedyank'
 
-" Git
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+" Dependency
+Plug 'nvim-lua/plenary.nvim'
 
 " Finder 
-Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+
+" Git
+Plug 'lewis6991/gitsigns.nvim'
 
 " Undo tree
 Plug 'mbbill/undotree'
@@ -51,6 +52,9 @@ Plug 'akinsho/bufferline.nvim'
 
 " Key shortcut explainer
 Plug 'folke/which-key.nvim'
+
+" Auto pairs
+Plug 'windwp/nvim-autopairs'
 
 " Tex
 Plug 'lervag/vimtex'
@@ -65,7 +69,7 @@ Plug 'kovetskiy/sxhkd-vim'
 Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
-" TODO Checkout barbar
+" TODO Checkout nvim-dap
 
 " gdb in vim
 " packadd termdebug
@@ -115,25 +119,28 @@ highlight VertSplit cterm=NONE
 " Coq
 autocmd VimEnter * COQnow --shut-up
 
-" Tree sitter
+" Tree sitter and autopairs
 lua <<EOF
+local npairs = require("nvim-autopairs") 
+
+npairs.setup({
+    check_ts = true,
+})
+
 require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
-  },
+    highlight = {
+        enable = true,
+    },
+    indent = {
+        enable = true,
+    },
+    autopairs = {
+        enable = true,
+    },
 }
-EOF
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  indent = {
-    enable = true
-  }
-}
+
+local Rule = require('nvim-autopairs.rule')
+npairs.add_rule(Rule("\\(","\\)","tex"))
 EOF
 
 " lsp
@@ -187,11 +194,6 @@ nvim_lsp.efm.setup {
     }
 }
 EOF
-
-" Git
-" Git gutter update time in ms
-set updatetime=100
-
 
 " bufferline
 set termguicolors
@@ -252,6 +254,12 @@ require("which-key").setup {
     },
 }
 -- TODO document mappings
+EOF
+
+" Git Signs
+lua << EOF
+-- TODO configure
+require('gitsigns').setup()
 EOF
 
 "Latex

@@ -133,6 +133,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+export EDITOR="/usr/bin/nvim"
+
 alias exa='exa --header --icons --git'
 alias ls='exa --header --icons --git'
 alias bonsai='cbonsai -p'

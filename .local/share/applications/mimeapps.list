@@ -1,0 +1,4 @@
+[Default Applications]
+text/plain=neovim.desktop
+application/pdf=Zathura.desktop
+text/pdf=Zathura.desktop
