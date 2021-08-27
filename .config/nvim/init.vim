@@ -77,7 +77,7 @@ Plug 'kovetskiy/sxhkd-vim'
 Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
-" TODO Checkout nvim-dap and nvim-lsputils
+" TODO Checkout nvim-dap, neorg and nvim-lsputils
 
 " gdb in vim
 " packadd termdebug
