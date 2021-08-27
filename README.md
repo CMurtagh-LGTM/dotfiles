@@ -55,7 +55,7 @@ Incomplete list
     - mypy
 - ccls
 - jedi-language-server
-- java_language-server
+- jdtls
 
 ### Zim
 - zim

@@ -220,7 +220,10 @@ nvim_lsp.efm.setup {
 }
 
 -- Java :vomit:
-nvim_lsp.java_language_server.setup{} 
+nvim_lsp.jdtls.setup{
+    on_attach = on_attach,
+    cmd = {"jdtls"},
+} 
 EOF
 
 " Code action lightbulb
