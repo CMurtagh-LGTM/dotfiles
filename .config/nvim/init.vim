@@ -24,9 +24,6 @@ Plug 'tpope/vim-commentary' " gc
 " Tag manager
 Plug 'ludovicchabant/vim-gutentags'
 
-" Multicursor
-Plug 'mg979/vim-visual-multi'
-
 " Highlight copy
 Plug 'machakann/vim-highlightedyank'
 
@@ -71,7 +68,7 @@ Plug 'kovetskiy/sxhkd-vim'
 Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
-" TODO Checkout nvim-dap, neorg and nvim-lsputils
+" TODO Checkout nvim-dap, neorg, nvim-lsputils and lualine or galaxyline
 
 " gdb in vim
 " packadd termdebug
@@ -103,8 +100,6 @@ set colorcolumn=120
 nnoremap Y y$
 nnoremap <leader>v <cmd>vsplit<cr>
 nnoremap <leader>s <cmd>split<cr>
-nnoremap <leader>b <cmd>exe "b " . v:count1<cr>
-nnoremap <leader>d <cmd>exe "bd " . bufnr("%")<cr> 
 
 " Remove borders between windows, note the white-space
 set fillchars+=vert:\ 
@@ -207,7 +202,9 @@ nvim_lsp.efm.setup {
 }
 
 -- R
-nvim_lsp.r_language_server.setup{} 
+nvim_lsp.r_language_server.setup{
+    on_attach = on_attach,  
+}
 
 -- Java :vomit:
 nvim_lsp.jdtls.setup{
@@ -217,16 +214,26 @@ nvim_lsp.jdtls.setup{
 EOF
 
 " Code action lightbulb
-let g:cursorhold_updatetime = 100
-autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb{sign={enabled=false},virtual_text={enabled=true}}
+let g:cursorhold_updatetime = 500
+
+augroup hover_
+  au!
+  autocmd CursorHold *.py ++once lua vim.lsp.buf.hover()
+augroup END
+augroup hover
+    au!
+    autocmd CursorMoved *.py exe "exe \"au! hover_\" | autocmd hover_ CursorHold *.py ++once lua vim.lsp.buf.hover()"
+    autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb{sign={enabled=false},virtual_text={enabled=true}}
+augroup END
 
 " bufferline
 set termguicolors
 lua << EOF
 require('bufferline').setup {
   options = {
-    numbers = "buffer_id",
-    number_style = "",
+    numbers = function(opts)
+        return string.format('%s', opts.ordinal)
+    end,
     show_buffer_close_icons = false,
     show_close_icon =  false,
   }
@@ -234,8 +241,10 @@ require('bufferline').setup {
 EOF
 
 " These commands will navigate through buffers in order regardless of which mode you are using
-nnoremap <silent>b] :BufferLineCycleNext<CR>
-nnoremap <silent>b[ :BufferLineCyclePrev<CR>
+nnoremap <leader>] :BufferLineCycleNext<CR>
+nnoremap <leader>[ :BufferLineCyclePrev<CR>
+nnoremap <leader>b <cmd>exe "BufferLineGoToBuffer " . v:count1<cr>
+nnoremap <leader>d <cmd>exe "bd " . bufnr("%")<cr> 
 
 " UndoTree
 " Put it on the right
@@ -335,8 +344,7 @@ EOF
 let g:vimtex_view_general_viewer = 'zathura'
 
 " R
-" If there is X open pdf viewer when we first compile
-if $DISPLAY != ""
-    let R_openpdf = 1
-endif
-
+augroup R_commands
+    au!
+    autocmd FileType rmd map <Leader>ll :let file_name=expand('%:r')<enter> :!echo<space>"require(rmarkdown);<space>render('<c-r>%', output_file = '<c-r>=file_name<enter>.pdf')"<space>\|<space>R<space>--vanilla<enter>
+augroup END
