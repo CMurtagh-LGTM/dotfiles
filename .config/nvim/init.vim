@@ -6,7 +6,7 @@ Plug 'kosayoda/nvim-lightbulb' " Code action
 Plug 'ray-x/lsp_signature.nvim' " Signature Highlight
 
 " Autocomplete 
-Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+Plug 'ms-jpq/coq_nvim', {'do' : ':COQdeps','branch': 'coq'}
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 
 " Syntax
@@ -64,9 +64,6 @@ Plug 'windwp/nvim-autopairs'
 " Tex
 Plug 'lervag/vimtex'
 
-" R
-Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
-
 " sxhkd highlighting
 Plug 'kovetskiy/sxhkd-vim'
 
@@ -107,6 +104,7 @@ nnoremap Y y$
 nnoremap <leader>v <cmd>vsplit<cr>
 nnoremap <leader>s <cmd>split<cr>
 nnoremap <leader>b <cmd>exe "b " . v:count1<cr>
+nnoremap <leader>d <cmd>exe "bd " . bufnr("%")<cr> 
 
 " Remove borders between windows, note the white-space
 set fillchars+=vert:\ 
@@ -207,6 +205,9 @@ nvim_lsp.efm.setup {
         }
     }
 }
+
+-- R
+nvim_lsp.r_language_server.setup{} 
 
 -- Java :vomit:
 nvim_lsp.jdtls.setup{
