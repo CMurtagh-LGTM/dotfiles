@@ -100,6 +100,8 @@ set colorcolumn=120
 nnoremap Y y$
 nnoremap <leader>v <cmd>vsplit<cr>
 nnoremap <leader>s <cmd>split<cr>
+nnoremap <c-z> [s1z=``
+inoremap <c-z> <Esc>[s1z=``a
 
 " Remove borders between windows, note the white-space
 set fillchars+=vert:\ 
@@ -107,15 +109,56 @@ highlight VertSplit cterm=NONE
 
 " Coq
 autocmd VimEnter * COQnow --shut-up
+let g:coq_settings = { "keymap.recommended": v:false }
+ino <silent><expr> <Esc>   pumvisible() ? "\<C-e><Esc>" : "\<Esc>"
+ino <silent><expr> <C-c>   pumvisible() ? "\<C-e><C-c>" : "\<C-c>"
+ino <silent><expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+ino <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<BS>"
 
-" Tree sitter and autopairs
+" Tree sitter, autopairs and lsp
 lua <<EOF
 local npairs = require("nvim-autopairs") 
+local nvim_lsp = require('lspconfig')
+local coq = require('coq')
+
+_G.MUtils = {}
+
+-- npairs
 
 npairs.setup({
     check_ts = true,
-    disable_filetype = { "TelescopePrompt" , "vim" },
+    map_bs = false,
+    disable_filetype = { "TelescopePrompt" , "vim", "rmd" },
 })
+
+local Rule = require('nvim-autopairs.rule')
+npairs.add_rule(Rule("\\(","\\)","tex"))
+
+-- Decide to do either coq or npairs keybinds
+
+MUtils.CR = function()
+  if vim.fn.pumvisible() ~= 0 then
+    if vim.fn.complete_info({ 'selected' }).selected ~= -1 then
+      return npairs.esc('<c-y>')
+    else
+      return npairs.esc('<c-e>') .. npairs.autopairs_cr()
+    end
+  else
+    return npairs.autopairs_cr()
+  end
+end
+vim.api.nvim_set_keymap('i', '<cr>', 'v:lua.MUtils.CR()', { expr = true, noremap = true })
+
+MUtils.BS = function()
+  if vim.fn.pumvisible() ~= 0 and vim.fn.complete_info({ 'mode' }).mode == 'eval' then
+    return npairs.esc('<c-e>') .. npairs.autopairs_bs()
+  else
+    return npairs.autopairs_bs()
+  end
+end
+vim.api.nvim_set_keymap('i', '<bs>', 'v:lua.MUtils.BS()', { expr = true, noremap = true })
+
+-- Tresitter
 
 require'nvim-treesitter.configs'.setup {
     highlight = {
@@ -129,13 +172,7 @@ require'nvim-treesitter.configs'.setup {
     },
 }
 
-local Rule = require('nvim-autopairs.rule')
-npairs.add_rule(Rule("\\(","\\)","tex"))
-EOF
-
-" lsp
-lua << EOF
-local nvim_lsp = require('lspconfig')
+-- lsp
 
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -157,6 +194,7 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
     buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
     buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+    buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)    
 
     require "lsp_signature".on_attach({
         doc_lines = 3,
@@ -167,7 +205,7 @@ local on_attach = function(client, bufnr)
 end
 
 -- C++
-nvim_lsp.ccls.setup {
+nvim_lsp.ccls.setup (coq.lsp_ensure_capabilities{
     on_attach = on_attach,  
     init_options = {
         cache = {
@@ -177,15 +215,15 @@ nvim_lsp.ccls.setup {
             extraArgs = {"-std=c++20"}
         }
     }
-}
+})
 
 -- Python
-nvim_lsp.jedi_language_server.setup {
+nvim_lsp.jedi_language_server.setup (coq.lsp_ensure_capabilities{
     on_attach = on_attach
-}
+})
 
 -- efm Allows for formatters
-nvim_lsp.efm.setup {
+nvim_lsp.efm.setup (coq.lsp_ensure_capabilities{
     on_attach = on_attach,  
     init_options = {documentFormatting = true},
     settings = {
@@ -199,30 +237,26 @@ nvim_lsp.efm.setup {
             }
         }
     }
-}
+})
 
 -- R
-nvim_lsp.r_language_server.setup{
-    on_attach = on_attach,  
-}
+nvim_lsp.r_language_server.setup(coq.lsp_ensure_capabilities{
+    on_attach = on_attach,
+})
 
 -- Java :vomit:
-nvim_lsp.jdtls.setup{
+nvim_lsp.jdtls.setup(coq.lsp_ensure_capabilities{
     on_attach = on_attach,
     cmd = {"jdtls"},
-} 
+})
 EOF
 
 " Code action lightbulb
 let g:cursorhold_updatetime = 500
 
-augroup hover_
-  au!
-  autocmd CursorHold *.py ++once lua vim.lsp.buf.hover()
-augroup END
 augroup hover
     au!
-    autocmd CursorMoved *.py exe "exe \"au! hover_\" | autocmd hover_ CursorHold *.py ++once lua vim.lsp.buf.hover()"
+    autocmd CursorHold *.py lua if vim.fn.pumvisible() then vim.lsp.buf.hover() end
     autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb{sign={enabled=false},virtual_text={enabled=true}}
 augroup END
 
@@ -318,7 +352,13 @@ require('telescope').load_extension('fzy_native')
 EOF
 
 " gutentags
-let g:gutentags_file_list_command = "git ls-files" 
+let g:gutentags_project_root = [".enable_tags"]
+let g:gutentags_file_list_command = {
+    \ 'markers': {
+        \ '.git': 'git ls-files',
+        \ '.enable_tags' : 'find . -type f',
+        \ },
+    \ }
 
 " Which Key
 set timeoutlen=250

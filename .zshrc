@@ -175,7 +175,7 @@ n ()
 }
 
 # export R_ENVIRON_USER=$HOME/.config/R/environ
-
+alias R='R --no-save'
 #####################################################################################################
 # Uncomment / edit the following environment variables when the corresponding software is installed #
 #####################################################################################################
