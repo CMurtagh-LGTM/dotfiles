@@ -39,6 +39,7 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 " Git
 Plug 'lewis6991/gitsigns.nvim'
+" TODO think about how to integrate git, ideas, telescope-github, git fututive,
 
 " Undo tree
 Plug 'mbbill/undotree'
@@ -68,10 +69,7 @@ Plug 'kovetskiy/sxhkd-vim'
 Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
-" TODO Checkout nvim-dap (with telescope), neorg, nvim-lsputils, lsp_extensions and lualine or galaxyline
-
-" gdb in vim
-" packadd termdebug
+" TODO Checkout nvim-dap (with telescope), neorg, and lualine or galaxyline
 
 " Theme
 colorscheme nord
@@ -182,6 +180,7 @@ local on_attach = function(client, bufnr)
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
     local opts = { noremap=true, silent=true }
+    -- TODO work out incomming-outgoing calls
     --buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
     buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
@@ -331,14 +330,18 @@ nnoremap <leader>ff <cmd>Telescope file_browser<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-nnoremap <leader>ft <cmd>Telescope tags<cr>
+nnoremap <leader>fT <cmd>Telescope tags<cr>
 nnoremap <leader>fm <cmd>lua require'telescope.builtin'.man_pages({sections={"2", "3", "3p", "4", "7"}})<cr>
-nnoremap <leader>fq <cmd>Telescope quickfix<cr> 
-nnoremap <leader>fr <cmd>Telescope lsp_references<cr> 
-nnoremap <leader>fi <cmd>Telescope lsp_implementations<cr> 
-nnoremap <leader>fd <cmd>Telescope lsp_definitions<cr> 
-nnoremap <leader>fc <cmd>Telescope lsp_code_actions<cr> 
-nnoremap <leader>f<leader> <cmd>Telescope builtin<cr>  
+nnoremap <leader>fq <cmd>Telescope quickfix<cr>
+nnoremap <leader>fr <cmd>Telescope lsp_references<cr>
+nnoremap <leader>fi <cmd>Telescope lsp_implementations<cr>
+nnoremap <leader>fd <cmd>Telescope lsp_definitions<cr>
+nnoremap <leader>fc <cmd>Telescope lsp_code_actions<cr>
+nnoremap <leader>fs <cmd>Telescope lsp_document_symbols<cr>
+nnoremap <leader>fw <cmd>Telescope lsp_workspace_symbols<cr>
+nnoremap <leader>fD <cmd>Telescope lsp_document_diagnostics<cr>
+nnoremap <leader>ft <cmd>Telescope treesitter<cr>
+nnoremap <leader>f<leader> <cmd>Telescope builtin<cr>
 nnoremap <leader>fp <cmd>Telescope planets<cr>
 
 lua << EOF
