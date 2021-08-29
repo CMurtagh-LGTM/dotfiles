@@ -249,6 +249,8 @@ nvim_lsp.jdtls.setup(coq.lsp_ensure_capabilities{
     on_attach = on_attach,
     cmd = {"jdtls"},
 })
+
+-- ltex-ls wait for upstream
 EOF
 
 " Code action lightbulb
