@@ -56,6 +56,7 @@ Incomplete list
 - ccls
 - jedi-language-server
 - R languageserver
+- vim-language-server
 - jdtls
 
 ### Zim

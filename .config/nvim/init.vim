@@ -238,6 +238,11 @@ nvim_lsp.r_language_server.setup(coq.lsp_ensure_capabilities{
     on_attach = on_attach,
 })
 
+-- Vimscript
+nvim_lsp.vimls.setup(coq.lsp_ensure_capabilities{
+    on_attach = on_attach,
+})
+
 -- Java :vomit:
 nvim_lsp.jdtls.setup(coq.lsp_ensure_capabilities{
     on_attach = on_attach,
@@ -385,6 +390,7 @@ EOF
 let g:vimtex_view_general_viewer = 'zathura'
 
 " R
+" TODO help command?
 augroup R_commands
     au!
     autocmd FileType rmd map <Leader>ll :let file_name=expand('%:r')<enter> :!echo<space>"require(rmarkdown);<space>render('<c-r>%', output_file = '<c-r>=file_name<enter>.pdf')"<space>\|<space>R<space>--vanilla<enter>
