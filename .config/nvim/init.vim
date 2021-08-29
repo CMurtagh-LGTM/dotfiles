@@ -68,7 +68,7 @@ Plug 'kovetskiy/sxhkd-vim'
 Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
-" TODO Checkout nvim-dap, neorg, nvim-lsputils and lualine or galaxyline
+" TODO Checkout nvim-dap (with telescope), neorg, nvim-lsputils, lsp_extensions and lualine or galaxyline
 
 " gdb in vim
 " packadd termdebug
@@ -102,6 +102,9 @@ nnoremap <leader>v <cmd>vsplit<cr>
 nnoremap <leader>s <cmd>split<cr>
 nnoremap <c-z> [s1z=``
 inoremap <c-z> <Esc>[s1z=``a
+" something is causing q: not to be <nop>
+nnoremap q: <nop>
+nnoremap Q <nop>
 
 " Remove borders between windows, note the white-space
 set fillchars+=vert:\ 
@@ -322,13 +325,14 @@ call wilder#set_option('renderer', wilder#popupmenu_renderer({
       \ }))
 
 " Telescope
+" Possible extensions telescope media files, telescope dap
 nnoremap <leader>f<space> <cmd>Telescope git_files<cr>
 nnoremap <leader>ff <cmd>Telescope file_browser<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>ft <cmd>Telescope tags<cr>
-nnoremap <leader>fm <cmd>Telescope man_pages<cr>
+nnoremap <leader>fm <cmd>lua require'telescope.builtin'.man_pages({sections={"2", "3", "3p", "4", "7"}})<cr>
 nnoremap <leader>fq <cmd>Telescope quickfix<cr> 
 nnoremap <leader>fr <cmd>Telescope lsp_references<cr> 
 nnoremap <leader>fi <cmd>Telescope lsp_implementations<cr> 
