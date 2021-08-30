@@ -12,11 +12,14 @@ Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 " Syntax
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': '0.5-compat' }
 
-" Powerline
-Plug 'itchyny/lightline.vim'
-
 " Icons
 Plug 'kyazdani42/nvim-web-devicons'
+
+" Powerline
+Plug 'hoob3rt/lualine.nvim'
+
+" Pretty tabs
+Plug 'akinsho/bufferline.nvim'
 
 " Comments
 Plug 'tpope/vim-commentary' " gc
@@ -39,7 +42,7 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 " Git
 Plug 'lewis6991/gitsigns.nvim'
-" TODO think about how to integrate git, ideas, telescope-github, git fututive,
+" TODO think about how to integrate git, ideas, telescope-github, git fututive, neogit, git-messenger
 
 " Undo tree
 Plug 'mbbill/undotree'
@@ -49,9 +52,6 @@ Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Intent markers
 Plug 'lukas-reineke/indent-blankline.nvim'
-
-" Pretty tabs
-Plug 'akinsho/bufferline.nvim'
 
 " Key shortcut explainer
 Plug 'folke/which-key.nvim'
@@ -69,14 +69,10 @@ Plug 'kovetskiy/sxhkd-vim'
 Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
-" TODO Checkout nvim-dap (with telescope), neorg, and lualine or galaxyline
+" TODO Checkout nvim-dap (with telescope), neorg
 
 " Theme
 colorscheme nord
-let g:nord_cursor_line_number_background = 1
-let g:lightline = {
-            \ 'colorscheme': 'nord',
-            \ }
 
 " Line numbers
 set number
@@ -103,10 +99,6 @@ inoremap <c-z> <Esc>[s1z=``a
 " something is causing q: not to be <nop>
 nnoremap q: <nop>
 nnoremap Q <nop>
-
-" Remove borders between windows, note the white-space
-set fillchars+=vert:\ 
-highlight VertSplit cterm=NONE
 
 " Coq
 autocmd VimEnter * COQnow --shut-up
@@ -282,6 +274,34 @@ nnoremap <leader>] :BufferLineCycleNext<CR>
 nnoremap <leader>[ :BufferLineCyclePrev<CR>
 nnoremap <leader>b <cmd>exe "BufferLineGoToBuffer " . v:count1<cr>
 nnoremap <leader>d <cmd>exe "bd " . bufnr("%")<cr> 
+
+
+" lualine
+lua << EOF
+require('lualine').setup {
+    options = {
+        theme = 'nord',
+        component_seperators = {'', ''},
+        section_separators = {'', ''},
+    },
+    sections = {
+        lualine_a = {'mode'},
+        lualine_b = {'branch'},
+        lualine_c = {{'filename', path = 1}},
+        lualine_x = {{'filetype', colored = false}},
+        lualine_y = {'progress'},
+        lualine_z = {'location'}
+    },
+    inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {{'filename', file_status = false}},
+        lualine_x = {{'filetype', colored = false}},
+        lualine_y = {'location'},
+        lualine_z = {}
+    },
+}
+EOF
 
 " UndoTree
 " Put it on the right
