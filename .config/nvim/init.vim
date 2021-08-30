@@ -281,13 +281,48 @@ lua << EOF
 require('lualine').setup {
     options = {
         theme = 'nord',
-        component_seperators = {'', ''},
-        section_separators = {'', ''},
+        component_separators = "",
+        section_separators = "",
     },
     sections = {
-        lualine_a = {'mode'},
+        lualine_a = {
+            {-- mode
+                function()
+                    local mode_names = {
+                        V = 'VL',
+                        [''] = 'VB',
+                    }
+                    if mode_names[vim.fn.mode()] == nil then
+                        return vim.fn.mode()
+                    else
+                        return mode_names[vim.fn.mode()]
+                    end
+                end,
+                upper = true,
+            }
+        },
         lualine_b = {'branch'},
-        lualine_c = {{'filename', path = 1}},
+        lualine_c = {
+            {'filename', path = 1},
+            {function() return '%=' end},
+            { -- Lsp server name .
+                function()
+                    local msg = 'No Active Lsp'
+                    local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+                    local clients = vim.lsp.get_active_clients()
+                    if next(clients) == nil then return msg end
+                    for _, client in ipairs(clients) do
+                        local filetypes = client.config.filetypes
+                        if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+                            return client.name
+                        end
+                    end
+                    return msg
+                end,
+                icon = ' ',
+                color = {fg = '#ffffff', gui = 'bold'}
+            }
+        },
         lualine_x = {{'filetype', colored = false}},
         lualine_y = {'progress'},
         lualine_z = {'location'}
