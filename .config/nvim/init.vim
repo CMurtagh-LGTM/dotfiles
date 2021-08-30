@@ -271,7 +271,8 @@ augroup END
 " bufferline
 set termguicolors
 lua << EOF
-require('bufferline').setup {
+local bufferline = require'bufferline'
+bufferline.setup {
   options = {
     numbers = function(opts)
         return string.format('%s', opts.ordinal)
@@ -280,6 +281,20 @@ require('bufferline').setup {
     show_close_icon =  false,
   }
 }
+
+function _G.bdel(num)
+    bufferline.buf_exec(
+        num,
+        function(buf, visible_buffers)
+            vim.cmd('bdelete '..buf.id)
+        end
+    )
+end
+
+-- TODO fixme
+vim.cmd [[
+    command -count Bdel <cmd>lua _G.bdel(<count>)<cr>
+]]
 EOF
 
 " These commands will navigate through buffers in order regardless of which mode you are using
