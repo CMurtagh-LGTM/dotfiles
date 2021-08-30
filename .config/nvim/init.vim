@@ -69,7 +69,7 @@ Plug 'kovetskiy/sxhkd-vim'
 Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
-" TODO Checkout nvim-dap (with telescope), neorg
+" TODO Checkout nvim-dap (with telescope), neorg, rebind <c-h> coq
 
 " Theme
 colorscheme nord
@@ -176,15 +176,15 @@ local on_attach = function(client, bufnr)
     --buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
     buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-    buf_set_keymap('n', '<leader>lc', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-    buf_set_keymap('n', '<leader>ld', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-    buf_set_keymap('n', '<leader>ln', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-    buf_set_keymap('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-    buf_set_keymap('n', '<leader>le', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+    buf_set_keymap('n', '<leader><leader>c', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+    buf_set_keymap('n', '<leader><leader>d', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+    buf_set_keymap('n', '<leader><leader>n', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+    buf_set_keymap('n', '<leader><leader>a', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+    buf_set_keymap('n', '<leader><leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
     --buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
     --buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-    buf_set_keymap('n', '<leader>lq', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-    buf_set_keymap('n', '<leader>ll', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)    
+    buf_set_keymap('n', '<leader><leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+    buf_set_keymap('n', '<leader><leader>l', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)    
 
     require "lsp_signature".on_attach({
         floating_window = true,
@@ -214,6 +214,7 @@ nvim_lsp.jedi_language_server.setup (coq.lsp_ensure_capabilities{
 nvim_lsp.efm.setup (coq.lsp_ensure_capabilities{
     on_attach = on_attach,  
     init_options = {documentFormatting = true},
+    filetypes = {"py"},
     settings = {
         languages = {
             python = {
@@ -237,6 +238,11 @@ nvim_lsp.vimls.setup(coq.lsp_ensure_capabilities{
     on_attach = on_attach,
 })
 
+-- LaTeX -- TODO configure formatting
+nvim_lsp.texlab.setup(coq.lsp_ensure_capabilities{
+    on_attach = on_attach,
+})
+
 -- Java :vomit:
 nvim_lsp.jdtls.setup(coq.lsp_ensure_capabilities{
     on_attach = on_attach,
@@ -246,9 +252,16 @@ nvim_lsp.jdtls.setup(coq.lsp_ensure_capabilities{
 -- ltex-ls wait for upstream
 EOF
 
+" TODO make toggle able
+augroup before_save
+    au!
+    autocmd BufWritePre * lua vim.lsp.buf.formatting()
+augroup END
+
 " Code action lightbulb
 let g:cursorhold_updatetime = 500
 
+" TODO make toggle able
 augroup hover
     au!
     autocmd CursorHold *.py lua if vim.fn.pumvisible() then vim.lsp.buf.hover() end
@@ -276,7 +289,7 @@ nnoremap <leader>b <cmd>exe "BufferLineGoToBuffer " . v:count1<cr>
 nnoremap <leader>d <cmd>exe "bd " . bufnr("%")<cr> 
 
 
-" lualine
+" lualine TODO copy vieb colours for modes
 lua << EOF
 require('lualine').setup {
     options = {

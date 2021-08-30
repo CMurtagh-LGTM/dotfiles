@@ -57,6 +57,7 @@ Incomplete list
 - jedi-language-server
 - R languageserver
 - vim-language-server
+- texlab
 - jdtls
 
 ### Zim
