@@ -202,12 +202,14 @@ local function get_project_dir_lower()
     return string.lower(vim.fn.fnamemodify(nvim_lsp.util.find_git_ancestor(project_dirname), ':t'))
 end
 
+-- C++
 if (get_project_dir_lower() == "nubots") then
     nvim_lsp.clangd.setup(coq.lsp_ensure_capabilities{
         on_attach = on_attach,
+        -- TODO unhardcode
         cmd = {
             "/home/cameron/.config/nvim/docker_start.sh"
-        }
+        },
     })
 else
     nvim_lsp.ccls.setup (coq.lsp_ensure_capabilities{
@@ -229,22 +231,40 @@ nvim_lsp.jedi_language_server.setup (coq.lsp_ensure_capabilities{
 })
 
 -- efm Allows for formatters
-nvim_lsp.efm.setup (coq.lsp_ensure_capabilities{
-    on_attach = on_attach,  
-    init_options = {documentFormatting = true},
-    filetypes = {"py"},
-    settings = {
-        languages = {
-            python = {
-                {formatCommand = "black --quiet -", formatStdin = true},
-                {formatCommand = "isort --quiet -", formatStdin = true},
-                {formatCommand = "doq", formatStdin = true},  
-                {lintCommand = "flake8 --stdin-display-name={$INPUT} -", lintStdin = true},
-                {lintCommand = "mypy --show-column-numbers"},
+if (get_project_dir_lower() == "nubots") then
+    nvim_lsp.efm.setup (coq.lsp_ensure_capabilities{
+        on_attach = on_attach,  
+        init_options = {documentFormatting = true},
+        filetypes = {"python"},
+        settings = {
+            languages = {
+                python = {
+                    {formatCommand = "black --quiet -", formatStdin = true},
+                    {formatCommand = "isort --quiet -", formatStdin = true},
+                    {lintCommand = "flake8 --stdin-display-name={$INPUT} -", lintStdin = true},
+                    {lintCommand = "mypy --show-column-numbers"},
+                }
             }
         }
-    }
-})
+    })
+else
+    nvim_lsp.efm.setup (coq.lsp_ensure_capabilities{
+        on_attach = on_attach,  
+        init_options = {documentFormatting = true},
+        filetypes = {"python"},
+        settings = {
+            languages = {
+                python = {
+                    {formatCommand = "black --quiet -", formatStdin = true},
+                    {formatCommand = "isort --quiet -", formatStdin = true},
+                    {formatCommand = "doq", formatStdin = true},  
+                    {lintCommand = "flake8 --stdin-display-name={$INPUT} -", lintStdin = true},
+                    {lintCommand = "mypy --show-column-numbers"},
+                }
+            }
+        }
+    })
+end
 
 -- R
 nvim_lsp.r_language_server.setup(coq.lsp_ensure_capabilities{
@@ -273,7 +293,7 @@ EOF
 " TODO make toggle able
 augroup before_save
     au!
-    autocmd BufWritePre * lua vim.lsp.buf.formatting()
+    autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
 augroup END
 
 " Code action lightbulb
