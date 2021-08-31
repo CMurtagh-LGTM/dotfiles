@@ -203,13 +203,10 @@ local function get_project_dir_lower()
 end
 
 if (get_project_dir_lower() == "nubots") then
-    print(vim.inspect(string.format("%s:generic", get_project_dir_lower())))
     nvim_lsp.clangd.setup(coq.lsp_ensure_capabilities{
         on_attach = on_attach,
         cmd = {
-            "docker", "run", "-i", string.format("%s:generic", get_project_dir_lower()), "clangd",
-            "--compile-commands-dir=/home/nubots/build", "--background-index",
-            "--clang-tidy",
+            "/home/cameron/.config/nvim/docker_start.sh"
         }
     })
 else
