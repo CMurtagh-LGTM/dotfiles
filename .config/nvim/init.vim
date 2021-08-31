@@ -193,17 +193,38 @@ local on_attach = function(client, bufnr)
 end
 
 -- C++
-nvim_lsp.ccls.setup (coq.lsp_ensure_capabilities{
-    on_attach = on_attach,  
-    init_options = {
-        cache = {
-            directory = ".ccls-cache"
-        },
-        clang = {
-            extraArgs = {"-std=c++20"}
+local root_pattern = nvim_lsp.util.root_pattern('.git')
+local function get_project_dir_lower()
+    local filename = vim.fn.getcwd()
+    -- Then the directory of the project
+    local project_dirname = root_pattern(filename) or nvim_lsp.util.path.dirname(filename)
+    -- And finally perform what is essentially a `basename` on this directory
+    return string.lower(vim.fn.fnamemodify(nvim_lsp.util.find_git_ancestor(project_dirname), ':t'))
+end
+
+if (get_project_dir_lower() == "nubots") then
+    print(vim.inspect(string.format("%s:generic", get_project_dir_lower())))
+    nvim_lsp.clangd.setup(coq.lsp_ensure_capabilities{
+        on_attach = on_attach,
+        cmd = {
+            "docker", "run", "-i", string.format("%s:generic", get_project_dir_lower()), "clangd",
+            "--compile-commands-dir=/home/nubots/build", "--background-index",
+            "--clang-tidy",
         }
-    }
-})
+    })
+else
+    nvim_lsp.ccls.setup (coq.lsp_ensure_capabilities{
+        on_attach = on_attach,  
+        init_options = {
+            cache = {
+                directory = ".ccls-cache"
+            },
+            clang = {
+                extraArgs = {"-std=c++20"}
+            }
+        }
+    })
+end
 
 -- Python
 nvim_lsp.jedi_language_server.setup (coq.lsp_ensure_capabilities{
@@ -408,6 +429,7 @@ call wilder#set_option('renderer', wilder#popupmenu_renderer({
 
 " Telescope
 " Possible extensions telescope media files, telescope dap
+" It'd be cool if undotree
 nnoremap <leader>f<space> <cmd>Telescope git_files<cr>
 nnoremap <leader>ff <cmd>Telescope file_browser<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
