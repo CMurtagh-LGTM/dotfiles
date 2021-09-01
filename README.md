@@ -127,10 +127,10 @@ Key 					| Action
 media keys				| .xbindkeysrc
 
 ## TODO
-- Make notes - possible scratchpad from left
+- Make notes - possible scratchpad from left with neorg
 - rofi modi
     - browser bookmarks
-    - browser seach ddgr
+    - browser seach ddgr, current one kinda sucks
     - rofi steam?
     - rofi spotify?
 - add audio sinks to eww
