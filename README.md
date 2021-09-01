@@ -37,7 +37,7 @@ Incomplete list
 - imagemagick
 
 ### rofi-modi
-- rofi-ddgr
+- ddgr - soon
 
 ### Neovim
 - fzy
