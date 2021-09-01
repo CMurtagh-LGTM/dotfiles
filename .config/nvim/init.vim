@@ -1,7 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 " Language server protocol client
 Plug 'neovim/nvim-lspconfig'
-Plug 'folke/lsp-colors.nvim'
 Plug 'kosayoda/nvim-lightbulb' " Code action
 Plug 'ray-x/lsp_signature.nvim' " Signature Highlight
 
@@ -11,6 +10,8 @@ Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 
 " Syntax
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': '0.5-compat' }
+Plug 'nvim-treesitter/nvim-treesitter-refactor'
+Plug 'nvim-treesitter/nvim-treesitter-textobjects', {'branch' : '0.5-compat'}
 
 " Icons
 Plug 'kyazdani42/nvim-web-devicons'
@@ -69,7 +70,7 @@ Plug 'kovetskiy/sxhkd-vim'
 Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
-" TODO Checkout nvim-dap (with telescope), neorg, rebind <c-h> coq
+" TODO Checkout nvim-dap (with telescope), neorg, rebind <c-h> coq, ray-x/navigator.lua
 
 " Theme
 colorscheme nord
@@ -163,6 +164,23 @@ require'nvim-treesitter.configs'.setup {
     autopairs = {
         enable = true,
     },
+    refactor = {
+        highlight_definitions = { enable = true },
+        -- highlight_current_scope = { enable = true }, TODO change to some other ui
+        -- Maybe work out if treesitter has better rename/goto_definition
+    },
+    textobjects = {
+        -- TODO look at the other options
+        swap = {
+            enable = true,
+            swap_next = {
+                ["<leader>a"] = "@parameter.inner",
+            },
+            swap_previous = {
+                ["<leader>A"] = "@parameter.inner",
+            },
+        },
+    },
 }
 
 -- lsp
@@ -173,6 +191,7 @@ local on_attach = function(client, bufnr)
 
     local opts = { noremap=true, silent=true }
     -- TODO work out incomming-outgoing calls
+    -- Code lens?
     --buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
     buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
