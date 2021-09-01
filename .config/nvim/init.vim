@@ -43,7 +43,7 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 " Git
 Plug 'lewis6991/gitsigns.nvim'
-" TODO think about how to integrate git, ideas, telescope-github, git fututive, neogit, git-messenger
+" TODO think about how to integrate git, ideas, telescope-github, git fututive, neogit, git-messenger, diffview
 
 " Undo tree
 Plug 'mbbill/undotree'
@@ -70,7 +70,8 @@ Plug 'kovetskiy/sxhkd-vim'
 Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
-" TODO Checkout nvim-dap (with telescope), neorg, rebind <c-h> coq, ray-x/navigator.lua
+" TODO Checkout nvim-dap (with telescope), neorg, rebind <c-h> coq
+" checkout later after more development ray-x/navigator.lua
 
 " Theme
 colorscheme nord
