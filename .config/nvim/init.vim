@@ -262,7 +262,6 @@ if (get_project_dir_lower() == "nubots") then
                     {formatCommand = "black --quiet -", formatStdin = true},
                     {formatCommand = "isort --quiet -", formatStdin = true},
                     {lintCommand = "flake8 --stdin-display-name={$INPUT} -", lintStdin = true},
-                    {lintCommand = "mypy --show-column-numbers"},
                 }
             }
         }
