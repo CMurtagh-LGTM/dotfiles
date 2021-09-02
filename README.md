@@ -22,7 +22,6 @@ Incomplete list
 - Vieb
 - eww
 - delta
-- nnn
 - sad
 - picom
 - cbonsai
@@ -136,7 +135,6 @@ media keys				| .xbindkeysrc
 - add audio sinks to eww
 - Add lock screen slock or xscreensaver
 - add volume to eww
-- look into nnn more & nnn opener
 - work out all the neovim binary dependencies
 - sort out vim autoclose brackets
 - Erwik discord, slack and spotify - wait for a later version
