@@ -22,7 +22,7 @@ Plug 'hoob3rt/lualine.nvim'
 " Pretty tabs
 Plug 'akinsho/bufferline.nvim'
 
-" Comments
+" Comments -- TODO swap to kommentary
 Plug 'tpope/vim-commentary' " gc
 
 " Tag manager
@@ -34,7 +34,7 @@ Plug 'machakann/vim-highlightedyank'
 " CursorHold time changer
 Plug 'antoinemadec/FixCursorHold.nvim'
 
-" Dependency for telescope and git signs
+" Dependency for telescope, git signs, neorg
 Plug 'nvim-lua/plenary.nvim'
 
 " Finder 
@@ -43,7 +43,8 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 " Git
 Plug 'lewis6991/gitsigns.nvim'
-" TODO think about how to integrate git, ideas, telescope-github, git fututive, neogit, git-messenger, diffview
+" TODO think about how to integrate git,
+" ideas, telescope-github, git fututive, neogit, git-messenger, diffview, lazygit.nvim
 
 " Undo tree
 Plug 'mbbill/undotree'
@@ -60,6 +61,10 @@ Plug 'folke/which-key.nvim'
 " Auto pairs
 Plug 'windwp/nvim-autopairs'
 
+" Neorg
+Plug 'vhyrro/neorg'
+Plug 'vhyrro/neorg-telescope'
+
 " Tex
 Plug 'lervag/vimtex'
 
@@ -70,7 +75,7 @@ Plug 'kovetskiy/sxhkd-vim'
 Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
-" TODO Checkout nvim-dap (with telescope), neorg, rebind <c-h> coq
+" TODO Checkout nvim-dap (with telescope), rebind <c-h> coq, toggleterm
 " checkout later after more development ray-x/navigator.lua
 
 " Theme
@@ -94,8 +99,6 @@ set colorcolumn=120
 
 " Some easy mappings
 nnoremap Y y$
-nnoremap <leader>v <cmd>vsplit<cr>
-nnoremap <leader>s <cmd>split<cr>
 nnoremap <c-z> [s1z=``
 inoremap <c-z> <Esc>[s1z=``a
 " something is causing q: not to be <nop>
@@ -154,8 +157,17 @@ end
 vim.api.nvim_set_keymap('i', '<bs>', 'v:lua.MUtils.BS()', { expr = true, noremap = true })
 
 -- Tresitter
+local parser_configs = require('nvim-treesitter.parsers').get_parser_configs()
+parser_configs.norg = {
+    install_info = {
+        url = "https://github.com/vhyrro/tree-sitter-norg",
+        files = { "src/parser.c", "src/scanner.cc" },
+        branch = "main"
+    },
+}
 
 require'nvim-treesitter.configs'.setup {
+    ensure_installed = {"python", "cpp", "latex", "lua", "r", "norg", "java"},
     highlight = {
         enable = true,
     },
@@ -527,11 +539,60 @@ require("which-key").setup {
 }
 -- TODO document mappings
 EOF
+nnoremap  <cmd>WhichKey<cr>
+inoremap  <cmd>WhichKey<cr>
 
 " Git Signs
 lua << EOF
 -- TODO configure
 require('gitsigns').setup()
+EOF
+
+" Neorg TODO work out how to use
+lua << EOF
+require('neorg').setup {
+    -- Tell Neorg what modules to load
+    load = {
+        ["core.defaults"] = {}, -- Load all the default modules
+        ["core.keybinds"] = { -- Configure core.keybinds
+            config = {
+                default_keybinds = true, -- Generate the default keybinds
+                neorg_leader = "<Leader>o" -- This is the default if unspecified
+            }
+        },
+        ["core.norg.concealer"] = { -- Allows for use of icons
+            config = {
+                icons = {
+                    todo = {
+                        enabled = true, -- Conceal TODO items
+
+                        done = {
+                            enabled = true, -- Conceal whenever an item is marked as done
+                            icon = ""
+                        },
+                        pending = {
+                            enabled = true, -- Conceal whenever an item is marked as pending
+                            icon = ""
+                        },
+                        undone = {
+                            enabled = true, -- Conceal whenever an item is marked as undone
+                            icon = "×"
+                        }
+                    },
+                },
+            },
+        },
+        ["core.norg.dirman"] = { -- Manage your directories with Neorg
+            config = {
+                workspaces = {
+                    my_workspace = "~/Documents/neorg"
+                },
+                -- Automatically detect whenever we have entered a subdirectory of a workspace
+                autodetect = true,
+            }
+        }
+    },
+}
 EOF
 
 "Latex
