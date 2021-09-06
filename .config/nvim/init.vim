@@ -22,8 +22,8 @@ Plug 'hoob3rt/lualine.nvim'
 " Pretty tabs
 Plug 'akinsho/bufferline.nvim'
 
-" Comments -- TODO swap to kommentary
-Plug 'tpope/vim-commentary' " gc
+" Comments
+Plug 'b3nj5m1n/kommentary' " gc
 
 " Tag manager
 Plug 'ludovicchabant/vim-gutentags'
@@ -515,6 +515,15 @@ require('telescope').setup{
   }
 }
 require('telescope').load_extension('fzy_native')
+EOF
+
+" kommentary
+lua << EOF
+require('kommentary.config').use_extended_mappings()
+require('kommentary.config').configure_language("default", {
+    prefer_single_line_comments = true,
+    use_consistent_indentation = true,
+})
 EOF
 
 " gutentags
