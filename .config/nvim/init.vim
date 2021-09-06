@@ -75,7 +75,7 @@ Plug 'kovetskiy/sxhkd-vim'
 Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
-" TODO Checkout nvim-dap (with telescope), rebind <c-h> coq, toggleterm
+" TODO Checkout nvim-dap (with telescope), toggleterm
 " checkout later after more development ray-x/navigator.lua
 
 " Theme
@@ -107,7 +107,7 @@ nnoremap Q <nop>
 
 " Coq
 autocmd VimEnter * COQnow --shut-up
-let g:coq_settings = { "keymap.recommended": v:false }
+let g:coq_settings = { "keymap.recommended": v:false, "keymap.jump_to_mark": "<c-\>" }
 ino <silent><expr> <Esc>   pumvisible() ? "\<C-e><Esc>" : "\<Esc>"
 ino <silent><expr> <C-c>   pumvisible() ? "\<C-e><C-c>" : "\<C-c>"
 ino <silent><expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -360,9 +360,8 @@ function _G.bdel(num)
     )
 end
 
--- TODO fixme
 vim.cmd [[
-    command -count Bdel <cmd>lua _G.bdel(<count>)<cr>
+    command -count Bdel lua _G.bdel(<count>)
 ]]
 EOF
 
@@ -370,8 +369,7 @@ EOF
 nnoremap <leader>] :BufferLineCycleNext<CR>
 nnoremap <leader>[ :BufferLineCyclePrev<CR>
 nnoremap <leader>b <cmd>exe "BufferLineGoToBuffer " . v:count1<cr>
-nnoremap <leader>d <cmd>exe "bd " . bufnr("%")<cr> 
-
+nnoremap <leader>d <cmd>exe "Bdel " . v:count1<cr>
 
 " lualine TODO copy vieb colours for modes
 lua << EOF
@@ -573,7 +571,7 @@ require('neorg').setup {
             config = {
                 icons = {
                     todo = {
-                        enabled = true, -- Conceal TODO items
+                        enabled = true, -- Conceal todo items
 
                         done = {
                             enabled = true, -- Conceal whenever an item is marked as done
