@@ -541,6 +541,7 @@ lua << EOF
 require("toggleterm").setup{
   -- size can be a number or function which is passed the current terminal
   open_mapping = [[<leader>t]],
+  insert_mappings = false,
   hide_numbers = true, -- hide the number column in toggleterm buffers
   shade_terminals = true,
   start_in_insert = true,
