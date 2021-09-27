@@ -7,6 +7,7 @@ Plug 'ray-x/lsp_signature.nvim' " Signature Highlight
 " Autocomplete 
 Plug 'ms-jpq/coq_nvim', {'do' : ':COQdeps','branch': 'coq'}
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+Plug 'ms-jpq/coq.thirdparty'
 
 " Syntax
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': '0.5-compat' }
@@ -40,6 +41,9 @@ Plug 'nvim-lua/plenary.nvim'
 " Finder 
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+
+" Terminal
+Plug 'akinsho/toggleterm.nvim'
 
 " Git
 Plug 'lewis6991/gitsigns.nvim'
@@ -75,7 +79,7 @@ Plug 'kovetskiy/sxhkd-vim'
 Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
-" TODO Checkout nvim-dap (with telescope), toggleterm
+" TODO Checkout nvim-dap (with telescope), goto-preview, telescope-lsp-handlers.nvim
 " checkout later after more development ray-x/navigator.lua
 
 " Theme
@@ -96,6 +100,8 @@ set noshowmode
 set clipboard=unnamedplus
 " Set ruler for code length
 set colorcolumn=120
+" Allow unsaved hidden buffers
+set hidden
 
 " Some easy mappings
 nnoremap Y y$
@@ -107,11 +113,18 @@ nnoremap Q <nop>
 
 " Coq
 autocmd VimEnter * COQnow --shut-up
-let g:coq_settings = { "keymap.recommended": v:false, "keymap.jump_to_mark": "<c-\>" }
+let g:coq_settings = { "keymap.recommended": v:false, "keymap.jump_to_mark": "<C-a>" }
 ino <silent><expr> <Esc>   pumvisible() ? "\<C-e><Esc>" : "\<Esc>"
 ino <silent><expr> <C-c>   pumvisible() ? "\<C-e><C-c>" : "\<C-c>"
 ino <silent><expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 ino <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<BS>"
+
+lua << EOF
+-- TODO check other modules
+require("coq_3p") {
+  { src = "vimtex", short_name = "vTEX" },
+}
+EOF
 
 " Tree sitter, autopairs and lsp
 lua <<EOF
@@ -308,9 +321,9 @@ nvim_lsp.vimls.setup(coq.lsp_ensure_capabilities{
 })
 
 -- LaTeX -- TODO configure formatting
-nvim_lsp.texlab.setup(coq.lsp_ensure_capabilities{
-    on_attach = on_attach,
-})
+--nvim_lsp.texlab.setup(coq.lsp_ensure_capabilities{
+--    on_attach = on_attach,
+--})
 
 -- Java :vomit:
 nvim_lsp.jdtls.setup(coq.lsp_ensure_capabilities{
@@ -324,7 +337,7 @@ EOF
 " TODO make toggle able
 augroup before_save
     au!
-    autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
+    " autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
 augroup END
 
 " Code action lightbulb
@@ -513,6 +526,28 @@ require('telescope').setup{
   }
 }
 require('telescope').load_extension('fzy_native')
+EOF
+
+" Indent Blankline
+lua << EOF
+require("indent_blankline").setup {
+    buftype_exclude = {"terminal"},
+    show_current_context = true,
+}
+EOF
+
+" Toggleterm TODO more advanced config
+lua << EOF
+require("toggleterm").setup{
+  -- size can be a number or function which is passed the current terminal
+  open_mapping = [[<leader>t]],
+  hide_numbers = true, -- hide the number column in toggleterm buffers
+  shade_terminals = true,
+  start_in_insert = true,
+  direction = 'float',
+  close_on_exit = true, -- close the terminal window when the process exits
+  shell = vim.o.shell, -- change the default shell
+}
 EOF
 
 " kommentary
