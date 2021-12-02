@@ -6,21 +6,6 @@
  *
  */
 
-configuration {
-
-	font: "Hack 12";
-	width: 50;
-	line-margin: 10;
-	lines: 15;
-
-    display-ssh:    "";
-    display-run:    "";
-    display-drun:   "";
-    display-window: "";
-    display-combi:  "";
-    show-icons:     true;
-}
-
 * {
 	nord0: #2e3440;
 	nord1: #3b4252;
