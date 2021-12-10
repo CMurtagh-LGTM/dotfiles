@@ -48,7 +48,7 @@ Plug 'akinsho/toggleterm.nvim'
 " Git
 Plug 'lewis6991/gitsigns.nvim'
 " TODO think about how to integrate git,
-" ideas, telescope-github, git fututive, neogit, git-messenger, diffview, lazygit.nvim
+" ideas, telescope-github, git fututive, neogit, git-messenger, diffview, lazygit.nvim. gihhub-notifications.nvim
 
 " Undo tree
 Plug 'mbbill/undotree'
@@ -79,7 +79,8 @@ Plug 'kovetskiy/sxhkd-vim'
 Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
-" TODO Checkout nvim-dap (with telescope), goto-preview, telescope-lsp-handlers.nvim
+" TODO Checkout nvim-dap (with telescope), goto-preview, telescope-lsp-handlers.nvim, nvim-code-action-menu, windline
+" telescope-vimwiki + vimwiki, ltex-ls
 " checkout later after more development ray-x/navigator.lua
 
 " Theme
