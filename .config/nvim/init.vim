@@ -103,6 +103,8 @@ set clipboard=unnamedplus
 set colorcolumn=120
 " Allow unsaved hidden buffers
 set hidden
+" Allow mouse clicks
+set mouse=a
 
 " Some easy mappings
 nnoremap Y y$
@@ -181,7 +183,7 @@ parser_configs.norg = {
 }
 
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = {"python", "cpp", "latex", "lua", "r", "norg", "java"},
+    ensure_installed = {"python", "cpp", "latex", "lua", "r", "norg", "java", "gdscript", "godotResource"},
     highlight = {
         enable = true,
     },
@@ -318,6 +320,11 @@ nvim_lsp.r_language_server.setup(coq.lsp_ensure_capabilities{
 
 -- Vimscript
 nvim_lsp.vimls.setup(coq.lsp_ensure_capabilities{
+    on_attach = on_attach,
+})
+
+-- gdscript
+nvim_lsp.gdscript.setup(coq.lsp_ensure_capabilities{
     on_attach = on_attach,
 })
 
