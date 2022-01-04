@@ -41,6 +41,13 @@ Incomplete list
 - fzy
 - Universal ctags
 
+### Neomutt
+- mutt-wizard (my patch)
+- links
+- notmuch
+- abook (todo)
+- cronie
+
 #### Language servers
 - efm-langserver
     - black
