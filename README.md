@@ -19,7 +19,6 @@ Incomplete list
 - feh
 - rofi
 - neovim
-- Vieb
 - eww
 - delta
 - sad
@@ -137,6 +136,5 @@ media keys				| .xbindkeysrc
 - add volume to eww
 - work out all the neovim binary dependencies
 - sort out vim autoclose brackets
-- Erwik discord, slack and spotify - wait for a later version
 - mess around with neofetch
 - work out how to control where eww appears - given up on this
