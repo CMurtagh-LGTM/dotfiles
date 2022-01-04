@@ -10,9 +10,9 @@ Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 Plug 'ms-jpq/coq.thirdparty'
 
 " Syntax
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': '0.5-compat' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
-Plug 'nvim-treesitter/nvim-treesitter-textobjects', {'branch' : '0.5-compat'}
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
 " Icons
 Plug 'kyazdani42/nvim-web-devicons'
@@ -24,7 +24,7 @@ Plug 'hoob3rt/lualine.nvim'
 Plug 'akinsho/bufferline.nvim'
 
 " Comments
-Plug 'b3nj5m1n/kommentary' " gc
+Plug 'b3nj5m1n/kommentary'
 
 " Tag manager
 Plug 'ludovicchabant/vim-gutentags'
@@ -80,7 +80,7 @@ Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
 " TODO Checkout nvim-dap (with telescope), goto-preview, telescope-lsp-handlers.nvim, nvim-code-action-menu, windline
-" telescope-vimwiki + vimwiki, ltex-ls
+" telescope-vimwiki + vimwiki, ltex-ls/grammar-gaurd
 " checkout later after more development ray-x/navigator.lua
 
 " Theme
@@ -352,11 +352,11 @@ augroup END
 let g:cursorhold_updatetime = 500
 
 " TODO make toggle able
-augroup hover
-    au!
-    autocmd CursorHold *.py lua if vim.fn.pumvisible() then vim.lsp.buf.hover() end
-    autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb{sign={enabled=false},virtual_text={enabled=true}}
-augroup END
+"augroup hover
+"    au!
+"    autocmd CursorHold *.py lua if vim.fn.pumvisible() then vim.lsp.buf.hover() end
+"    autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb{sign={enabled=false},virtual_text={enabled=true}}
+"augroup END
 
 " bufferline
 set termguicolors
