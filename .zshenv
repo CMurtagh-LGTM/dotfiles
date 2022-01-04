@@ -6,3 +6,8 @@
 # Define Zim location
 : ${ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim}
 # }}} End configuration added by Zim install
+
+export EDITOR="/usr/bin/nvim"
+
+# Make qt work
+export QT_PLUGIN_PATH=/usr/lib/qt/plugins
