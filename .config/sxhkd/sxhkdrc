@@ -25,6 +25,19 @@ super + shift + l
 super + Escape
 	pkill -USR1 -x sxhkd
 
+# Dunst
+super + space
+	dunstctl close
+
+super + shift + space
+	dunstctl close-all
+
+super + ctrl + space
+	dunstctl history-pop
+
+super + shift + ctrl + space
+	dunstctl context
+
 #
 # media keys
 #
