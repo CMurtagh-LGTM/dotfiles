@@ -38,7 +38,7 @@
   "playerctl -p spotify status")
 
 (defwindow music
-  :monitor 0
+  :monitor 2
   :geometry (geometry
     :x 150
     :y 100

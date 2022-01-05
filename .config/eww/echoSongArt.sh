@@ -6,4 +6,4 @@ album=$(playerctl metadata --format '{{ album }}')
 # Remove spaces
 album=${album// /_}
 
-echo "/tmp/leftwm/spotify/${album}.png"
+echo "/tmp/spotify/${album}.png"

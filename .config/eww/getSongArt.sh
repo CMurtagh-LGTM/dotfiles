@@ -2,7 +2,7 @@
 
 # https://github.com/TheRealKizu/dotfiles/blob/bspwm/cfg/eww/scripts/getSongArt
 
-tmp_dir="/tmp/leftwm/spotify"
+tmp_dir="/tmp/spotify"
 album=$(playerctl metadata --format '{{ album }}')
 # Remove spaces
 album=${album// /_}
