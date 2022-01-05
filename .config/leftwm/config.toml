@@ -3,18 +3,6 @@ workspaces = []
 tags = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "", "", "", "r", "t", "y", "", "", "", "ﭮ"]
 
 [[keybind]]
-command = "Execute"
-value = "rofi-todo -f ~/.local/notes.json"
-modifier = ["modkey", "Shift"]
-key = "i"
-
-[[keybind]]
-command = "Execute"
-value = "python /home/cameron/.config/leftwm/themes/current/eww/toggle.py"
-modifier = ["modkey", "Shift"]
-key = "o"
-
-[[keybind]]
 command = "CloseWindow"
 modifier = ["modkey", "Shift"]
 key = "c"

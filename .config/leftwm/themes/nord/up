@@ -37,4 +37,4 @@ do
   let index=index+1
 done
 
-eww --config $SCRIPTPATH/eww/eww.xml daemon
+eww daemon

@@ -55,15 +55,6 @@
 				<box>NVME:{{d-temperature}}</box>
 			</box>
 		</def>
-
-		<!-- Notes -->
-		<def name="notes">
-			<box orientation="v">
-				<expander name="note1">
-					<label/>
-				</expander>
-			</box>
-		</def>
 	</definitions>
 
 	<variables>
@@ -118,11 +109,5 @@
 				<temperature/>
 			</widget>
 		</window>
-		<!--<window name="notes" stacking="fg" focusable="false" screen="2">
-			<geometry x="150" y="390" width="490" height="200"/>
-			<widget>
-				<notes/>
-			</widget>
-		</window>-->
 	</windows>
 </eww>

@@ -75,6 +75,9 @@ Plug 'lervag/vimtex'
 " sxhkd highlighting
 Plug 'kovetskiy/sxhkd-vim'
 
+" eww yuck highlighting
+Plug 'elkowar/yuck.vim'
+
 " Nord colour theme
 Plug 'shaunsingh/nord.nvim'
 call plug#end()

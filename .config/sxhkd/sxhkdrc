@@ -3,11 +3,12 @@
 #
 
 # terminal emulator
-super + shift + s
-	st
-
 super + shift + Return
 	alacritty
+
+# eww
+super + shift + o
+	toggle_eww
 
 # program launcher
 super + shift + p
