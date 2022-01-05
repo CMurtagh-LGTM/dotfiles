@@ -124,7 +124,7 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 # }}} End configuration added by Zim install
 
-cbonsai -p
+python ~/.local/bin/greet.py
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -135,7 +135,7 @@ fi
 
 alias exa='exa --header --icons --git'
 alias ls='exa --header --icons --git'
-alias bonsai='cbonsai -p'
+alias clear='cbonsai -p'
 
 # Dotfile repo
 alias dotfile='/usr/bin/git --git-dir=$HOME/Documents/dotfiles/ --work-tree=$HOME'

@@ -15,27 +15,30 @@ Incomplete list
 - dunst
 - Alacritty
 - zsh
-- powerlevel 10k
+    - powerlevel 10k
 - feh
 - rofi
 - neovim
 - eww
 - delta
-- sad
 - picom
 - cbonsai
 - pass and rofi-pass
+- neomutt
+- neofetch
+- calcurse
 
 ### Inside Scripts
 - python
 	- psutil
 	- pilsectl
+    - rich
 - playerctl
 - pactl
 - imagemagick
 
 ### rofi-modi
-- ddgr - soon
+- ddgr - todo
 
 ### Neovim
 - fzy
@@ -67,7 +70,7 @@ Incomplete list
 
 ### Zim
 - zim
-- fzf
+- fzy
 - exa
 
 ### Font
@@ -81,11 +84,8 @@ Incomplete list
 - `:TSInstall <language-name>`
 
 ## Cool Stuff
-- `n` for filebrowser
 - `bat` for coloured cat
-- `batman`
 - `git graph` alias to `git log --oneline --decorate --graph`
-- [libxft-bgra](https://aur.archlinux.org/packages/libxft-bgra/) so `st` can display coloured emoji
 
 ## Keybindings
 Key 					| Action
@@ -93,7 +93,8 @@ Key 					| Action
 mod4+p					| open rofi drun
 mod4+o					| toggle eww
 mod4+i                  | rofi todo
-mod4+shift+return		| open st
+mod4+l                  | rofi pass
+mod4+shift+return		| open Alacritty
 
 Key 					| Action
 ------------------------|----------------------
@@ -105,6 +106,7 @@ Key 					| Action
 ------------------------|----------------------
 mod4+shift+c			| close window
 mod4+shift+r			| soft reload wm
+mod4+shift+esc          | reload sxhkd
 mod4+shift+q			| quit wm
 
 Key 					| Action
@@ -129,7 +131,7 @@ mod4+shift+ctrl+space	| notification context menu
 
 Key 					| Action
 ------------------------|----------------------
-media keys				| .xbindkeysrc
+media keys				| todo
 
 ## TODO
 - Make notes - possible scratchpad from left with neorg
