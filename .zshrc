@@ -136,6 +136,7 @@ fi
 alias exa='exa --header --icons --git'
 alias ls='exa --header --icons --git'
 alias clear='cbonsai -p'
+alias status='python ~/.local/bin/greet.py'
 
 # Dotfile repo
 alias dotfile='/usr/bin/git --git-dir=$HOME/Documents/dotfiles/ --work-tree=$HOME'

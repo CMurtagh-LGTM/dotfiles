@@ -100,8 +100,8 @@ timed_layout.split_row(
     Layout(Panel(mails, title="Emails"), name="email"),
 )
 layout["content"].split_row(
-    Layout(Panel(fetch), name="fetch", size=max([len(x) for x in fetch.split("\n")])),
-    Layout(Panel(timed_layout, title=str(datetime.date.today())), name="timed"),
+    Layout(Panel(fetch), name="fetch"),
+    Layout(Panel(timed_layout, title=str(datetime.date.today())), name="timed", ratio=4),
 )
 
 # Do it

@@ -26,6 +26,7 @@ Incomplete list
 - pass and rofi-pass
 - neomutt
 - neofetch
+    - chafa
 - calcurse
 
 ### Inside Scripts
@@ -134,6 +135,7 @@ Key 					| Action
 media keys				| todo
 
 ## TODO
+- images in neomutt
 - Make notes - possible scratchpad from left with neorg
 - rofi modi
     - browser bookmarks
@@ -145,5 +147,4 @@ media keys				| todo
 - add volume to eww
 - work out all the neovim binary dependencies
 - sort out vim autoclose brackets
-- mess around with neofetch
 - work out how to control where eww appears - given up on this
