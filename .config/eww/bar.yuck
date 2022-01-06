@@ -1,0 +1,107 @@
+(defwidget bar_0 []
+  (centerbox :orientation "h"
+    (workspaces_0)
+    (time)
+    (sidestuff)))
+(defwidget workspaces_0 []
+  (box :class "workspaces" :orientation "h" :space-evenly true :halign "start" :spacing 5
+    (literal :content wm_tags_0)))
+
+(defwidget bar_1 []
+  (centerbox :orientation "h"
+    (workspaces_1)
+    (time)
+    (sidestuff)))
+(defwidget workspaces_1 []
+  (box :class "workspaces" :orientation "h" :space-evenly true :halign "start" :spacing 5
+    (literal :content wm_tags_1)))
+
+(defwidget bar_2 []
+  (centerbox :orientation "h"
+    (workspaces_2)
+    (time)
+    (sidestuff)))
+(defwidget workspaces_2 []
+  (box :class "workspaces" :orientation "h" :space-evenly true :halign "start" :spacing 0
+    (literal :content wm_tags_2)))
+
+
+(defwidget sidestuff []
+  (box :orientation "h" :space-evenly false :halign "end"
+    (volume)
+    (net)))
+
+(defwidget volume []
+  (box
+    (box :space-evenly false :class 'volume' :visible {muted < 1}
+      (box volume)
+      (box '%')
+      (box :valign 'center'
+        (progress :value volume :orientation 'h' :class 'volume_bar')))
+    (box :visible {muted > 0} "mute")
+  ))
+
+(defwidget net []
+  (box :class "internet" {internet > 0 ? "Online" : "Offline"}))
+
+(defwidget time []
+  (box :orientation "h" :space-evenly false
+    (button :onclick "eww update is_time_alt=${is_time_alt ? "false" : "true"}" {is_time_alt ? time_alt : time}))) ; TODO unjank
+
+;; Variables
+(defpoll volume :interval "1s"
+  "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%' | head -1")
+(defvar muted
+  "0")
+;(defpoll muted :interval "1s"
+;  "amixer -D pulse sget Master | grep 'Left:' | grep -c -e '\[off\]' | head -1")
+
+(defpoll internet :interval "2s"
+  "networkctl status | grep -c -e 'partial' -e 'online'")
+
+(defvar is_time_alt
+  false)
+(defpoll time :interval "10s"
+  "date '+%d/%m/%Y %I:%M %p'")
+(defpoll time_alt :interval "10s"
+  "date '+%A, %d %B, %Y %I:%M %p'")
+
+(deflisten wm_tags_0
+  "leftwm-state -w 0 -t ~/.config/eww/eww.liquid")
+(deflisten wm_tags_1
+  "leftwm-state -w 1 -t ~/.config/eww/eww.liquid")
+(deflisten wm_tags_2
+  "leftwm-state -w 2 -t ~/.config/eww/eww.liquid")
+
+;; Windows
+
+(defwindow bar_0
+  :monitor 0
+  :windowtype "dock"
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "100%"
+                      :height "25px"
+                      :anchor "top center")
+  :reserve (struts :side "top" :distance "25px")
+  (bar_0))
+(defwindow bar_1
+  :monitor 1
+  :windowtype "dock"
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "100%"
+                      :height "25px"
+                      :anchor "top center")
+  :reserve (struts :side "top" :distance "25px")
+  (bar_1))
+(defwindow bar_2
+  :monitor 2
+  :windowtype "dock"
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "100%"
+                      :height "25px"
+                      :anchor "top center")
+  :reserve (struts :side "top" :distance "25px")
+  (bar_2))

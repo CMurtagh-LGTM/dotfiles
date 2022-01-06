@@ -1,16 +1,65 @@
-window {
-	font-family:Hack;
-	font-size: 12pt;
-	border-radius: 10px;
+* {
+    all: unset
 }
 
-window > * {
-	margin-left:10px;
-	margin-right:10px;
+window {
+	font-family:Hack Nerd Font;
+	font-size: 11pt;
+    background-color: #3b4252;
+    color: #D8DEE9;
 }
 
 button {
 	border: none;
 	background: none;
+    text-decoration: none;
+    border-radius: 0px;
+    color: #ECEFF4;
+    padding: 0px;
 }
 
+/* wm stuff */
+
+.ws-button-mine {
+    color: #2E3440;
+    background-color: #88C0D0;
+    min-height: 25px;
+}
+
+.ws-button-visible {
+    color: #2E3340;
+    background-color: #5E81AC;
+    min-height: 25px;
+}
+
+.ws-button-busy {
+    color: #8FBCBB;
+    min-height: 25px;
+}
+
+.ws-button {
+    color: #ECEFF4;
+    min-height: 25px;
+}
+
+/*bar statuses*/
+
+.internet {
+    margin-right: 5px;
+    border-bottom: 3px solid #B48EAD;
+}
+
+/* progress bars */
+.volume_bar {
+    padding: 5px;
+}
+
+.volume_bar trough progress {
+    background-color: #A3BE8C;
+    min-height: 3px;
+}
+
+.volume_bar trough {
+    background-color: #000000;
+    min-height: 1px;
+}

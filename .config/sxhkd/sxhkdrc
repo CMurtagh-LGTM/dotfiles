@@ -8,7 +8,7 @@ super + shift + Return
 
 # eww
 super + shift + o
-	toggle_eww
+	toggle_eww.py
 
 # program launcher
 super + shift + p

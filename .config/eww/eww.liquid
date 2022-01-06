@@ -1,0 +1,17 @@
+{% assign mine_open = '(button :class "ws-button-mine" :onclick "wmctrl -s ' %}
+{% assign visible_open = '(button :class "ws-button-visible" :onclick "wmctrl -s ' %}
+{% assign busy_open = '(button :class "ws-button-busy" :onclick "wmctrl -s ' %}
+{% assign unoccupied = '(button :class "ws-button" :onclick "wmctrl -s ' %}
+{{'(box :orientation "h" :class "workspaces" :space-evenly true '}}
+{% for tag in workspace.tags %}
+{% if tag.mine %}
+{{mine_open}}{{tag.index | append: '" "'}} {{tag.name}} {{'")'}}
+{% elsif tag.visible  %}
+{{visible_open}}{{tag.index | append: '" "'}} {{tag.name}} {{'")'}}
+{% elsif tag.busy  %}
+{{busy_open}}{{tag.index | append: '" "'}} {{tag.name}} {{'")'}}
+{% else tag.visible  %}
+{{unoccupied}}{{tag.index | append: '" "'}} {{tag.name}} {{'")'}}
+{% endif %}
+{% endfor %}
+{{")"}}

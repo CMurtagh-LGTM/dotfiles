@@ -11,7 +11,6 @@ Incomplete list
 ### Main
 - LeftWM
 - sxhkd
-- polybar
 - dunst
 - Alacritty
 - zsh
@@ -20,6 +19,7 @@ Incomplete list
 - rofi
 - neovim
 - eww
+    - wmctrl
 - delta
 - picom
 - cbonsai

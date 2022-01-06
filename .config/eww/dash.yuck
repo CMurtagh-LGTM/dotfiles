@@ -1,0 +1,25 @@
+(defwidget music_widget []
+  (box :orientation "h" :space-evenly false :spacing 5
+    (image :image-width 160 :path art)
+    (box :orientation "v" :space-evenly false :valign "center"
+      (box artist)
+      (box album)
+      (box song))
+    (box :orientation "h" :halign "center" :space-evenly "false"
+      (button :onclick "playerctl previous" "")
+      (button :onclick "playerctl play-pause" {player_status == "Playing" ? "❚❚" : "▶"})
+      (button :onclick "palyerctl next" ""))))
+
+(deflisten artist :inital ""
+  "playerctl metadata --format '{{ artist }}'")
+(deflisten album :inital ""
+  "playerctl metadata --format '{{ album }}'")
+(deflisten song :inital ""
+  "playerctl metadata --format '{{ title }}'")
+(defpoll art :interval "1s" ; TODO make listen
+  "~/.config/eww/getSongArt.sh && ~/.config/eww/echoSongArt.sh")
+(defpoll player_status :interval "1s"
+  "playerctl -p spotify status")
+
+(defwindow music_dash :monitor 2 :geometry (geometry :x 150 :y 100 :width 490 :height 160) :wm-ignore true
+  (music_widget))
