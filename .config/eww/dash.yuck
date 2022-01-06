@@ -5,10 +5,10 @@
       (box artist)
       (box album)
       (box song))
-    (box :orientation "h" :halign "center" :space-evenly "false"
-      (button :onclick "playerctl previous" "")
-      (button :onclick "playerctl play-pause" {player_status == "Playing" ? "❚❚" : "▶"})
-      (button :onclick "palyerctl next" ""))))
+    (box :orientation "h" :halign "center" :valign "center" :space-evenly "false"
+      (button :class "media_control" :onclick "playerctl previous" "")
+      (button :class "media_control" :onclick "playerctl play-pause" {player_status == "Playing" ? "❚❚" : "▶"})
+      (button :class "media_control" :onclick "palyerctl next" ""))))
 
 (deflisten artist :inital ""
   "playerctl metadata --format '{{ artist }}'")

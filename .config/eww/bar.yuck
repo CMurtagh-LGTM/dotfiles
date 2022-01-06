@@ -45,8 +45,9 @@
   (box :class "internet" {internet > 0 ? "Online" : "Offline"}))
 
 (defwidget time []
-  (box :orientation "h" :space-evenly false
-    (button :onclick "eww update is_time_alt=${is_time_alt ? "false" : "true"}" {is_time_alt ? time_alt : time}))) ; TODO unjank
+  (eventbox :onhover "eww update is_time_alt=true"
+      :onhoverlost "eww update is_time_alt=false"
+    (box :orientation "h" :space-evenly false {is_time_alt ? time_alt : time})))
 
 ;; Variables
 (defpoll volume :interval "1s"

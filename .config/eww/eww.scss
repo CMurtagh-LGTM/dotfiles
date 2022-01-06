@@ -5,41 +5,44 @@
 window {
 	font-family:Hack Nerd Font;
 	font-size: 11pt;
-    background-color: #3b4252;
+    background-color: #3B4252;
     color: #D8DEE9;
 }
 
-button {
+/**** DASH ****/
+.media_control {
+    padding: 5px;
+}
+
+.media_control:hover{
+    background-color: #434C5E;
+}
+
+
+/**** BAR ****/
+
+/* wm stuff */
+.ws-button, .ws-button-mine, .ws-button-visible, .ws-button-busy {
+    min-height: 25px;
 	border: none;
 	background: none;
     text-decoration: none;
     border-radius: 0px;
-    color: #ECEFF4;
     padding: 0px;
 }
-
-/* wm stuff */
 
 .ws-button-mine {
     color: #2E3440;
     background-color: #88C0D0;
-    min-height: 25px;
 }
 
 .ws-button-visible {
     color: #2E3340;
     background-color: #5E81AC;
-    min-height: 25px;
 }
 
 .ws-button-busy {
     color: #8FBCBB;
-    min-height: 25px;
-}
-
-.ws-button {
-    color: #ECEFF4;
-    min-height: 25px;
 }
 
 /*bar statuses*/
