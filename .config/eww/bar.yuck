@@ -79,18 +79,18 @@
 (defwindow bar_0
   :monitor 0
   :windowtype "dock"
-  :geometry (geometry :x "0%"
-                      :y "0%"
+  :geometry (geometry :x "0"
+                      :y "0"
                       :width "100%"
                       :height "25px"
-                      :anchor "top center")
+                      :anchor "top left")
   :reserve (struts :side "top" :distance "25px")
   (bar_0))
 (defwindow bar_1
   :monitor 1
   :windowtype "dock"
-  :geometry (geometry :x "0%"
-                      :y "0%"
+  :geometry (geometry :x "0"
+                      :y "0"
                       :width "100%"
                       :height "25px"
                       :anchor "top center")
@@ -101,8 +101,8 @@
   :windowtype "dock"
   :geometry (geometry :x "0%"
                       :y "0%"
-                      :width "100%"
+                      :width "90%"
                       :height "25px"
-                      :anchor "top center")
+                      :anchor "top left")
   :reserve (struts :side "top" :distance "25px")
   (bar_2))

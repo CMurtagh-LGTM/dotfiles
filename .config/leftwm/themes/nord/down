@@ -13,3 +13,4 @@ pkill compton
 pkill picom 
 pkill polybar
 eww kill
+pkill trayer

@@ -28,3 +28,5 @@ eww daemon
 eww open bar_0
 eww open bar_1
 eww open bar_2
+
+trayer --edge top --width 10 --height 25 --align right --monitor 0 & disown
