@@ -3,15 +3,15 @@
 #
 
 # terminal emulator
-super + shift + Return
+super + Return
 	alacritty
 
 # eww
-super + shift + o
+super + o
 	toggle_dash.py
 
 # program launcher
-super + shift + p
+super + p
 	rofi -show drun
 
 # Web search
@@ -19,7 +19,7 @@ super + shift + p
 #	rofi -lines 5 -eh 3 -show search
 
 # Passwords
-super + shift + l
+super + l
 	rofi-pass
 
 # make sxhkd reload its configuration files:
@@ -38,6 +38,10 @@ super + ctrl + space
 
 super + shift + ctrl + space
 	dunstctl context
+
+# Mouse Menu
+button8
+	pmenu.sh
 
 #
 # media keys

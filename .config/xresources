@@ -1,0 +1,9 @@
+pmenu.font: Hack Nerd Font-24
+pmenu.background: #3b4252
+pmenu.foreground: #d8dee9
+pmenu.selbackground: #88c0d0
+pmenu.selforeground: #2b4252
+pmenu.border: #88c0d0
+pmenu.separator: #88c0d0
+pmenu.borderWidth: 5
+pmenu.separatorWidth: 5

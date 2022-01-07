@@ -27,6 +27,7 @@ Incomplete list
 - neofetch
     - chafa
 - calcurse
+- pmenu
 
 ### Inside Scripts
 - python
@@ -97,7 +98,8 @@ mod4+p					| open rofi drun
 mod4+o					| toggle eww dashboard
 mod4+i                  | rofi todo
 mod4+l                  | rofi pass
-mod4+shift+return		| open Alacritty
+mod4+return     		| open Alacritty
+mouse4                  | open pmenu
 
 Key 					| Action
 ------------------------|----------------------
@@ -107,10 +109,10 @@ mod4+shift+numb 		| send to workspace
 
 Key 					| Action
 ------------------------|----------------------
-mod4+shift+c			| close window
-mod4+shift+r			| soft reload wm
-mod4+shift+esc          | reload sxhkd
-mod4+shift+q			| quit wm
+mod4+c      			| close window
+mod4+r		        	| soft reload wm
+mod4+esc                | reload sxhkd
+mod4+alt+q		    	| quit wm
 
 Key 					| Action
 ------------------------|----------------------
