@@ -39,10 +39,6 @@ super + ctrl + space
 super + shift + ctrl + space
 	dunstctl context
 
-# Mouse Menu
-button8
-	pmenu.sh
-
 #
 # media keys
 #

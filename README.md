@@ -28,6 +28,7 @@ Incomplete list
     - chafa
 - calcurse
 - pmenu
+- xclickroot
 
 ### Inside Scripts
 - python
