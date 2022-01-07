@@ -30,7 +30,7 @@ key = "Down"
 
 [[keybind]]
 command = "MoveWindowTop"
-modifier = ["modkey"]
+modifier = ["modkey", "Shift"]
 key = "Return"
 
 [[keybind]]

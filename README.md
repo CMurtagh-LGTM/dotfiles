@@ -120,7 +120,7 @@ mod4+right				| next screen
 mod4+left				| prev screen
 mod4+shift+up			| move window up
 mod4+shift+dowm			| move window down
-mod4+return				| move window top
+mod4+shift+return		| move window top
 
 Key 					| Action
 ------------------------|----------------------
