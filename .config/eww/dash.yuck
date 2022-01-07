@@ -1,11 +1,11 @@
 (defwidget music_widget []
-  (box :orientation "h" :space-evenly false :spacing 5
-    (image :image-width 160 :path art)
-    (box :orientation "v" :space-evenly false :valign "center"
-      (box artist)
-      (box album)
-      (box song))
-    (box :orientation "h" :halign "center" :valign "center" :space-evenly false
+  (box :orientation "h" :space-evenly false
+      (image :image-width 160 :path art)
+      (box :orientation "v" :space-evenly false :valign "center" :halign "center"
+        (label :text artist :limit-width 25)
+        (label :text album :limit-width 25)
+        (label :text song :limit-width 25))
+    (box :orientation "h" :halign "end" :valign "center" :space-evenly false
       (button :class "media_control" :onclick "playerctl previous" "")
       (button :class "media_control" :onclick "playerctl play-pause" {player_status == "Playing" ? "❚❚" : "▶"})
       (button :class "media_control" :onclick "palyerctl next" ""))))
@@ -34,8 +34,20 @@
     (audio_bar :variable cava :index 16)
     (audio_bar :variable cava :index 17)
     (audio_bar :variable cava :index 18)
-    (audio_bar :variable cava :index 19)
-    ))
+    (audio_bar :variable cava :index 19)))
+
+(defwidget calendar_widget []
+  (box (literal :content calendar)))
+
+(defwidget sys_widget[]
+  (box :class "cpu" :orientation "v" :space-evenly false :halign "center" :valign "center"
+    (metric :label "﬙" :value {EWW_CPU.avg})
+    (metric :label "" :value {EWW_RAM.used_mem_perc})
+    (metric :label "泌" :value {(EWW_NET.wlp4s0.NET_UP)/100})
+    (metric :label "" :value {(EWW_DISK["/"].free / EWW_DISK["/"].total) * 100})
+    (metric_red :label "" :value {temperature["nvme"]})
+    (metric_red :label "﬙" :value {temperature["k10temp"]})
+    (metric_red :label "度" :colour "red" :value {temperature["amdgpu"]})))
 
 (deflisten artist :inital ""
   "playerctl metadata --format '{{ artist }}'")
@@ -49,10 +61,26 @@
   "playerctl -p spotify status")
 
 (deflisten cava :inital "[0, 0, 0, 0, 0, 0, 0]"
-  "/home/cameron/.config/eww/cava.py")
+  "python ~/.config/eww/cava.py")
 
-(defwindow music_dash :monitor 2 :geometry (geometry :x 150 :y 100 :width 490 :height 160) :wm-ignore true
+(defpoll calendar :interval "300s"
+  "python ~/.config/eww/calender.py")
+
+(defpoll temperature :interval "1s"
+  "python ~/.config/eww/temperature.py")
+
+(defwindow music_dash :monitor 2 :geometry (geometry :x 150 :y 100 :width 500 :height 160) :wm-ignore true
   (music_widget))
 
-(defwindow cava_dash :monitor 2 :geometry (geometry :x 660 :y 100 :width 490 :height 160) :wm-ignore true
+(defwindow cava_dash :monitor 2 :geometry (geometry :x 660 :y 100 :width 620 :height 160) :wm-ignore true
   (cava_widget))
+
+(defwindow calendar_dash :monitor 2 :geometry (geometry :x 150 :y 270 :width 500) :wm-ignore true
+  (calendar_widget))
+
+(defwindow sys_dash :class "cpu-win" :wm-ignore true :monitor 2
+  :geometry (geometry :x 1290
+                      :y 100
+                      :width 200
+                      :height 160)
+  (sys_widget))

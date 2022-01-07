@@ -38,8 +38,7 @@
       (box '%')
       (box :valign 'center'
         (progress :value volume :orientation 'h' :class 'volume_bar')))
-    (box :visible {muted > 0} "mute")
-  ))
+    (box :visible {muted > 0} "mute")))
 
 (defwidget net []
   (box :class "internet" {internet > 0 ? "Online" : "Offline"}))

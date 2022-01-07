@@ -1,12 +1,41 @@
 * {
-    all: unset
+    all: unset;
+	font-family: Hack Nerd Font;
+	font-size: 11pt;
+    //color: #D8DEE9;
 }
 
 window {
-	font-family:Hack Nerd Font;
-	font-size: 11pt;
     background-color: #3B4252;
-    color: #D8DEE9;
+}
+
+/**** Common ****/
+.metric_label {
+  font-size: 1.5rem;
+}
+
+.metric_progress trough progress {
+  background-color: #88c0d0;
+  min-height: 10px;
+}
+
+.metric_progress trough {
+  background-color: #2E3440;
+  min-height: 1px;
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+.metric_progress_red trough progress {
+  background-color: #bf616a;
+  min-height: 10px;
+}
+
+.metric_progress_red trough {
+  background-color: #2E3440;
+  min-height: 1px;
+  margin-left: 10px;
+  margin-right: 5px;
 }
 
 /**** DASH ****/
@@ -16,6 +45,14 @@ window {
 
 .media_control:hover{
     background-color: #434C5E;
+}
+
+.calendar_entry {
+    border: 2px solid #2e3440;
+}
+
+.calendar_date {
+    border-bottom: 1px dotted #2e3440;
 }
 
 /* progress bars */
@@ -81,6 +118,6 @@ window {
 }
 
 .volume_bar trough {
-    background-color: #2e3440;
+    background-color: #2E3440;
     min-height: 1px;
 }

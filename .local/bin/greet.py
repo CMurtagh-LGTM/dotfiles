@@ -3,7 +3,6 @@ import email.policy
 import os
 import platform
 import subprocess
-import textwrap
 from email.parser import BytesHeaderParser
 from email.utils import parsedate_to_datetime
 
