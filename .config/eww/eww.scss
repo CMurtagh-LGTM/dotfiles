@@ -18,6 +18,24 @@ window {
     background-color: #434C5E;
 }
 
+/* progress bars */
+.cava_bar {
+    margin-right: 15px;
+    margin-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.cava_bar trough progress {
+    background-color: #4c566a;
+    min-width: 15px;
+}
+
+.cava_bar trough {
+    background-color: #2e3440;
+    min-width: 1px;
+}
+
 
 /**** BAR ****/
 
@@ -63,6 +81,6 @@ window {
 }
 
 .volume_bar trough {
-    background-color: #000000;
+    background-color: #2e3440;
     min-height: 1px;
 }
