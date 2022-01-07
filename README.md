@@ -31,7 +31,6 @@ Incomplete list
 ### Inside Scripts
 - python
 	- psutil
-	- pilsectl
     - rich
 - eww & sxkbd
     - playerctl
@@ -145,8 +144,8 @@ media keys				| todo
     - browser seach ddgr, current one kinda sucks
     - rofi steam?
     - rofi spotify?
-- add audio sinks to eww
 - Add lock screen slock or xscreensaver
 - add volume to eww
+- comment and format script files
 - work out all the neovim binary dependencies
 - sort out vim autoclose brackets

@@ -1,5 +1,5 @@
 (defwidget music_widget []
-  (box :orientation "h" :space-evenly false
+  (box :orientation "h" :space-evenly false :class "float"
       (image :image-width 160 :path art)
       (box :orientation "v" :space-evenly false :valign "center" :halign "center"
         (label :text artist :limit-width 25)
@@ -14,7 +14,7 @@
   (progress :value {variable[index]} :orientation "v" :class "cava_bar" :flipped true))
 
 (defwidget cava_widget []
-  (box
+  (box :class "float"
     (audio_bar :variable cava :index 0)
     (audio_bar :variable cava :index 1)
     (audio_bar :variable cava :index 2)
@@ -37,17 +37,22 @@
     (audio_bar :variable cava :index 19)))
 
 (defwidget calendar_widget []
-  (box (literal :content calendar)))
+  (box :class "float" (literal :content calendar)))
 
 (defwidget sys_widget[]
-  (box :class "cpu" :orientation "v" :space-evenly false :halign "center" :valign "center"
-    (metric :label "﬙" :value {EWW_CPU.avg})
-    (metric :label "" :value {EWW_RAM.used_mem_perc})
-    (metric :label "泌" :value {(EWW_NET.wlp4s0.NET_UP)/100})
-    (metric :label "" :value {(EWW_DISK["/"].free / EWW_DISK["/"].total) * 100})
-    (metric_red :label "" :value {temperature["nvme"]})
-    (metric_red :label "﬙" :value {temperature["k10temp"]})
-    (metric_red :label "度" :colour "red" :value {temperature["amdgpu"]})))
+  (box :class "float"
+    (box :orientation "v" :space-evenly false :halign "center" :valign "center"
+      (metric :label "﬙" :value {EWW_CPU.avg})
+      (metric :label "" :value {EWW_RAM.used_mem_perc})
+      (metric :label "泌" :value {(EWW_NET.wlp4s0.NET_UP)/100})
+      (metric :label "" :value {(EWW_DISK["/"].free / EWW_DISK["/"].total) * 100})
+      (metric_red :label "﬙" :value {temperature["k10temp"]})
+      (metric_red :label "" :value {temperature["nvme"]})
+      (metric_red :label "度" :colour "red" :value {temperature["amdgpu"]}))))
+
+(defwidget sinks_widget []
+  (box :class "float"
+    (literal :content sinks)))
 
 (deflisten artist :inital ""
   "playerctl metadata --format '{{ artist }}'")
@@ -64,23 +69,26 @@
   "python ~/.config/eww/cava.py")
 
 (defpoll calendar :interval "300s"
-  "python ~/.config/eww/calender.py")
+  "python ~/.config/eww/calendar.py")
 
 (defpoll temperature :interval "1s"
   "python ~/.config/eww/temperature.py")
 
-(defwindow music_dash :monitor 2 :geometry (geometry :x 150 :y 100 :width 500 :height 160) :wm-ignore true
+(defpoll sinks :interval "1s"
+  "python ~/.config/eww/sinks.py")
+
+(defwindow music_dash :monitor 2 :geometry (geometry :x 150 :y 100 :width 510 :height 170) :wm-ignore true
   (music_widget))
 
-(defwindow cava_dash :monitor 2 :geometry (geometry :x 660 :y 100 :width 620 :height 160) :wm-ignore true
+(defwindow cava_dash :monitor 2 :geometry (geometry :x 670 :y 100 :width 630 :height 170) :wm-ignore true
   (cava_widget))
 
-(defwindow calendar_dash :monitor 2 :geometry (geometry :x 150 :y 270 :width 500) :wm-ignore true
+(defwindow calendar_dash :monitor 2 :geometry (geometry :x 150 :y 280 :width 510) :wm-ignore true
   (calendar_widget))
 
 (defwindow sys_dash :class "cpu-win" :wm-ignore true :monitor 2
-  :geometry (geometry :x 1290
-                      :y 100
-                      :width 200
-                      :height 160)
+  :geometry (geometry :x 1310 :y 100 :width 210 :height 170)
   (sys_widget))
+
+(defwindow sinks_dash :monitor 2 :geometry (geometry :x 1310 :y 280 :width 210 :height 170) :wm-ignore true
+  (sinks_widget))

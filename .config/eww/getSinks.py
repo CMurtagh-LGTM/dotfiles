@@ -1,3 +1,0 @@
-#!/ust/bin/env python
-
-
