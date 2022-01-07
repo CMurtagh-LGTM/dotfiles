@@ -19,7 +19,6 @@ Incomplete list
 - rofi
 - neovim
 - eww
-    - wmctrl
 - delta
 - picom
 - cbonsai
@@ -34,9 +33,13 @@ Incomplete list
 	- psutil
 	- pilsectl
     - rich
-- playerctl
-- pactl
-- imagemagick
+- eww & sxkbd
+    - playerctl
+    - pactl
+- eww
+    - imagemagick
+    - wmctrl
+    - cava
 
 ### rofi-modi
 - ddgr - todo
@@ -92,7 +95,7 @@ Incomplete list
 Key 					| Action
 ------------------------|----------------------
 mod4+p					| open rofi drun
-mod4+o					| toggle eww
+mod4+o					| toggle eww dashboard
 mod4+i                  | rofi todo
 mod4+l                  | rofi pass
 mod4+shift+return		| open Alacritty
@@ -147,4 +150,3 @@ media keys				| todo
 - add volume to eww
 - work out all the neovim binary dependencies
 - sort out vim autoclose brackets
-- work out how to control where eww appears - given up on this
