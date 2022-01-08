@@ -28,7 +28,6 @@ Incomplete list
     - chafa
 - calcurse
 - pmenu
-    - xclickroot
 - Thunar
     - 
 
