@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cat <<EOF | pmenu -r 3| sh &
+cat <<EOF | pmenu -r 3 | sh &
 	gtk-launch thunar
 	gtk-launch librewolf
 ﵁	~/.local/bin/toggle_dash.py

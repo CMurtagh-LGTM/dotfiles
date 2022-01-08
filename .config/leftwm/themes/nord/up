@@ -24,6 +24,8 @@ fi
 
 sxhkd &
 
+sh ~/.local/bin/pmenu.sh
+
 eww daemon
 eww open bar_0
 eww open bar_1
