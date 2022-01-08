@@ -40,6 +40,13 @@ super + shift + ctrl + space
 	dunstctl context
 
 #
+# wm dependant hotkeys
+#
+
+super + g
+	toggle_gaps.py
+
+#
 # media keys
 #
 

@@ -36,6 +36,7 @@ Incomplete list
 - python
 	- psutil
     - rich
+    - fasteners
 - eww & sxkbd
     - playerctl
     - pactl
@@ -114,6 +115,7 @@ Key 					| Action
 ------------------------|----------------------
 mod4+c      			| close window
 mod4+f                  | fullscreen
+mod4+g                  | toggle gaps
 mod4+esc                | reload sxhkd
 mod4+alt+r		        | soft reload wm
 mod4+alt+q		    	| quit wm

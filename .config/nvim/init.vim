@@ -293,7 +293,7 @@ if (get_project_dir_lower() == "nubots") then
                 python = {
                     {formatCommand = "black --quiet -", formatStdin = true},
                     {formatCommand = "isort --quiet -", formatStdin = true},
-                    {lintCommand = "flake8 --stdin-display-name={$INPUT} -", lintStdin = true},
+                    {lintCommand = "flake8 --max-line-length 120 --stdin-display-name={$INPUT} -", lintStdin = true},
                 }
             }
         }
@@ -309,7 +309,7 @@ else
                     {formatCommand = "black --quiet -", formatStdin = true},
                     {formatCommand = "isort --quiet -", formatStdin = true},
                     {formatCommand = "doq", formatStdin = true},  
-                    {lintCommand = "flake8 --stdin-display-name={$INPUT} -", lintStdin = true},
+                    {lintCommand = "flake8 --max-line-length 120 --stdin-display-name={$INPUT} -", lintStdin = true},
                     {lintCommand = "mypy --show-column-numbers"},
                 }
             }
