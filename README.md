@@ -29,7 +29,10 @@ Incomplete list
 - calcurse
 - pmenu
 - Thunar
-    - 
+    - Tumbler
+    - ffmpegthumbnailer
+    - popler-glib
+    - catfish mlocate
 
 ### Inside Scripts
 - python
@@ -39,8 +42,9 @@ Incomplete list
 - eww & sxkbd
     - playerctl
     - pactl
-- eww
+- eww & tumbler
     - imagemagick
+- eww
     - wmctrl
     - cava
 

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>nvim</icon>
+	<name>NeoVim</name>
+	<unique-id>1641642983022029-3</unique-id>
+	<command>alacritty -e nvim %F</command>
+	<description>Edit file</description>
+	<patterns>*</patterns>
+	<text-files/>
+</action>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<unique-id>1641602770557165-1</unique-id>
+	<command>alacritty --working-directory %f</command>
+	<description>Open Terminal</description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>system-search</icon>
+	<name>Search</name>
+	<unique-id>1641640081192635-1</unique-id>
+	<command>catfish --path=%f</command>
+	<description>Search for file</description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>document-open</icon>
+	<name>Copy Contents</name>
+	<unique-id>1641642251347410-1</unique-id>
+	<command>cat %f | xclip -i -selection clipboard</command>
+	<description>Copy the contents of the file</description>
+	<patterns>*</patterns>
+	<text-files/>
+</action>
+<action>
+	<icon></icon>
+	<name>Diff</name>
+	<unique-id>1641642453094624-1</unique-id>
+	<command>alacritty -e delta %F</command>
+	<description>See the diff of the two files</description>
+	<patterns>*</patterns>
+	<text-files/>
+</action>
+<action>
+	<icon></icon>
+	<name>Extract here (zip)</name>
+	<unique-id>1641642825942588-2</unique-id>
+	<command>unzip %f</command>
+	<description></description>
+	<patterns>*.zip</patterns>
+	<other-files/>
+</action>
+</actions>
