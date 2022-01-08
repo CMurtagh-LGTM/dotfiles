@@ -28,7 +28,9 @@ Incomplete list
     - chafa
 - calcurse
 - pmenu
-- xclickroot
+    - xclickroot
+- Thunar
+    - 
 
 ### Inside Scripts
 - python
@@ -100,7 +102,7 @@ mod4+o					| toggle eww dashboard
 mod4+i                  | rofi todo
 mod4+l                  | rofi pass
 mod4+return     		| open Alacritty
-mouse4                  | open pmenu
+rightclick on desktop   | open pmenu
 
 Key 					| Action
 ------------------------|----------------------
@@ -111,8 +113,9 @@ mod4+shift+numb 		| send to workspace
 Key 					| Action
 ------------------------|----------------------
 mod4+c      			| close window
-mod4+r		        	| soft reload wm
+mod4+f                  | fullscreen
 mod4+esc                | reload sxhkd
+mod4+alt+r		        | soft reload wm
 mod4+alt+q		    	| quit wm
 
 Key 					| Action

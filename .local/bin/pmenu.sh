@@ -1,10 +1,13 @@
 #!/bin/sh
 
 cat <<EOF | pmenu | sh &
-	gtk-launch Alacritty
+	gtk-launch thunar
 	gtk-launch librewolf
-	alacritty -e vim & disown
 ﵁	~/.local/bin/toggle_dash.py
+
+		alacritty -e vim & disown
+		gtk-launch Alacritty
+	ﬓ	rofi -show drun
 
 		gtk-launch slack
 	ﭮ	gtk-launch discord

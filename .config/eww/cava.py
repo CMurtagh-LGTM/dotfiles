@@ -2,6 +2,7 @@
 import atexit
 import os
 import random
+import signal
 import string
 import subprocess
 import sys
@@ -35,12 +36,15 @@ p = subprocess.Popen(
 )
 
 
-@atexit.register
-def _cleanup():
+def cleanup():
     p.terminate()
     os.remove(CONFIG)
     os.remove(PATH)
 
+
+atexit.register(cleanup)
+signal.signal(signal.SIGTERM, cleanup)
+signal.signal(signal.SIGINT, cleanup)
 
 str = ""
 stdout = p.stdout
