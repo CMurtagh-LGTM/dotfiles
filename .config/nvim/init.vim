@@ -82,8 +82,8 @@ Plug 'elkowar/yuck.vim'
 Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
-" TODO Checkout nvim-dap (with telescope), goto-preview, telescope-lsp-handlers.nvim, nvim-code-action-menu, windline
-" telescope-vimwiki + vimwiki, ltex-ls/grammar-gaurd
+" TODO Checkout nvim-dap (with telescope and coq_3p), goto-preview, telescope-lsp-handlers.nvim, nvim-code-action-menu, windline
+" telescope-vimwiki + vimwiki, ltex-ls/grammar-gaurd, kevinhwang91/nvim-hlslens, petertriho/nvim-scrollbar
 " checkout later after more development ray-x/navigator.lua
 
 " Theme
@@ -240,6 +240,7 @@ local on_attach = function(client, bufnr)
     require "lsp_signature".on_attach({
         floating_window = true,
         hint_enable = false,
+        max_height = 3,
     })
 end
 
