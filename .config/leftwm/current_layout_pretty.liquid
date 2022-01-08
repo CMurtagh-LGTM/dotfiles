@@ -1,0 +1,11 @@
+{% if workspace.layout == "GridHorizontal"%}
+{{""}}
+{% elsif workspace.layout == "CenterMainBalanced" %}
+{{"𤋮"}}
+{% elsif workspace.layout == "Monocle" %}
+{{""}}
+{% elsif workspace.layout == "MainAndVertStack" %}
+{{"├"}}
+{% else %}
+{{"?"}}{{workspace.layout}}
+{% endif %}

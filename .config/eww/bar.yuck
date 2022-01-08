@@ -4,8 +4,10 @@
     (time)
     (sidestuff)))
 (defwidget workspaces_0 []
-  (box :class "workspaces" :orientation "h" :space-evenly true :halign "start" :spacing 5
-    (literal :content wm_tags_0)))
+  (box :orientation "h" :space-evenly false
+    (box :class "workspaces" :orientation "h" :space-evenly true :halign "start" :spacing 5
+      (literal :content wm_tags_0))
+    (label :class "wm_layout" :text wm_layout_0)))
 
 (defwidget bar_1 []
   (centerbox :orientation "h"
@@ -13,8 +15,10 @@
     (time)
     (sidestuff)))
 (defwidget workspaces_1 []
-  (box :class "workspaces" :orientation "h" :space-evenly true :halign "start" :spacing 5
-    (literal :content wm_tags_1)))
+  (box :orientation "h" :space-evenly false
+    (box :class "workspaces" :orientation "h" :space-evenly true :halign "start" :spacing 5
+      (literal :content wm_tags_1))
+    (label :class "wm_layout" :text wm_layout_1)))
 
 (defwidget bar_2 []
   (centerbox :orientation "h"
@@ -22,8 +26,10 @@
     (time)
     (sidestuff)))
 (defwidget workspaces_2 []
-  (box :class "workspaces" :orientation "h" :space-evenly true :halign "start" :spacing 0
-    (literal :content wm_tags_2)))
+  (box :orientation "h" :space-evenly false
+    (box :class "workspaces" :orientation "h" :space-evenly true :halign "start" :spacing 0
+      (literal :content wm_tags_2))
+    (label :class "wm_layout" :text wm_layout_2)))
 
 
 (defwidget sidestuff []
@@ -72,6 +78,12 @@
   "leftwm-state -w 1 -t ~/.config/eww/eww.liquid")
 (deflisten wm_tags_2
   "leftwm-state -w 2 -t ~/.config/eww/eww.liquid")
+(deflisten wm_layout_0
+  "leftwm-state -w 0 -t ~/.config/leftwm/current_layout_pretty.liquid")
+(deflisten wm_layout_1
+  "leftwm-state -w 1 -t ~/.config/leftwm/current_layout_pretty.liquid")
+(deflisten wm_layout_2
+  "leftwm-state -w 2 -t ~/.config/leftwm/current_layout_pretty.liquid")
 
 ;; Windows
 
