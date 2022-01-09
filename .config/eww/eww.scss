@@ -63,8 +63,20 @@ window {
     padding: 5px;
 }
 
-.sinks_button:hover{
+.sinks_button:hover {
     background-color: #434C5E;
+}
+
+.weather_icon {
+    font-size: 70px;
+}
+
+.weather_temp {
+    font-size: 40px;
+}
+
+.weather_temp_C {
+    font-size: 60px;
 }
 
 /* progress bars */

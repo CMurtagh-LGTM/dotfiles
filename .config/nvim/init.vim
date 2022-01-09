@@ -83,7 +83,7 @@ Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
 " TODO Checkout nvim-dap (with telescope and coq_3p), goto-preview, telescope-lsp-handlers.nvim, nvim-code-action-menu, windline
-" telescope-vimwiki + vimwiki, ltex-ls/grammar-gaurd, kevinhwang91/nvim-hlslens, petertriho/nvim-scrollbar
+" telescope-vimwiki + vimwiki, ltex-ls/grammar-gaurd, kevinhwang91/nvim-hlslens, petertriho/nvim-scrollbar, telescope-dict.nvim
 " checkout later after more development ray-x/navigator.lua
 
 " Theme

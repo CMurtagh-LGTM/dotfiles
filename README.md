@@ -47,6 +47,7 @@ Incomplete list
 - eww
     - wmctrl
     - cava
+    - liquid-bin rust crate
 
 ### rofi-modi
 - ddgr - todo

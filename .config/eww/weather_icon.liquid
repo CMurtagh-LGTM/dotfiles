@@ -1,0 +1,37 @@
+{% if today.icon_descriptor == "sunny" %}
+{{""}}
+{% elsif today.icon_descriptor == "clear" %}
+{{""}}
+{% elsif today.icon_descriptor == "mostly sunny" %}
+{{""}}
+{% elsif today.icon_descriptor == "partly cloudy" %}
+{{""}}
+{% elsif today.icon_descriptor == "cloudy" %}
+{{""}}
+{% elsif today.icon_descriptor == "hazy" %}
+{{""}}
+{% elsif today.icon_descriptor == "light rain" %}
+{{""}}
+{% elsif today.icon_descriptor == "windy" %}
+{{""}}
+{% elsif today.icon_descriptor == "shower" %}
+{{""}}
+{% elsif today.icon_descriptor == "rain" %}
+{{""}}
+{% elsif today.icon_descriptor == "dusty" %}
+{{""}}
+{% elsif today.icon_descriptor == "frost" %}
+{{""}}
+{% elsif today.icon_descriptor == "snow" %}
+{{""}}
+{% elsif today.icon_descriptor == "storm" %}
+{{""}}
+{% elsif today.icon_descriptor == "light shower" %}
+{{""}}
+{% elsif today.icon_descriptor == "heavy shower" %}
+{{""}}
+{% elsif today.icon_descriptor == "cyclone" %}
+{{""}}
+{% else %}
+{{today.icon_descriptor}}
+{% endif %}

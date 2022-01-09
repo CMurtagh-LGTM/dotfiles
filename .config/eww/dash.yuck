@@ -54,6 +54,19 @@
   (box :class "float"
     (literal :content sinks)))
 
+(defwidget weather_widget []
+  (box :class "float" 
+    (box :orientation "v" :space-evenly false
+      (box :orientation "h"
+        (label :class "weather_icon" :text weather_icon)
+        (box :space-evenly false
+          (label :class "weather_temp" :text {weather["now"]["temp"]})
+          (label :class "weather_temp_C" :text ""))
+      )
+      (box :orientation "h"
+        (label :text {weather["today"]["short_text"]}))
+    )))
+
 (deflisten artist :inital ""
   "playerctl metadata --format '{{ artist }}'")
 (deflisten album :inital ""
@@ -77,18 +90,25 @@
 (defpoll sinks :interval "1s"
   "python ~/.config/eww/sinks.py")
 
+(defpoll weather :interval "600s"
+  "cat /tmp/weather.json")
+(defpoll weather_icon :interval "600s"
+  "~/.cargo/bin/liquid-bin --context /tmp/weather.json --input ~/.config/eww/weather_icon.liquid")
+
 (defwindow music_dash :monitor 2 :geometry (geometry :x 150 :y 100 :width 510 :height 170) :wm-ignore true
   (music_widget))
 
 (defwindow cava_dash :monitor 2 :geometry (geometry :x 670 :y 100 :width 630 :height 170) :wm-ignore true
   (cava_widget))
 
-(defwindow calendar_dash :monitor 2 :geometry (geometry :x 150 :y 280 :width 510) :wm-ignore true
+(defwindow calendar_dash :monitor 2 :geometry (geometry :x 150 :y 460 :width 510 :height 320) :wm-ignore true
   (calendar_widget))
 
-(defwindow sys_dash :class "cpu-win" :wm-ignore true :monitor 2
-  :geometry (geometry :x 1310 :y 100 :width 210 :height 170)
+(defwindow sys_dash :monitor 2 :geometry (geometry :x 1310 :y 280 :width 210 :height 170) :wm-ignore true
   (sys_widget))
 
-(defwindow sinks_dash :monitor 2 :geometry (geometry :x 1310 :y 280 :width 210 :height 170) :wm-ignore true
+(defwindow sinks_dash :monitor 2 :geometry (geometry :x 1310 :y 100 :width 210 :height 170) :wm-ignore true
   (sinks_widget))
+
+(defwindow weather_dash :monitor 2 :geometry (geometry :x 150 :y 280 :width 510 :height 170) :wm-ignore true
+  (weather_widget))
