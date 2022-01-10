@@ -6,9 +6,9 @@
         (label :text album :limit-width 25)
         (label :text song :limit-width 25))
     (box :orientation "h" :halign "end" :valign "center" :space-evenly false
-      (button :class "media_control" :onclick "playerctl previous" "")
-      (button :class "media_control" :onclick "playerctl play-pause" {player_status == "Playing" ? "❚❚" : "▶"})
-      (button :class "media_control" :onclick "palyerctl next" ""))))
+      (button :class "media_control" :onclick "mpc prev" "")
+      (button :class "media_control" :onclick "mpc toggle" {player_status == "playing" ? "❚❚" : "▶"})
+      (button :class "media_control" :onclick "mpc next" ""))))
 
 (defwidget audio_bar [variable index]
   (progress :value {variable[index]} :orientation "v" :class "cava_bar" :flipped true))
@@ -68,15 +68,17 @@
     )))
 
 (deflisten artist :inital ""
-  "playerctl metadata --format '{{ artist }}'")
+  "mpc --format '%artist%' current")
 (deflisten album :inital ""
-  "playerctl metadata --format '{{ album }}'")
+  "mpc --format '%album%' current")
 (deflisten song :inital ""
-  "playerctl metadata --format '{{ title }}'")
+  "mpc --format '%title%' current")
 (defpoll art :interval "1s" ; TODO make listen
   "~/.config/eww/getSongArt.sh && ~/.config/eww/echoSongArt.sh")
 (defpoll player_status :interval "1s"
-  "playerctl -p spotify status")
+  "mpc status '%state%'")
+(defpoll song_percent :interval "1s"
+  "mpc status '%percenttime%'")
 
 (deflisten cava :inital "[0, 0, 0, 0, 0, 0, 0]"
   "python ~/.config/eww/cava.py")

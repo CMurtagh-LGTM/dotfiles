@@ -33,6 +33,12 @@ Incomplete list
     - ffmpegthumbnailer
     - popler-glib
     - catfish mlocate
+    - Thunar-media-tags-plugin
+- mopidy
+    - mopidy-mpd
+    - mopidy-spotify
+- mpd-notification
+- ncmpcc
 
 ### Inside Scripts
 - python
@@ -40,7 +46,7 @@ Incomplete list
     - rich
     - fasteners
 - eww & sxkbd
-    - playerctl
+    - mpc
     - pactl
 - eww & tumbler
     - imagemagick

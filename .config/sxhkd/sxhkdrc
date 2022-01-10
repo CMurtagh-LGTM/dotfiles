@@ -51,13 +51,13 @@ super + g
 #
 
 XF86AudioPlay
-	playerctl play-pause
+	mpd toggle
 
 XF86AudioNext
-	playerctl next
+	mpd next
 
 XF86AudioPrev
-	playerctl previous
+	mpd prev
 
 XF86AudioRaiseVolume
 	pactl set-sink-volume @DEFAULT_SINK@ +1000

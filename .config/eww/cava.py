@@ -31,6 +31,7 @@ c = open(CONFIG, "wt")
 c.write(config)
 c.close()
 
+# TODO change from cava to use the mopidy upsink thingy
 p = subprocess.Popen(
     ["stdbuf", "-o0", "/usr/bin/cava", "-p", CONFIG], stdout=subprocess.PIPE
 )

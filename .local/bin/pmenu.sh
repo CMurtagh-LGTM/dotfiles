@@ -14,5 +14,6 @@ cat <<EOF | pmenu -r 3 | sh &
 		alacritty -e neomutt & disown
 
 		gtk-launch steam
+		alacritty -e ncmpcpp & disown
 		gtk-launch spotify
 EOF

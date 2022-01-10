@@ -86,6 +86,8 @@ call plug#end()
 " telescope-vimwiki + vimwiki, ltex-ls/grammar-gaurd, kevinhwang91/nvim-hlslens, petertriho/nvim-scrollbar, telescope-dict.nvim
 " checkout later after more development ray-x/navigator.lua
 
+" For when move to lua shift-d/mappy.nvim
+
 " Theme
 colorscheme nord
 
