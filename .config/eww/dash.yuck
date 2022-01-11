@@ -66,7 +66,11 @@
       )
       (box :orientation "h"
         (label :text {weather["today"]["short_text"]}))
-    )))
+      (box :orientation "h" :space-evenly false :halign "center"
+        (label :text "uv: ")
+        (label :text {weather["today"]["uv"]["start_time"]})
+        (label :text " - ")
+        (label :text {weather["today"]["uv"]["end_time"]})))))
 
 (deflisten artist :inital ""
   "mpc --format '%artist%' current")

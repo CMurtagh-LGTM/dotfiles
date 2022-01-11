@@ -1,6 +1,8 @@
 import json
 import sys
 
+import dateutil.parser
+
 from weather_api import WeatherApi
 
 loc = 'newcastle+nsw'
@@ -29,8 +31,13 @@ print("\"now\": ", end="")
 print(json.dumps(w.observations()), end="")
 print(", ", end="")
 
+forecast = w.forecasts_daily()[0]
+
+forecast["uv"]["start_time"] = dateutil.parser.isoparse(forecast["uv"]["start_time"]).astimezone().strftime("%I:%M%p")
+forecast["uv"]["end_time"] = dateutil.parser.isoparse(forecast["uv"]["end_time"]).astimezone().strftime("%I:%M%p")
+
 print("\"today\": ", end="")
-print(json.dumps(w.forecasts_daily()[0]), end="")
+print(json.dumps(forecast), end="")
 print("}")
 
 sys.stdout.flush()
