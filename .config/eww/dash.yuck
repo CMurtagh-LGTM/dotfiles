@@ -50,6 +50,7 @@
       (metric_red :label "" :value {temperature["nvme"]})
       (metric_red :label "度" :colour "red" :value {temperature["amdgpu"]}))))
 
+; TODO add interactable volume slider
 (defwidget sinks_widget []
   (box :class "float"
     (literal :content sinks)))
@@ -74,7 +75,7 @@
 (deflisten song :inital ""
   "mpc --format '%title%' current")
 (defpoll art :interval "1s" ; TODO make listen
-  "~/.config/eww/getSongArt.sh && ~/.config/eww/echoSongArt.sh")
+  "mpc albumart $(mpc --format %file% current) >| /tmp/eww/art && echo '/tmp/eww/art'")
 (defpoll player_status :interval "1s"
   "mpc status '%state%'")
 (defpoll song_percent :interval "1s"

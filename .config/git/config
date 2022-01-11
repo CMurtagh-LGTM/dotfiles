@@ -3,7 +3,7 @@
 	name = cameron
 
 [core]
-    pager = delta
+    pager = delta --paging never
     excludesfile = "~/.config/git/ignore"
 
 [delta]

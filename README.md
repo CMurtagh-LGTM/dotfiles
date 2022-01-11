@@ -35,7 +35,7 @@ Incomplete list
     - catfish mlocate
     - Thunar-media-tags-plugin
 - mopidy
-    - mopidy-mpd
+    - mopidy-mpd (my patch)
     - mopidy-spotify
 - mpd-notification
 - ncmpcc
@@ -163,7 +163,7 @@ media keys				| todo
     - rofi steam?
     - rofi spotify?
 - Add lock screen slock or xscreensaver
-- add volume to eww
+- add volume control slider to eww
 - comment and format script files
 - work out all the neovim binary dependencies
 - sort out vim autoclose brackets
