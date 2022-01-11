@@ -3,7 +3,7 @@
 	name = cameron
 
 [core]
-    pager = delta --paging never
+    pager = delta
     excludesfile = "~/.config/git/ignore"
 
 [delta]
@@ -17,5 +17,9 @@
 
 [interactive]
     diffFilter = delta --color-only
+
 [init]
-	defaultBranch = master
+    defaultBranch = master
+
+[pager]
+    diff = delta --paging never
