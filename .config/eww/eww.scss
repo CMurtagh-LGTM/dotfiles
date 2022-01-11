@@ -43,6 +43,11 @@ window {
 }
 
 /**** DASH ****/
+.music_info {
+    padding-left: 20px;
+    min-width: 300px;
+}
+
 .media_control {
     padding: 5px;
 }
@@ -97,6 +102,18 @@ window {
     min-width: 1px;
 }
 
+.song_progress {
+}
+
+.song_progress trough progress {
+    background-color: #88c0d0;
+    min-height: 5px;
+}
+
+.song_progress trough {
+    background-color: #2e3440;
+    min-height: 1px;
+}
 
 /**** BAR ****/
 
@@ -146,7 +163,7 @@ window {
 
 .volume_bar trough progress {
     background-color: #A3BE8C;
-    min-height: 3px;
+    min-height: 5px;
 }
 
 .volume_bar trough {

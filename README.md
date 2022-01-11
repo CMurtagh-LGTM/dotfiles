@@ -45,6 +45,7 @@ Incomplete list
 	- psutil
     - rich
     - fasteners
+    - iCalEvents
 - eww & sxkbd
     - mpc
     - pactl

@@ -32,9 +32,9 @@ print(json.dumps(w.observations()), end="")
 print(", ", end="")
 
 forecast = w.forecasts_daily()[0]
-
-forecast["uv"]["start_time"] = dateutil.parser.isoparse(forecast["uv"]["start_time"]).astimezone().strftime("%I:%M%p")
-forecast["uv"]["end_time"] = dateutil.parser.isoparse(forecast["uv"]["end_time"]).astimezone().strftime("%I:%M%p")
+if forecast["uv"]["start_time"] is not None and forecast["uv"]["end_time"] is not None:
+    forecast["uv"]["start_time"] = dateutil.parser.isoparse(forecast["uv"]["start_time"]).astimezone().strftime("%I:%M%p")
+    forecast["uv"]["end_time"] = dateutil.parser.isoparse(forecast["uv"]["end_time"]).astimezone().strftime("%I:%M%p")
 
 print("\"today\": ", end="")
 print(json.dumps(forecast), end="")

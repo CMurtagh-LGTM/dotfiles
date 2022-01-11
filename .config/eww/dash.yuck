@@ -1,14 +1,17 @@
 (defwidget music_widget []
   (box :orientation "h" :space-evenly false :class "float"
-      (image :image-width 160 :path art)
-      (box :orientation "v" :space-evenly false :valign "center" :halign "center"
-        (label :text artist :limit-width 25)
-        (label :text album :limit-width 25)
-        (label :text song :limit-width 25))
-    (box :orientation "h" :halign "end" :valign "center" :space-evenly false
-      (button :class "media_control" :onclick "mpc prev" "")
-      (button :class "media_control" :onclick "mpc toggle" {player_status == "playing" ? "❚❚" : "▶"})
-      (button :class "media_control" :onclick "mpc next" ""))))
+    (image :image-width 160 :path art)
+    (box :orientation "v" :space-evenly false :valign "center" :halign "center" :class "music_info"
+      (box :orientation "h" :space-evenly false :halign "center"
+        (box :orientation "v" :space-evenly false :valign "center" :halign "center"
+          (label :text artist :limit-width 20)
+          (label :text album :limit-width 20)
+          (label :text song :limit-width 20))
+        (box :orientation "h" :halign "end" :valign "center" :space-evenly false
+          (button :class "media_control" :onclick "mpc prev" "")
+          (button :class "media_control" :onclick "mpc toggle" {player_status == "playing" ? "❚❚" : "▶"})
+          (button :class "media_control" :onclick "mpc next" "")))
+      (progress :value song_percent :class "song_progress" :orientation "h"))))
 
 (defwidget audio_bar [variable index]
   (progress :value {variable[index]} :orientation "v" :class "cava_bar" :flipped true))
@@ -83,7 +86,7 @@
 (defpoll player_status :interval "1s"
   "mpc status '%state%'")
 (defpoll song_percent :interval "1s"
-  "mpc status '%percenttime%'")
+  "mpc status '%percenttime%' | sed 's/.$//' | sed 's/^.//'")
 
 (deflisten cava :inital "[0, 0, 0, 0, 0, 0, 0]"
   "python ~/.config/eww/cava.py")
