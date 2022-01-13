@@ -11,6 +11,17 @@ layouts = [
 
 layout_mode = "Tag"
 
+focus_behaviour = "Sloppy"
+focus_new_windows = true
+
+[[scratchpad]]
+name  = "Notes"
+value =  "alacritty -e vim"
+x = 670
+y = 280
+height = 500
+width = 630
+
 [[keybind]]
 command = "CloseWindow"
 modifier = ["modkey"]
@@ -20,6 +31,11 @@ key = "c"
 command = "ToggleFullScreen"
 modifier = ["modkey"]
 key = "f"
+
+[[keybind]]
+command = "ToggleSticky"
+modifier = ["modkey"]
+key = "s"
 
 [[keybind]]
 command = "SoftReload"

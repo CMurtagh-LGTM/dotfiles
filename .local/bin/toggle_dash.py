@@ -9,7 +9,7 @@ windows = (
     .split("\n")
 )[:-1]
 
-subprocess.run(["leftwm-command", "'ToggleScratchPad notes'"])
+subprocess.run("leftwm-command \"ToggleScratchPad Notes\"", shell=True)
 
 for window in windows:
     if "dash" in window:
@@ -17,3 +17,5 @@ for window in windows:
             subprocess.run(["eww", "close", window[1:]])
         else:
             subprocess.run(["eww", "open", window])
+
+# subprocess.run("leftwm-command ToggleSticky", shell=True)
