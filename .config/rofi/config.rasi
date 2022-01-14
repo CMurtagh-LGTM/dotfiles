@@ -1,5 +1,5 @@
 configuration {
-	modi: "drun";
+	modi: "drun,window";
 /*	width: 50;*/
 /*	lines: 15;*/
 	columns: 2;

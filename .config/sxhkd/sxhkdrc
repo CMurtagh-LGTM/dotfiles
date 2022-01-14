@@ -14,6 +14,10 @@ super + o
 super + p
 	rofi -show drun
 
+# program switcher
+super + k
+	rofi -show window
+
 # Web search
 # super + shift + k
 #	rofi -lines 5 -eh 3 -show search
