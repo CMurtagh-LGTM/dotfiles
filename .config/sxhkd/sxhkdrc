@@ -12,11 +12,11 @@ super + o
 
 # program launcher
 super + p
-	rofi -show drun
+	rofi -show drun -theme nord_icons
 
 # program switcher
 super + k
-	rofi -show window
+	rofi -show window -theme nord_icons
 
 # Web search
 # super + shift + k
