@@ -113,6 +113,7 @@ mod4+p					| open rofi drun
 mod4+o					| toggle eww dashboard
 mod4+i                  | rofi todo
 mod4+l                  | rofi pass
+mod4+alt+p              | rofi powermenu
 mod4+return     		| open Alacritty
 rightclick on desktop   | open pmenu
 
