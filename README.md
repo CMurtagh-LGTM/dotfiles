@@ -157,14 +157,17 @@ media keys				| todo
 
 ## TODO
 - images in neomutt
-- Make notes - possible scratchpad from left with neorg
+- Make notes - possible scratchpad from left with orgmode neovim
+    - Sync with iCalendar standard?
 - rofi modi
     - browser bookmarks
-    - browser seach ddgr, current one kinda sucks
+    - browser seach ddgr
     - rofi steam?
     - rofi spotify?
 - Add lock screen slock or xscreensaver
 - add volume control slider to eww
 - comment and format script files
 - work out all the neovim binary dependencies
-- sort out vim autoclose brackets
+- Add new neovim plugins
+- Alacritty config deep dive
+- Remove toggle gaps when leftwm 0.3.0 comes

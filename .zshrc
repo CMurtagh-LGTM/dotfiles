@@ -145,5 +145,9 @@ alias dotfile='/usr/bin/git --git-dir=$HOME/Documents/dotfiles/ --work-tree=$HOM
 # export R_ENVIRON_USER=$HOME/.config/R/environ
 alias R='R --no-save'
 
+autoload -U bashcompinit
+bashcompinit
+eval "$(register-python-argcomplete b)"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -133,4 +133,6 @@ button {
 button selected normal {
     border: 1px;
     border-color: @foreground;
+    background-color: @nord7;
+    text-color: @nord0;
 }
