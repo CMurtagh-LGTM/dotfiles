@@ -1,7 +1,5 @@
 * {
     /* Default background color */
-    background-color: transparent;
-    text-color:       white;
     nord0: #2e3440;
     nord1: #3b4252;
     nord2: #434c5e;
@@ -21,8 +19,9 @@
     nord13: #ebcb8b;
     nord14: #a3be8c;
     nord15: #b48ead;
-    
-    foreground:  @nord9;
+
+    text-color: @nord4;
+    foreground: @nord9;
     background-color: transparent;
     transparent: rgba(46,52,64,0);
     font: "Hack Nerd Font 12";
