@@ -35,12 +35,14 @@ Plug 'machakann/vim-highlightedyank'
 " CursorHold time changer
 Plug 'antoinemadec/FixCursorHold.nvim'
 
-" Dependency for telescope, git signs, neorg
+" Dependency for telescope, git signs
 Plug 'nvim-lua/plenary.nvim'
 
 " Finder 
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'nvim-telescope/telescope-bibtex.nvim'
+Plug 'nvim-telescope/telescope-file-browser.nvim'
 
 " Terminal
 Plug 'akinsho/toggleterm.nvim'
@@ -65,10 +67,6 @@ Plug 'folke/which-key.nvim'
 " Auto pairs
 Plug 'windwp/nvim-autopairs'
 
-" Neorg
-Plug 'vhyrro/neorg'
-Plug 'vhyrro/neorg-telescope'
-
 " Tex
 Plug 'lervag/vimtex'
 
@@ -84,6 +82,7 @@ call plug#end()
 
 " TODO Checkout nvim-dap (with telescope and coq_3p), goto-preview, telescope-lsp-handlers.nvim, nvim-code-action-menu, windline or heirline
 " telescope-vimwiki + vimwiki, ltex-ls/grammar-gaurd, kevinhwang91/nvim-hlslens, petertriho/nvim-scrollbar, telescope-dict.nvim
+" beauwilliams/focus.nvim
 " checkout later after more development ray-x/navigator.lua
 
 " For when move to lua shift-d/mappy.nvim
@@ -507,6 +506,7 @@ nnoremap <leader>f<space> <cmd>Telescope git_files<cr>
 nnoremap <leader>ff <cmd>Telescope file_browser<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fB <cmd>Telescope bibtex cite<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fT <cmd>Telescope tags<cr>
 nnoremap <leader>fm <cmd>lua require'telescope.builtin'.man_pages({sections={"2", "3", "3p", "4", "7"}})<cr>
@@ -534,12 +534,16 @@ require('telescope').setup{
       '--column',
       '--smart-case'
     },
+    prompt_prefix = "  ",
+    initial_mode = "insert",
     selection_strategy = "reset",
     use_less = false,
     set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil, 
   }
 }
 require('telescope').load_extension('fzy_native')
+require('telescope').load_extension('bibtex')
+require('telescope').load_extension('file_browser')
 EOF
 
 " Indent Blankline
@@ -603,53 +607,6 @@ inoremap  <cmd>WhichKey<cr>
 lua << EOF
 -- TODO configure
 require('gitsigns').setup()
-EOF
-
-" Neorg TODO work out how to use
-lua << EOF
-require('neorg').setup {
-    -- Tell Neorg what modules to load
-    load = {
-        ["core.defaults"] = {}, -- Load all the default modules
-        ["core.keybinds"] = { -- Configure core.keybinds
-            config = {
-                default_keybinds = true, -- Generate the default keybinds
-                neorg_leader = "<Leader>o" -- This is the default if unspecified
-            }
-        },
-        ["core.norg.concealer"] = { -- Allows for use of icons
-            config = {
-                icons = {
-                    todo = {
-                        enabled = true, -- Conceal todo items
-
-                        done = {
-                            enabled = true, -- Conceal whenever an item is marked as done
-                            icon = ""
-                        },
-                        pending = {
-                            enabled = true, -- Conceal whenever an item is marked as pending
-                            icon = ""
-                        },
-                        undone = {
-                            enabled = true, -- Conceal whenever an item is marked as undone
-                            icon = "×"
-                        }
-                    },
-                },
-            },
-        },
-        ["core.norg.dirman"] = { -- Manage your directories with Neorg
-            config = {
-                workspaces = {
-                    my_workspace = "~/Documents/neorg"
-                },
-                -- Automatically detect whenever we have entered a subdirectory of a workspace
-                autodetect = true,
-            }
-        }
-    },
-}
 EOF
 
 "Latex

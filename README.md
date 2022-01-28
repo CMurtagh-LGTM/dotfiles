@@ -64,7 +64,7 @@ Incomplete list
 - Universal ctags
 
 ### Neomutt
-- mutt-wizard (my patch)
+- mutt-wizard
 - links
 - notmuch
 - abook (todo)
