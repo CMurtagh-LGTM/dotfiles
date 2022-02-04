@@ -18,6 +18,10 @@ super + p
 super + k
 	rofi -show window -theme nord_icons
 
+# File manager
+super + e
+	thunar
+
 # Web search
 # super + shift + k
 #	rofi -lines 5 -eh 3 -show search
