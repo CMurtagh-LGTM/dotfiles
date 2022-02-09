@@ -3,6 +3,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'neovim/nvim-lspconfig'
 Plug 'kosayoda/nvim-lightbulb' " Code action
 Plug 'ray-x/lsp_signature.nvim' " Signature Highlight
+Plug 'brymer-meneses/grammar-guard.nvim' " Grammar in markdown
 
 " Autocomplete 
 Plug 'ms-jpq/coq_nvim', {'do' : ':COQdeps','branch': 'coq'}
@@ -81,8 +82,7 @@ Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
 " TODO Checkout nvim-dap (with telescope and coq_3p), goto-preview, telescope-lsp-handlers.nvim, nvim-code-action-menu, windline or heirline
-" telescope-vimwiki + vimwiki, ltex-ls/grammar-gaurd, kevinhwang91/nvim-hlslens, petertriho/nvim-scrollbar, telescope-dict.nvim
-" beauwilliams/focus.nvim
+" telescope-vimwiki + vimwiki, kevinhwang91/nvim-hlslens, petertriho/nvim-scrollbar, telescope-dict.nvim, beauwilliams/focus.nvim
 " checkout later after more development ray-x/navigator.lua
 
 " For when move to lua shift-d/mappy.nvim
@@ -187,7 +187,7 @@ parser_configs.norg = {
 }
 
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = {"python", "cpp", "latex", "lua", "r", "norg", "java", "gdscript", "godotResource"},
+    ensure_installed = {"python", "cpp", "latex", "lua", "r", "norg", "java", "gdscript", "godotResource", "markdown"},
     highlight = {
         enable = true,
     },
@@ -199,7 +199,7 @@ require'nvim-treesitter.configs'.setup {
     },
     refactor = {
         highlight_definitions = { enable = true },
-        -- highlight_current_scope = { enable = true }, TODO change to some other ui
+        -- highlight_current_scope = { enable = true }, -- TODO change to some other ui
         -- Maybe work out if treesitter has better rename/goto_definition
     },
     textobjects = {
@@ -319,8 +319,24 @@ else
 end
 
 -- R
+-- TODO work out why its not working for rmd
 nvim_lsp.r_language_server.setup(coq.lsp_ensure_capabilities{
     on_attach = on_attach,
+})
+
+-- Grammar
+require("grammar-guard").init()
+nvim_lsp.grammar_guard.setup(coq.lsp_ensure_capabilities{
+  cmd = { '/usr/bin/ltex-ls' }, -- add this if you install ltex-ls yourself
+	settings = {
+		ltex = {
+            enabled = {'bibtex', 'html', 'latex', 'markdown', 'org', 'restructuredtext', 'rsweave', 'rmd'},
+			language = "en",
+			dictionary = {},
+			disabledRules = {},
+			hiddenFalsePositives = {},
+		},
+	},
 })
 
 -- Vimscript
@@ -333,11 +349,6 @@ nvim_lsp.gdscript.setup(coq.lsp_ensure_capabilities{
     on_attach = on_attach,
 })
 
--- LaTeX -- TODO configure formatting
---nvim_lsp.texlab.setup(coq.lsp_ensure_capabilities{
---    on_attach = on_attach,
---})
-
 -- Java :vomit:
 nvim_lsp.jdtls.setup(coq.lsp_ensure_capabilities{
     on_attach = on_attach,
@@ -348,10 +359,10 @@ nvim_lsp.jdtls.setup(coq.lsp_ensure_capabilities{
 EOF
 
 " TODO make toggle able
-augroup before_save
-    au!
+" augroup before_save
+    " au!
     " autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
-augroup END
+" augroup END
 
 " Code action lightbulb
 let g:cursorhold_updatetime = 500
@@ -397,7 +408,6 @@ nnoremap <leader>[ :BufferLineCyclePrev<CR>
 nnoremap <leader>b <cmd>exe "BufferLineGoToBuffer " . v:count1<cr>
 nnoremap <leader>d <cmd>exe "Bdel " . v:count1<cr>
 
-" lualine TODO copy vieb colours for modes
 lua << EOF
 require('lualine').setup {
     options = {

@@ -22,6 +22,10 @@ super + k
 super + e
 	thunar
 
+# Process viewer
+super + t
+	alacritty -e htop
+
 # Web search
 # super + shift + k
 #	rofi -lines 5 -eh 3 -show search
