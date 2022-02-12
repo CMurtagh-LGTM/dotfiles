@@ -63,6 +63,8 @@ Incomplete list
 - fzy
 - Universal ctags
 - bc
+- dictd
+- pearl
 
 ### Neomutt
 - mutt-wizard

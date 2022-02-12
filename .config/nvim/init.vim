@@ -44,6 +44,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope-bibtex.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
+Plug 'rudism/telescope-dict.nvim' 
 
 " Terminal
 Plug 'akinsho/toggleterm.nvim'
@@ -85,7 +86,7 @@ Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
 " TODO Checkout nvim-dap (with telescope and coq_3p), goto-preview, telescope-lsp-handlers.nvim, nvim-code-action-menu, windline or heirline
-" telescope-vimwiki + vimwiki, petertriho/nvim-scrollbar, telescope-dict.nvim, beauwilliams/focus.nvim
+" telescope-vimwiki + vimwiki, petertriho/nvim-scrollbar, beauwilliams/focus.nvim
 " checkout later after more development ray-x/navigator.lua
 
 " For when move to lua shift-d/mappy.nvim, Olical/aniseed
@@ -112,6 +113,8 @@ set colorcolumn=120
 set hidden
 " Allow mouse clicks
 set mouse=a
+" Use smartcase in searching
+set smartcase
 
 " Some easy mappings
 nnoremap Y y$
@@ -536,6 +539,8 @@ nnoremap <leader>fD <cmd>Telescope lsp_document_diagnostics<cr>
 nnoremap <leader>ft <cmd>Telescope treesitter<cr>
 nnoremap <leader>f<leader> <cmd>Telescope builtin<cr>
 nnoremap <leader>fp <cmd>Telescope planets<cr>
+" TODO make dictionary searchable as well as synonyms
+nnoremap <leader>fz <cmd>lua require('telescope').extensions.dict.synonyms()<cr>
 
 lua << EOF
 require('telescope').setup{
