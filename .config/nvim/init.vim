@@ -69,8 +69,11 @@ Plug 'folke/which-key.nvim'
 " Auto pairs
 Plug 'windwp/nvim-autopairs'
 
-" Virtual text on search
+" Virtual text on search, required by scrollbar
 Plug 'kevinhwang91/nvim-hlslens'
+
+" Scrollbar
+Plug 'petertriho/nvim-scrollbar'
 
 " Tex
 Plug 'lervag/vimtex'
@@ -85,8 +88,8 @@ Plug 'elkowar/yuck.vim'
 Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
-" TODO Checkout nvim-dap (with telescope and coq_3p), goto-preview, telescope-lsp-handlers.nvim, nvim-code-action-menu, windline or heirline
-" telescope-vimwiki + vimwiki, petertriho/nvim-scrollbar, beauwilliams/focus.nvim
+" TODO Checkout nvim-dap (with telescope and coq_3p), goto-preview, telescope-lsp-handlers.nvim, nvim-code-action-menu,
+" windline or heirline, telescope-vimwiki + vimwiki, beauwilliams/focus.nvim
 " checkout later after more development ray-x/navigator.lua
 
 " For when move to lua shift-d/mappy.nvim, Olical/aniseed
@@ -650,6 +653,31 @@ noremap # #<cmd>lua require('hlslens').start()<cr>
 noremap g* g*<cmd>lua require('hlslens').start()<cr>
 noremap g# g#<cmd>lua require('hlslens').start()<cr>
 noremap <leader>h :nohlsearch<cr>
+
+" Scrollbar TODO come back when more developed
+lua << EOF
+local nord = require("nord.colors")
+require("scrollbar").setup{
+    show = true,
+    handle = {
+        text = " ",
+        color = nord.nord1_gui,
+        hide_if_all_visible = true, -- Hides handle if all lines are visible
+    },
+    marks = {
+        Search = { text = { "-", "=" }, priority = 0, color = nord.nord8_gui },
+        Error = { text = { "-", "=" }, priority = 1, color = nord.nord11_gui },
+        Warn = { text = { "-", "=" }, priority = 2, color = nord.nord12_gui },
+        Info = { text = { "-", "=" }, priority = 3, color = nord.nord13_gui },
+        Hint = { text = { "-", "=" }, priority = 4, color = nord.nord14_gui },
+        Misc = { text = { "-", "=" }, priority = 5, color = nord.nord15_gui },
+    },
+    handlers = {
+        diagnostic = true,
+        search = true,
+    },
+}
+EOF
 
 "Latex
 let g:vimtex_view_general_viewer = 'zathura'
