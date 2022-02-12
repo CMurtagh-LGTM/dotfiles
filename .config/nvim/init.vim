@@ -68,6 +68,9 @@ Plug 'folke/which-key.nvim'
 " Auto pairs
 Plug 'windwp/nvim-autopairs'
 
+" Virtual text on search
+Plug 'kevinhwang91/nvim-hlslens'
+
 " Tex
 Plug 'lervag/vimtex'
 
@@ -82,10 +85,10 @@ Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
 " TODO Checkout nvim-dap (with telescope and coq_3p), goto-preview, telescope-lsp-handlers.nvim, nvim-code-action-menu, windline or heirline
-" telescope-vimwiki + vimwiki, kevinhwang91/nvim-hlslens, petertriho/nvim-scrollbar, telescope-dict.nvim, beauwilliams/focus.nvim
+" telescope-vimwiki + vimwiki, petertriho/nvim-scrollbar, telescope-dict.nvim, beauwilliams/focus.nvim
 " checkout later after more development ray-x/navigator.lua
 
-" For when move to lua shift-d/mappy.nvim
+" For when move to lua shift-d/mappy.nvim, Olical/aniseed
 
 " Theme
 colorscheme nord
@@ -227,8 +230,8 @@ local on_attach = function(client, bufnr)
     -- TODO work out incomming-outgoing calls
     -- Code lens?
     --buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-    buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-    buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+    buf_set_keymap('n', '<c-k>', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+    buf_set_keymap('n', '<leader><leader>k', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
     buf_set_keymap('n', '<leader><leader>c', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
     buf_set_keymap('n', '<leader><leader>d', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
     buf_set_keymap('n', '<leader><leader>n', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
@@ -631,6 +634,17 @@ lua << EOF
 -- TODO configure
 require('gitsigns').setup()
 EOF
+
+" hlslens
+noremap <silent> n <cmd>execute('normal! ' . v:count1 . 'n')<cr>
+            \<cmd>lua require('hlslens').start()<cr>
+noremap <silent> N <cmd>execute('normal! ' . v:count1 . 'N')<cr>
+            \<cmd>lua require('hlslens').start()<cr>
+noremap * *<cmd>lua require('hlslens').start()<cr>
+noremap # #<cmd>lua require('hlslens').start()<cr>
+noremap g* g*<cmd>lua require('hlslens').start()<cr>
+noremap g# g#<cmd>lua require('hlslens').start()<cr>
+noremap <leader>h :nohlsearch<cr>
 
 "Latex
 let g:vimtex_view_general_viewer = 'zathura'
