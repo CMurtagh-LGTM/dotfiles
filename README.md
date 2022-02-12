@@ -62,6 +62,7 @@ Incomplete list
 ### Neovim
 - fzy
 - Universal ctags
+- bc
 
 ### Neomutt
 - mutt-wizard

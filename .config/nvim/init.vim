@@ -8,7 +8,7 @@ Plug 'brymer-meneses/grammar-guard.nvim' " Grammar in markdown
 " Autocomplete 
 Plug 'ms-jpq/coq_nvim', {'do' : ':COQdeps','branch': 'coq'}
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
-Plug 'ms-jpq/coq.thirdparty'
+Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 
 " Syntax
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -25,7 +25,7 @@ Plug 'hoob3rt/lualine.nvim'
 Plug 'akinsho/bufferline.nvim'
 
 " Comments
-Plug 'b3nj5m1n/kommentary'
+Plug 'numToStr/Comment.nvim'
 
 " Tag manager
 Plug 'ludovicchabant/vim-gutentags'
@@ -119,8 +119,7 @@ nnoremap q: <nop>
 nnoremap Q <nop>
 
 " Coq
-autocmd VimEnter * COQnow --shut-up
-let g:coq_settings = { "keymap.recommended": v:false, "keymap.jump_to_mark": "<C-a>" }
+let g:coq_settings = { "keymap.recommended": v:false, "keymap.jump_to_mark": "<C-a>", "auto_start": "shut-up" }
 ino <silent><expr> <Esc>   pumvisible() ? "\<C-e><Esc>" : "\<Esc>"
 ino <silent><expr> <C-c>   pumvisible() ? "\<C-e><C-c>" : "\<C-c>"
 ino <silent><expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -129,7 +128,9 @@ ino <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<BS>"
 lua << EOF
 -- TODO check other modules
 require("coq_3p") {
-  { src = "vimtex", short_name = "vTEX" },
+    { src = "nvimlua", short_name = "nLUA", conf_only = true },
+    { src = "vimtex", short_name = "vTEX" },
+    { src = "bc", short_name = "MATH", precision = 6 },
 }
 EOF
 
@@ -187,7 +188,7 @@ parser_configs.norg = {
 }
 
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = {"python", "cpp", "latex", "lua", "r", "norg", "java", "gdscript", "godotResource", "markdown"},
+    ensure_installed = {"python", "cpp", "latex", "lua", "r", "vim", "java", "gdscript", "godotResource", "markdown"},
     highlight = {
         enable = true,
     },
@@ -472,6 +473,7 @@ EOF
 " UndoTree
 " Put it on the right
 let g:undotree_WindowLayout = 3
+nnoremap <leader>u <cmd>UndotreeToggle<cr>
 
 " Wilder
 call wilder#setup({'modes': [':', '/', '?']})
@@ -579,13 +581,24 @@ require("toggleterm").setup{
 }
 EOF
 
-" kommentary
+" Comment
 lua << EOF
-require('kommentary.config').use_extended_mappings()
-require('kommentary.config').configure_language("default", {
-    prefer_single_line_comments = true,
-    use_consistent_indentation = true,
-})
+require('Comment').setup{
+    ignore = "^$",
+    toggler = {
+        line = "<leader>cc",
+        block = "<leader>cb",
+    },
+    opleader = {
+        line = "<leader>cz",
+        block = "<leader>cx",
+    },
+    mappings = {
+        basic = true,
+        extra = false,
+        extended = false,
+    },
+}
 EOF
 
 " gutentags
