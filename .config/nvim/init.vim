@@ -30,9 +30,6 @@ Plug 'numToStr/Comment.nvim'
 " Tag manager
 Plug 'ludovicchabant/vim-gutentags'
 
-" Highlight copy
-Plug 'machakann/vim-highlightedyank'
-
 " CursorHold time changer
 Plug 'antoinemadec/FixCursorHold.nvim'
 
@@ -63,7 +60,7 @@ Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 " Intent markers
 Plug 'lukas-reineke/indent-blankline.nvim'
 
-" Key shortcut explainer
+" Keymap explainer
 Plug 'folke/which-key.nvim'
 
 " Auto pairs
@@ -89,7 +86,7 @@ Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
 " TODO Checkout nvim-dap (with telescope and coq_3p), goto-preview, telescope-lsp-handlers.nvim, nvim-code-action-menu,
-" windline or heirline, telescope-vimwiki + vimwiki, beauwilliams/focus.nvim
+" windline or heirline, telescope-vimwiki + vimwiki, beauwilliams/focus.nvim, nvim-colorozer.lua
 " checkout later after more development ray-x/navigator.lua
 
 " For when move to lua shift-d/mappy.nvim, Olical/aniseed
@@ -126,6 +123,9 @@ inoremap <c-z> <Esc>[s1z=``a
 " something is causing q: not to be <nop>
 nnoremap q: <nop>
 nnoremap Q <nop>
+
+" Highlight yank
+au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=true}
 
 " Coq
 let g:coq_settings = { "keymap.recommended": v:false, "keymap.jump_to_mark": "<C-a>", "auto_start": "shut-up" }
@@ -624,15 +624,19 @@ let g:gutentags_file_list_command = {
 " Which Key
 set timeoutlen=250
 lua << EOF
-require("which-key").setup {
+require("which-key").setup{
     plugins = {
         spelling = {
             enabled = true,
-            suggestions = 20
-        }
+            suggestions = 20,
+        },
     },
 }
 -- TODO document mappings
+require("which-key").register({
+    ["<leader>"] = {
+    },
+})
 EOF
 nnoremap  <cmd>WhichKey<cr>
 inoremap  <cmd>WhichKey<cr>
