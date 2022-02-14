@@ -365,7 +365,6 @@ nvim_lsp.jdtls.setup(coq.lsp_ensure_capabilities{
     cmd = {"jdtls"},
 })
 
--- ltex-ls wait for upstream
 EOF
 
 " TODO make toggle able
@@ -393,8 +392,6 @@ bufferline.setup {
     numbers = function(opts)
         return string.format('%s', opts.ordinal)
     end,
-    show_buffer_close_icons = false,
-    show_close_icon =  false,
   }
 }
 
