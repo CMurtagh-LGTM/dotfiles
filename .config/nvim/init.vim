@@ -43,6 +43,9 @@ Plug 'nvim-telescope/telescope-bibtex.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'rudism/telescope-dict.nvim' 
 
+" Comment generator
+Plug 'danymat/neogen'
+
 " Terminal
 Plug 'akinsho/toggleterm.nvim'
 
@@ -86,7 +89,7 @@ Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
 " TODO Checkout nvim-dap (with telescope and coq_3p), goto-preview, telescope-lsp-handlers.nvim, nvim-code-action-menu,
-" windline or heirline, telescope-vimwiki + vimwiki, beauwilliams/focus.nvim, nvim-colorozer.lua
+" windline or heirline or feline, telescope-vimwiki + vimwiki, beauwilliams/focus.nvim, nvim-colorozer.lua
 " checkout later after more development ray-x/navigator.lua
 
 " For when move to lua shift-d/mappy.nvim, Olical/aniseed
@@ -127,12 +130,40 @@ nnoremap Q <nop>
 " Highlight yank
 au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=true}
 
+" Which Key
+set timeoutlen=250
+lua << EOF
+require("which-key").setup{
+    plugins = {
+        spelling = {
+            enabled = true,
+            suggestions = 20,
+        },
+    },
+}
+-- TODO document mappings
+require("which-key").register({
+    ["<leader>"] = {
+    },
+})
+EOF
+nnoremap  <cmd>WhichKey<cr>
+inoremap  <cmd>WhichKey<cr>
+
+" Git Signs
+lua << EOF
+-- TODO configure
+require('gitsigns').setup()
+EOF
+
 " Coq
-let g:coq_settings = { "keymap.recommended": v:false, "keymap.jump_to_mark": "<C-a>", "auto_start": "shut-up" }
+let g:coq_settings = { "keymap.recommended": v:false, "keymap.jump_to_mark": "", "auto_start": "shut-up" }
 ino <silent><expr> <Esc>   pumvisible() ? "\<C-e><Esc>" : "\<Esc>"
 ino <silent><expr> <C-c>   pumvisible() ? "\<C-e><C-c>" : "\<C-c>"
 ino <silent><expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 ino <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<BS>"
+inoremap <C-H> <cmd>lua if require("neogen").jumpable() then require("neogen").jump_next() else COQ.Nav_mark() end<cr>
+nnoremap <C-H> <cmd>lua if require("neogen").jumpable() then require("neogen").jump_next() else COQ.Nav_mark() end<cr>
 
 lua << EOF
 -- TODO check other modules
@@ -144,7 +175,7 @@ require("coq_3p") {
 EOF
 
 " Tree sitter, autopairs and lsp
-lua <<EOF
+lua << EOF
 local npairs = require("nvim-autopairs") 
 local nvim_lsp = require('lspconfig')
 local coq = require('coq')
@@ -197,7 +228,7 @@ parser_configs.norg = {
 }
 
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = {"python", "cpp", "latex", "lua", "r", "vim", "java", "gdscript", "godotResource", "markdown"},
+    ensure_installed = {"python", "cpp", "latex", "lua", "r", "vim", "java", "gdscript", "godot_resource", "markdown"},
     highlight = {
         enable = true,
     },
@@ -214,15 +245,15 @@ require'nvim-treesitter.configs'.setup {
     },
     textobjects = {
         -- TODO look at the other options
-        swap = {
-            enable = true,
-            swap_next = {
-                ["<leader>a"] = "@parameter.inner",
-            },
-            swap_previous = {
-                ["<leader>A"] = "@parameter.inner",
-            },
-        },
+        -- swap = {
+        --     enable = true,
+        --     swap_next = {
+        --         ["<leader>a"] = "@parameter.inner",
+        --     },
+        --     swap_previous = {
+        --         ["<leader>A"] = "@parameter.inner",
+        --     },
+        -- },
     },
 }
 
@@ -566,6 +597,16 @@ require('telescope').load_extension('bibtex')
 require('telescope').load_extension('file_browser')
 EOF
 
+" Neogen
+lua << EOF
+require('neogen').setup()
+require("which-key").register({
+    ["<leader>"] = {
+        a = {"<cmd>Neogen<cr>", "Generate annotation"}
+    },
+})
+EOF
+
 " Indent Blankline
 lua << EOF
 require("indent_blankline").setup {
@@ -617,32 +658,6 @@ let g:gutentags_file_list_command = {
         \ '.enable_tags' : 'find . -type f',
         \ },
     \ }
-
-" Which Key
-set timeoutlen=250
-lua << EOF
-require("which-key").setup{
-    plugins = {
-        spelling = {
-            enabled = true,
-            suggestions = 20,
-        },
-    },
-}
--- TODO document mappings
-require("which-key").register({
-    ["<leader>"] = {
-    },
-})
-EOF
-nnoremap  <cmd>WhichKey<cr>
-inoremap  <cmd>WhichKey<cr>
-
-" Git Signs
-lua << EOF
--- TODO configure
-require('gitsigns').setup()
-EOF
 
 " hlslens
 noremap <silent> n <cmd>execute('normal! ' . v:count1 . 'n')<cr>
