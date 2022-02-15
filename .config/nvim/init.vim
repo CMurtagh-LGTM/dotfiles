@@ -33,7 +33,7 @@ Plug 'ludovicchabant/vim-gutentags'
 " CursorHold time changer
 Plug 'antoinemadec/FixCursorHold.nvim'
 
-" Dependency for telescope, git signs
+" Dependency for telescope, git signs, yode
 Plug 'nvim-lua/plenary.nvim'
 
 " Finder 
@@ -74,6 +74,9 @@ Plug 'kevinhwang91/nvim-hlslens'
 
 " Scrollbar
 Plug 'petertriho/nvim-scrollbar'
+
+" Floating text windows
+Plug 'hoschi/yode-nvim'
 
 " Tex
 Plug 'lervag/vimtex'
@@ -694,6 +697,20 @@ require("scrollbar").setup{
     },
 }
 EOF
+
+" Yode
+lua require('yode-nvim').setup({})
+map <Leader>yc      :YodeCreateSeditorFloating<CR>
+map <Leader>yr :YodeCreateSeditorReplace<CR>
+nmap <Leader>yd :YodeBufferDelete<cr>
+imap <Leader>yd <esc>:YodeBufferDelete<cr>
+" these commands fall back to overwritten keys when cursor is in split window
+map <C-W>r :YodeLayoutShiftWinDown<CR>
+map <C-W>R :YodeLayoutShiftWinUp<CR>
+map <C-W>J :YodeLayoutShiftWinBottom<CR>
+map <C-W>K :YodeLayoutShiftWinTop<CR>
+" at the moment this is needed to have no gap for floating windows
+" set showtabline=2
 
 "Latex
 let g:vimtex_view_general_viewer = 'zathura'
