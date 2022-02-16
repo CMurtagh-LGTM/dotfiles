@@ -84,6 +84,9 @@ Plug 'goolord/alpha-nvim'
 " Search and replace in workspace
 Plug 'windwp/nvim-spectre'
 
+" Virtual text on close brackets
+Plug 'haringsrob/nvim_context_vt'
+
 " Tex
 Plug 'lervag/vimtex'
 
