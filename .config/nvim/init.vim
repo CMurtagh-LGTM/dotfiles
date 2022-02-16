@@ -78,6 +78,9 @@ Plug 'petertriho/nvim-scrollbar'
 " Floating text windows
 Plug 'hoschi/yode-nvim'
 
+" Startup Screen
+Plug 'goolord/alpha-nvim'
+
 " Tex
 Plug 'lervag/vimtex'
 
@@ -613,7 +616,7 @@ EOF
 " Indent Blankline
 lua << EOF
 require("indent_blankline").setup {
-    buftype_exclude = {"terminal"},
+    buftype_exclude = {"terminal", "nofile"},
     show_current_context = true,
 }
 EOF
@@ -711,6 +714,42 @@ map <C-W>J :YodeLayoutShiftWinBottom<CR>
 map <C-W>K :YodeLayoutShiftWinTop<CR>
 " at the moment this is needed to have no gap for floating windows
 " set showtabline=2
+
+" alpha-nvim
+lua << EOF
+local alpha = require("alpha")
+local dashboard = require("alpha.themes.dashboard")
+
+-- Set header
+dashboard.section.header.val = {
+    "                                                     ",
+    "  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
+    "  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
+    "  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ",
+    "  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
+    "  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
+    "  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
+    "                                                     ",
+}
+
+-- Set menu
+dashboard.section.buttons.val = {
+    dashboard.button( "e", "  > New file" , "<cmd>ene <bar> startinsert <cr>"),
+    dashboard.button( "f", "  > Find file", "<cmd>Telescope find_files<cr>"),
+	dashboard.button("t", "  > Find text", "<cmd>Telescope live_grep <cr>"),
+    dashboard.button( "r", "  > Recent"   , "<cmd>Telescope oldfiles<cr>"),
+    dashboard.button("p", "  > Update plugins", "<cmd>PlugUpgrade<bar>PlugUpdate<cr>"),
+    dashboard.button( "q", "  > Quit NVIM", "<cmd>qa<cr>"),
+}
+
+-- Send config to alpha
+alpha.setup(dashboard.opts)
+
+-- Disable folding on alpha buffer
+vim.cmd([[
+    autocmd FileType alpha setlocal nofoldenable
+]])
+EOF
 
 "Latex
 let g:vimtex_view_general_viewer = 'zathura'
