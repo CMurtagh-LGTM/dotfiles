@@ -33,7 +33,7 @@ Plug 'ludovicchabant/vim-gutentags'
 " CursorHold time changer
 Plug 'antoinemadec/FixCursorHold.nvim'
 
-" Dependency for telescope, git signs, yode
+" Dependency for telescope, git signs, yode, spectre
 Plug 'nvim-lua/plenary.nvim'
 
 " Finder 
@@ -80,6 +80,9 @@ Plug 'hoschi/yode-nvim'
 
 " Startup Screen
 Plug 'goolord/alpha-nvim'
+
+" Search and replace in workspace
+Plug 'windwp/nvim-spectre'
 
 " Tex
 Plug 'lervag/vimtex'
@@ -751,7 +754,14 @@ vim.cmd([[
 ]])
 EOF
 
-"Latex
+" Spectre
+nnoremap <leader>s <cmd>lua require('spectre').open()<cr>
+vnoremap <leader>s <cmd>lua require('spectre').open_visual()<CR>
+lua << EOF
+require('spectre').setup()
+EOF
+
+" Latex
 let g:vimtex_view_general_viewer = 'zathura'
 
 " R
