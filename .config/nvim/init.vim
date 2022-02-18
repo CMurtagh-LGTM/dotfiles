@@ -87,6 +87,12 @@ Plug 'windwp/nvim-spectre'
 " Virtual text on close brackets
 Plug 'haringsrob/nvim_context_vt'
 
+" See lsp progress
+Plug 'j-hui/fidget.nvim'
+
+" Display colours
+Plug 'norcalli/nvim-colorizer.lua'
+
 " Tex
 Plug 'lervag/vimtex'
 
@@ -763,6 +769,14 @@ vnoremap <leader>s <cmd>lua require('spectre').open_visual()<CR>
 lua << EOF
 require('spectre').setup()
 EOF
+
+" Figet
+lua << EOF
+require"fidget".setup{}
+EOF
+
+" Colourizer
+lua require'colorizer'.setup()
 
 " Latex
 let g:vimtex_view_general_viewer = 'zathura'
