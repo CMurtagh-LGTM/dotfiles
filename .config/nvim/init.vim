@@ -146,7 +146,10 @@ nnoremap q: <nop>
 nnoremap Q <nop>
 
 " Highlight yank
-au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=true}
+augroup highlight_yank
+autocmd!
+au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=500, on_visual=true}
+augroup END
 
 " Which Key
 set timeoutlen=250
