@@ -177,3 +177,4 @@ media keys				| todo
 - Add new neovim plugins
 - Alacritty config deep dive
 - Remove toggle gaps when leftwm 0.3.0 comes
+- checkout yadm https://github.com/TheLocehiliosan/yadm

@@ -109,7 +109,7 @@ call plug#end()
 " windline or heirline or feline, telescope-vimwiki + vimwiki, beauwilliams/focus.nvim
 " checkout later after more development ray-x/navigator.lua
 
-" For when move to lua shift-d/mappy.nvim, Olical/aniseed
+" For when move to lua shift-d/mappy.nvim, Olical/aniseed, https://github.com/nanotee/nvim-lua-guide
 
 " Theme
 colorscheme nord
@@ -172,8 +172,10 @@ inoremap  <cmd>WhichKey<cr>
 
 " Git Signs
 lua << EOF
--- TODO configure
-require('gitsigns').setup()
+require('gitsigns').setup{
+    signcolumn = false,
+    numhl = true,
+}
 EOF
 
 " Coq
