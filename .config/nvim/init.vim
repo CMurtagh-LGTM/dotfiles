@@ -175,6 +175,29 @@ lua << EOF
 require('gitsigns').setup{
     signcolumn = false,
     numhl = true,
+    on_attach = function(bufnr)
+        local function map(mode, lhs, rhs, opts)
+            opts = vim.tbl_extend('force', {noremap = true, silent = true}, opts or {})
+            vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts)
+        end
+
+        -- Navigation
+        map('n', '<leader>}', '<cmd>Gitsigns next_hunk<CR>')
+        map('n', '<leader>{', '<cmd>Gitsigns prev_hunk<CR>')
+
+        -- Actions
+        map('n', '<leader>Gs', '<cmd>Gitsigns stage_hunk<CR>')
+        map('v', '<leader>Gs', '<cmd>Gitsigns stage_hunk<CR>')
+        map('n', '<leader>Gr', '<cmd>Gitsigns reset_hunk<CR>')
+        map('v', '<leader>Gr', '<cmd>Gitsigns reset_hunk<CR>')
+        map('n', '<leader>GS', '<cmd>Gitsigns stage_buffer<CR>')
+        map('n', '<leader>Gu', '<cmd>Gitsigns undo_stage_hunk<CR>')
+        map('n', '<leader>GR', '<cmd>Gitsigns reset_buffer<CR>')
+        map('n', '<leader>Gp', '<cmd>Gitsigns preview_hunk<CR>')
+        map('n', '<leader>Gd', '<cmd>Gitsigns diffthis<CR>')
+        map('n', '<leader>GD', '<cmd>lua require"gitsigns".diffthis("~")<CR>')
+        map('n', '<leader>Gt', '<cmd>Gitsigns toggle_deleted<CR>')
+    end
 }
 EOF
 
@@ -649,7 +672,6 @@ require("indent_blankline").setup {
 }
 EOF
 
-" Toggleterm TODO more advanced config
 lua << EOF
 require("toggleterm").setup{
   -- size can be a number or function which is passed the current terminal
