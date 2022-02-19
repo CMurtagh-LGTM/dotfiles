@@ -65,6 +65,8 @@ Incomplete list
 - bc
 - dictd
 - pearl
+- lazygit
+- github-cli
 
 ### Neomutt
 - mutt-wizard

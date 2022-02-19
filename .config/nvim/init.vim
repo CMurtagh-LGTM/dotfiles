@@ -41,6 +41,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope-bibtex.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
+Plug 'nvim-telescope/telescope-github.nvim'
 Plug 'rudism/telescope-dict.nvim' 
 
 " Comment generator
@@ -51,8 +52,6 @@ Plug 'akinsho/toggleterm.nvim'
 
 " Git
 Plug 'lewis6991/gitsigns.nvim'
-" TODO think about how to integrate git,
-" ideas, telescope-github, git fututive, neogit, git-messenger, diffview, lazygit.nvim. gihhub-notifications.nvim
 
 " Undo tree
 Plug 'mbbill/undotree'
@@ -107,7 +106,7 @@ Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
 " TODO Checkout nvim-dap (with telescope and coq_3p), goto-preview, telescope-lsp-handlers.nvim, nvim-code-action-menu,
-" windline or heirline or feline, telescope-vimwiki + vimwiki, beauwilliams/focus.nvim, nvim-colorozer.lua
+" windline or heirline or feline, telescope-vimwiki + vimwiki, beauwilliams/focus.nvim
 " checkout later after more development ray-x/navigator.lua
 
 " For when move to lua shift-d/mappy.nvim, Olical/aniseed
@@ -575,22 +574,33 @@ call wilder#set_option('renderer', wilder#popupmenu_renderer({
 nnoremap <leader>f<space> <cmd>Telescope git_files<cr>
 nnoremap <leader>ff <cmd>Telescope file_browser<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fo <cmd>Telescope oldfiles<cr>
+
+nnoremap <leader>flr <cmd>Telescope lsp_references<cr>
+nnoremap <leader>fli <cmd>Telescope lsp_implementations<cr>
+nnoremap <leader>fld <cmd>Telescope lsp_definitions<cr>
+nnoremap <leader>flc <cmd>Telescope lsp_code_actions<cr>
+nnoremap <leader>fls <cmd>Telescope lsp_document_symbols<cr>
+nnoremap <leader>flw <cmd>Telescope lsp_workspace_symbols<cr>
+nnoremap <leader>flp <cmd>Telescope diagnostics<cr>
+
 nnoremap <leader>fB <cmd>Telescope bibtex cite<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-nnoremap <leader>fT <cmd>Telescope tags<cr>
 nnoremap <leader>fm <cmd>lua require'telescope.builtin'.man_pages({sections={"2", "3", "3p", "4", "7"}})<cr>
 nnoremap <leader>fq <cmd>Telescope quickfix<cr>
-nnoremap <leader>fr <cmd>Telescope lsp_references<cr>
-nnoremap <leader>fi <cmd>Telescope lsp_implementations<cr>
-nnoremap <leader>fd <cmd>Telescope lsp_definitions<cr>
-nnoremap <leader>fc <cmd>Telescope lsp_code_actions<cr>
-nnoremap <leader>fs <cmd>Telescope lsp_document_symbols<cr>
-nnoremap <leader>fw <cmd>Telescope lsp_workspace_symbols<cr>
-nnoremap <leader>fD <cmd>Telescope lsp_document_diagnostics<cr>
+
+nnoremap <leader>fT <cmd>Telescope tags<cr>
 nnoremap <leader>ft <cmd>Telescope treesitter<cr>
+
 nnoremap <leader>f<leader> <cmd>Telescope builtin<cr>
 nnoremap <leader>fp <cmd>Telescope planets<cr>
+
+nnoremap <leader>fg <cmd>Telescope git_status<cr>
+nnoremap <leader>fGi <cmd>Telescope gh issues<cr>
+nnoremap <leader>fGp <cmd>Telescope gh pull_request<cr>
+nnoremap <leader>fGg <cmd>Telescope gh gist<cr>
+nnoremap <leader>fGr <cmd>Telescope gh run<cr>
+
 " TODO make dictionary searchable as well as synonyms
 nnoremap <leader>fz <cmd>lua require('telescope').extensions.dict.synonyms()<cr>
 
@@ -616,6 +626,7 @@ require('telescope').setup{
 require('telescope').load_extension('fzy_native')
 require('telescope').load_extension('bibtex')
 require('telescope').load_extension('file_browser')
+require('telescope').load_extension('gh')
 EOF
 
 " Neogen
@@ -641,15 +652,34 @@ lua << EOF
 require("toggleterm").setup{
   -- size can be a number or function which is passed the current terminal
   open_mapping = [[<leader>t]],
-  insert_mappings = false,
+  insert_mappings = true,
   hide_numbers = true, -- hide the number column in toggleterm buffers
-  shade_terminals = true,
   start_in_insert = true,
-  direction = 'float',
+  shade_terminals = false,
   close_on_exit = true, -- close the terminal window when the process exits
   shell = vim.o.shell, -- change the default shell
 }
+
+local Terminal  = require('toggleterm.terminal').Terminal
+local lazygit = Terminal:new({ cmd = "lazygit", direction = "float", hidden = true })
+
+function _lazygit_toggle()
+  lazygit:toggle()
+end
+
+vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+
+function _G.set_terminal_keymaps()
+  local opts = {noremap = true}
+  vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
+end
+vim.cmd('autocmd! TermOpen term://*toggleterm#* lua set_terminal_keymaps()')
 EOF
+
+augroup toggleterm
+    au!
+    au TermOpen * setlocal nospell
+augroup end
 
 " Comment
 lua << EOF
@@ -775,7 +805,11 @@ EOF
 
 " Figet
 lua << EOF
-require"fidget".setup{}
+require"fidget".setup{
+  timer = {
+    task_decay = 200,        -- how long to keep around completed task, in ms
+  },
+}
 EOF
 
 " Colourizer
