@@ -1,7 +1,7 @@
 modkey = "Mod4"
 mousekey = "Mod4"
 workspaces = []
-tags = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "", "", "", "r", "t", "y", "", "", "", "ﭮ"]
+tags = ["1", "2", "3", "4", "5", "6", "7", "8"]
 
 layouts = [
     "GridHorizontal",
@@ -57,11 +57,6 @@ key = "Up"
 command = "MoveWindowDown"
 modifier = ["modkey", "Shift"]
 key = "Down"
-
-[[keybind]]
-command = "MoveWindowTop"
-modifier = ["modkey", "Shift"]
-key = "Return"
 
 [[keybind]]
 command = "FocusWindowUp"
