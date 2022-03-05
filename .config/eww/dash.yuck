@@ -114,10 +114,10 @@
 (defwindow calendar_dash :monitor 2 :geometry (geometry :x 150 :y 460 :width 510 :height 320) :wm-ignore true
   (calendar_widget))
 
-(defwindow sys_dash :monitor 2 :geometry (geometry :x 1310 :y 280 :width 210 :height 170) :wm-ignore true
+(defwindow sys_dash :monitor 2 :geometry (geometry :x 1310 :y 280 :width 250 :height 170) :wm-ignore true
   (sys_widget))
 
-(defwindow sinks_dash :monitor 2 :geometry (geometry :x 1310 :y 100 :width 210 :height 170) :wm-ignore true
+(defwindow sinks_dash :monitor 2 :geometry (geometry :x 1310 :y 100 :width 250 :height 170) :wm-ignore true
   (sinks_widget))
 
 (defwindow weather_dash :monitor 2 :geometry (geometry :x 150 :y 280 :width 510 :height 170) :wm-ignore true
