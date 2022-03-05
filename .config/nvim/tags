@@ -1,0 +1,182 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/cameron/code/packages/dotfiles/.config/nvim/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210905.0/
+#	./init.vim	/^noremap # #<cmd>lua require('hlslens').start()<cr>$/;"	m
+#	init.vim	/^noremap # #<cmd>lua require('hlslens').start()<cr>$/;"	m
+('n',	./init.vim	/^        map('n', '<leader>GD', '<cmd>lua require"gitsigns".diffthis("~")<CR>')$/;"	m
+('n',	./init.vim	/^        map('n', '<leader>GR', '<cmd>Gitsigns reset_buffer<CR>')$/;"	m
+('n',	./init.vim	/^        map('n', '<leader>GS', '<cmd>Gitsigns stage_buffer<CR>')$/;"	m
+('n',	./init.vim	/^        map('n', '<leader>Gd', '<cmd>Gitsigns diffthis<CR>')$/;"	m
+('n',	./init.vim	/^        map('n', '<leader>Gp', '<cmd>Gitsigns preview_hunk<CR>')$/;"	m
+('n',	./init.vim	/^        map('n', '<leader>Gr', '<cmd>Gitsigns reset_hunk<CR>')$/;"	m
+('n',	./init.vim	/^        map('n', '<leader>Gs', '<cmd>Gitsigns stage_hunk<CR>')$/;"	m
+('n',	./init.vim	/^        map('n', '<leader>Gt', '<cmd>Gitsigns toggle_deleted<CR>')$/;"	m
+('n',	./init.vim	/^        map('n', '<leader>Gu', '<cmd>Gitsigns undo_stage_hunk<CR>')$/;"	m
+('n',	./init.vim	/^        map('n', '<leader>{', '<cmd>Gitsigns prev_hunk<CR>')$/;"	m
+('n',	./init.vim	/^        map('n', '<leader>}', '<cmd>Gitsigns next_hunk<CR>')$/;"	m
+('n',	init.vim	/^        map('n', '<leader>GD', '<cmd>lua require"gitsigns".diffthis("~")<CR>')$/;"	m
+('n',	init.vim	/^        map('n', '<leader>GR', '<cmd>Gitsigns reset_buffer<CR>')$/;"	m
+('n',	init.vim	/^        map('n', '<leader>GS', '<cmd>Gitsigns stage_buffer<CR>')$/;"	m
+('n',	init.vim	/^        map('n', '<leader>Gd', '<cmd>Gitsigns diffthis<CR>')$/;"	m
+('n',	init.vim	/^        map('n', '<leader>Gp', '<cmd>Gitsigns preview_hunk<CR>')$/;"	m
+('n',	init.vim	/^        map('n', '<leader>Gr', '<cmd>Gitsigns reset_hunk<CR>')$/;"	m
+('n',	init.vim	/^        map('n', '<leader>Gs', '<cmd>Gitsigns stage_hunk<CR>')$/;"	m
+('n',	init.vim	/^        map('n', '<leader>Gt', '<cmd>Gitsigns toggle_deleted<CR>')$/;"	m
+('n',	init.vim	/^        map('n', '<leader>Gu', '<cmd>Gitsigns undo_stage_hunk<CR>')$/;"	m
+('n',	init.vim	/^        map('n', '<leader>{', '<cmd>Gitsigns prev_hunk<CR>')$/;"	m
+('n',	init.vim	/^        map('n', '<leader>}', '<cmd>Gitsigns next_hunk<CR>')$/;"	m
+('v',	./init.vim	/^        map('v', '<leader>Gr', '<cmd>Gitsigns reset_hunk<CR>')$/;"	m
+('v',	./init.vim	/^        map('v', '<leader>Gs', '<cmd>Gitsigns stage_hunk<CR>')$/;"	m
+('v',	init.vim	/^        map('v', '<leader>Gr', '<cmd>Gitsigns reset_hunk<CR>')$/;"	m
+('v',	init.vim	/^        map('v', '<leader>Gs', '<cmd>Gitsigns stage_hunk<CR>')$/;"	m
+*	./init.vim	/^noremap * *<cmd>lua require('hlslens').start()<cr>$/;"	m
+*	init.vim	/^noremap * *<cmd>lua require('hlslens').start()<cr>$/;"	m
+<C-H>	./init.vim	/^inoremap <C-H> <cmd>lua if require("neogen").jumpable() then require("neogen").jump_next() else /;"	m
+<C-H>	./init.vim	/^nnoremap <C-H> <cmd>lua if require("neogen").jumpable() then require("neogen").jump_next() else /;"	m
+<C-H>	init.vim	/^inoremap <C-H> <cmd>lua if require("neogen").jumpable() then require("neogen").jump_next() else /;"	m
+<C-H>	init.vim	/^nnoremap <C-H> <cmd>lua if require("neogen").jumpable() then require("neogen").jump_next() else /;"	m
+<C-W>J	./init.vim	/^map <C-W>J :YodeLayoutShiftWinBottom<CR>$/;"	m
+<C-W>J	init.vim	/^map <C-W>J :YodeLayoutShiftWinBottom<CR>$/;"	m
+<C-W>K	./init.vim	/^map <C-W>K :YodeLayoutShiftWinTop<CR>$/;"	m
+<C-W>K	init.vim	/^map <C-W>K :YodeLayoutShiftWinTop<CR>$/;"	m
+<C-W>R	./init.vim	/^map <C-W>R :YodeLayoutShiftWinUp<CR>$/;"	m
+<C-W>R	init.vim	/^map <C-W>R :YodeLayoutShiftWinUp<CR>$/;"	m
+<C-W>r	./init.vim	/^map <C-W>r :YodeLayoutShiftWinDown<CR>$/;"	m
+<C-W>r	init.vim	/^map <C-W>r :YodeLayoutShiftWinDown<CR>$/;"	m
+<C-c>	./init.vim	/^ino <silent><expr> <C-c>   pumvisible() ? "\\<C-e><C-c>" : "\\<C-c>"$/;"	m
+<C-c>	init.vim	/^ino <silent><expr> <C-c>   pumvisible() ? "\\<C-e><C-c>" : "\\<C-c>"$/;"	m
+<Esc>	./init.vim	/^ino <silent><expr> <Esc>   pumvisible() ? "\\<C-e><Esc>" : "\\<Esc>"$/;"	m
+<Esc>	init.vim	/^ino <silent><expr> <Esc>   pumvisible() ? "\\<C-e><Esc>" : "\\<Esc>"$/;"	m
+<Leader>yc	./init.vim	/^map <Leader>yc      :YodeCreateSeditorFloating<CR>$/;"	m
+<Leader>yc	init.vim	/^map <Leader>yc      :YodeCreateSeditorFloating<CR>$/;"	m
+<Leader>yd	./init.vim	/^imap <Leader>yd <esc>:YodeBufferDelete<cr>$/;"	m
+<Leader>yd	./init.vim	/^nmap <Leader>yd :YodeBufferDelete<cr>$/;"	m
+<Leader>yd	init.vim	/^imap <Leader>yd <esc>:YodeBufferDelete<cr>$/;"	m
+<Leader>yd	init.vim	/^nmap <Leader>yd :YodeBufferDelete<cr>$/;"	m
+<Leader>yr	./init.vim	/^map <Leader>yr :YodeCreateSeditorReplace<CR>$/;"	m
+<Leader>yr	init.vim	/^map <Leader>yr :YodeCreateSeditorReplace<CR>$/;"	m
+<S-Tab>	./init.vim	/^ino <silent><expr> <S-Tab> pumvisible() ? "\\<C-p>" : "\\<BS>"$/;"	m
+<S-Tab>	init.vim	/^ino <silent><expr> <S-Tab> pumvisible() ? "\\<C-p>" : "\\<BS>"$/;"	m
+<Tab>	./init.vim	/^ino <silent><expr> <Tab>   pumvisible() ? "\\<C-n>" : "\\<Tab>"$/;"	m
+<Tab>	init.vim	/^ino <silent><expr> <Tab>   pumvisible() ? "\\<C-n>" : "\\<Tab>"$/;"	m
+<c-z>	./init.vim	/^inoremap <c-z> <Esc>[s1z=``a$/;"	m
+<c-z>	./init.vim	/^nnoremap <c-z> [s1z=``$/;"	m
+<c-z>	init.vim	/^inoremap <c-z> <Esc>[s1z=``a$/;"	m
+<c-z>	init.vim	/^nnoremap <c-z> [s1z=``$/;"	m
+<leader>[	./init.vim	/^nnoremap <leader>[ :BufferLineCyclePrev<CR>$/;"	m
+<leader>[	init.vim	/^nnoremap <leader>[ :BufferLineCyclePrev<CR>$/;"	m
+<leader>]	./init.vim	/^nnoremap <leader>] :BufferLineCycleNext<CR>$/;"	m
+<leader>]	init.vim	/^nnoremap <leader>] :BufferLineCycleNext<CR>$/;"	m
+<leader>b	./init.vim	/^nnoremap <leader>b <cmd>exe "BufferLineGoToBuffer " . v:count1<cr>$/;"	m
+<leader>b	init.vim	/^nnoremap <leader>b <cmd>exe "BufferLineGoToBuffer " . v:count1<cr>$/;"	m
+<leader>d	./init.vim	/^nnoremap <leader>d <cmd>exe "Bdel " . v:count1<cr>$/;"	m
+<leader>d	init.vim	/^nnoremap <leader>d <cmd>exe "Bdel " . v:count1<cr>$/;"	m
+<leader>f<leader>	./init.vim	/^nnoremap <leader>f<leader> <cmd>Telescope builtin<cr>$/;"	m
+<leader>f<leader>	init.vim	/^nnoremap <leader>f<leader> <cmd>Telescope builtin<cr>$/;"	m
+<leader>f<space>	./init.vim	/^nnoremap <leader>f<space> <cmd>Telescope git_files<cr>$/;"	m
+<leader>f<space>	init.vim	/^nnoremap <leader>f<space> <cmd>Telescope git_files<cr>$/;"	m
+<leader>fB	./init.vim	/^nnoremap <leader>fB <cmd>Telescope bibtex cite<cr>$/;"	m
+<leader>fB	init.vim	/^nnoremap <leader>fB <cmd>Telescope bibtex cite<cr>$/;"	m
+<leader>fGg	./init.vim	/^nnoremap <leader>fGg <cmd>Telescope gh gist<cr>$/;"	m
+<leader>fGg	init.vim	/^nnoremap <leader>fGg <cmd>Telescope gh gist<cr>$/;"	m
+<leader>fGi	./init.vim	/^nnoremap <leader>fGi <cmd>Telescope gh issues<cr>$/;"	m
+<leader>fGi	init.vim	/^nnoremap <leader>fGi <cmd>Telescope gh issues<cr>$/;"	m
+<leader>fGp	./init.vim	/^nnoremap <leader>fGp <cmd>Telescope gh pull_request<cr>$/;"	m
+<leader>fGp	init.vim	/^nnoremap <leader>fGp <cmd>Telescope gh pull_request<cr>$/;"	m
+<leader>fGr	./init.vim	/^nnoremap <leader>fGr <cmd>Telescope gh run<cr>$/;"	m
+<leader>fGr	init.vim	/^nnoremap <leader>fGr <cmd>Telescope gh run<cr>$/;"	m
+<leader>fT	./init.vim	/^nnoremap <leader>fT <cmd>Telescope tags<cr>$/;"	m
+<leader>fT	init.vim	/^nnoremap <leader>fT <cmd>Telescope tags<cr>$/;"	m
+<leader>ff	./init.vim	/^nnoremap <leader>ff <cmd>Telescope file_browser<cr>$/;"	m
+<leader>ff	init.vim	/^nnoremap <leader>ff <cmd>Telescope file_browser<cr>$/;"	m
+<leader>fg	./init.vim	/^nnoremap <leader>fg <cmd>Telescope git_status<cr>$/;"	m
+<leader>fg	./init.vim	/^nnoremap <leader>fg <cmd>Telescope live_grep<cr>$/;"	m
+<leader>fg	init.vim	/^nnoremap <leader>fg <cmd>Telescope git_status<cr>$/;"	m
+<leader>fg	init.vim	/^nnoremap <leader>fg <cmd>Telescope live_grep<cr>$/;"	m
+<leader>fh	./init.vim	/^nnoremap <leader>fh <cmd>Telescope help_tags<cr>$/;"	m
+<leader>fh	init.vim	/^nnoremap <leader>fh <cmd>Telescope help_tags<cr>$/;"	m
+<leader>flc	./init.vim	/^nnoremap <leader>flc <cmd>Telescope lsp_code_actions<cr>$/;"	m
+<leader>flc	init.vim	/^nnoremap <leader>flc <cmd>Telescope lsp_code_actions<cr>$/;"	m
+<leader>fld	./init.vim	/^nnoremap <leader>fld <cmd>Telescope lsp_definitions<cr>$/;"	m
+<leader>fld	init.vim	/^nnoremap <leader>fld <cmd>Telescope lsp_definitions<cr>$/;"	m
+<leader>fli	./init.vim	/^nnoremap <leader>fli <cmd>Telescope lsp_implementations<cr>$/;"	m
+<leader>fli	init.vim	/^nnoremap <leader>fli <cmd>Telescope lsp_implementations<cr>$/;"	m
+<leader>flp	./init.vim	/^nnoremap <leader>flp <cmd>Telescope diagnostics<cr>$/;"	m
+<leader>flp	init.vim	/^nnoremap <leader>flp <cmd>Telescope diagnostics<cr>$/;"	m
+<leader>flr	./init.vim	/^nnoremap <leader>flr <cmd>Telescope lsp_references<cr>$/;"	m
+<leader>flr	init.vim	/^nnoremap <leader>flr <cmd>Telescope lsp_references<cr>$/;"	m
+<leader>fls	./init.vim	/^nnoremap <leader>fls <cmd>Telescope lsp_document_symbols<cr>$/;"	m
+<leader>fls	init.vim	/^nnoremap <leader>fls <cmd>Telescope lsp_document_symbols<cr>$/;"	m
+<leader>flw	./init.vim	/^nnoremap <leader>flw <cmd>Telescope lsp_workspace_symbols<cr>$/;"	m
+<leader>flw	init.vim	/^nnoremap <leader>flw <cmd>Telescope lsp_workspace_symbols<cr>$/;"	m
+<leader>fm	./init.vim	/^nnoremap <leader>fm <cmd>lua require'telescope.builtin'.man_pages({sections={"2", "3", "3p", "4"/;"	m
+<leader>fm	init.vim	/^nnoremap <leader>fm <cmd>lua require'telescope.builtin'.man_pages({sections={"2", "3", "3p", "4"/;"	m
+<leader>fo	./init.vim	/^nnoremap <leader>fo <cmd>Telescope oldfiles<cr>$/;"	m
+<leader>fo	init.vim	/^nnoremap <leader>fo <cmd>Telescope oldfiles<cr>$/;"	m
+<leader>fp	./init.vim	/^nnoremap <leader>fp <cmd>Telescope planets<cr>$/;"	m
+<leader>fp	init.vim	/^nnoremap <leader>fp <cmd>Telescope planets<cr>$/;"	m
+<leader>fq	./init.vim	/^nnoremap <leader>fq <cmd>Telescope quickfix<cr>$/;"	m
+<leader>fq	init.vim	/^nnoremap <leader>fq <cmd>Telescope quickfix<cr>$/;"	m
+<leader>ft	./init.vim	/^nnoremap <leader>ft <cmd>Telescope treesitter<cr>$/;"	m
+<leader>ft	init.vim	/^nnoremap <leader>ft <cmd>Telescope treesitter<cr>$/;"	m
+<leader>fz	./init.vim	/^nnoremap <leader>fz <cmd>lua require('telescope').extensions.dict.synonyms()<cr>$/;"	m
+<leader>fz	init.vim	/^nnoremap <leader>fz <cmd>lua require('telescope').extensions.dict.synonyms()<cr>$/;"	m
+<leader>h	./init.vim	/^noremap <leader>h :nohlsearch<cr>$/;"	m
+<leader>h	init.vim	/^noremap <leader>h :nohlsearch<cr>$/;"	m
+<leader>s	./init.vim	/^nnoremap <leader>s <cmd>lua require('spectre').open()<cr>$/;"	m
+<leader>s	./init.vim	/^vnoremap <leader>s <cmd>lua require('spectre').open_visual()<CR>$/;"	m
+<leader>s	init.vim	/^nnoremap <leader>s <cmd>lua require('spectre').open()<cr>$/;"	m
+<leader>s	init.vim	/^vnoremap <leader>s <cmd>lua require('spectre').open_visual()<CR>$/;"	m
+<leader>u	./init.vim	/^nnoremap <leader>u <cmd>UndotreeToggle<cr>$/;"	m
+<leader>u	init.vim	/^nnoremap <leader>u <cmd>UndotreeToggle<cr>$/;"	m
+Bdel	./init.vim	/^    command -count Bdel lua _G.bdel(<count>)$/;"	c
+Bdel	init.vim	/^    command -count Bdel lua _G.bdel(<count>)$/;"	c
+N	./init.vim	/^noremap <silent> N <cmd>execute('normal! ' . v:count1 . 'N')<cr>$/;"	m
+N	init.vim	/^noremap <silent> N <cmd>execute('normal! ' . v:count1 . 'N')<cr>$/;"	m
+Q	./init.vim	/^nnoremap Q <nop>$/;"	m
+Q	init.vim	/^nnoremap Q <nop>$/;"	m
+R_commands	./init.vim	/^augroup R_commands$/;"	a
+R_commands	init.vim	/^augroup R_commands$/;"	a
+Y	./init.vim	/^nnoremap Y y\$$/;"	m
+Y	init.vim	/^nnoremap Y y\$$/;"	m
+\x1F	./init.vim	/^inoremap  <cmd>WhichKey<cr>$/;"	m
+\x1F	./init.vim	/^nnoremap  <cmd>WhichKey<cr>$/;"	m
+\x1F	init.vim	/^inoremap  <cmd>WhichKey<cr>$/;"	m
+\x1F	init.vim	/^nnoremap  <cmd>WhichKey<cr>$/;"	m
+_G.bdel	./init.vim	/^function _G.bdel(num)$/;"	f
+_G.bdel	init.vim	/^function _G.bdel(num)$/;"	f
+_G.set_terminal_keymaps	./init.vim	/^function _G.set_terminal_keymaps()$/;"	f
+_G.set_terminal_keymaps	init.vim	/^function _G.set_terminal_keymaps()$/;"	f
+filetypedetect	./filetype.vim	/^augroup filetypedetect$/;"	a
+g#	./init.vim	/^noremap g# g#<cmd>lua require('hlslens').start()<cr>$/;"	m
+g#	init.vim	/^noremap g# g#<cmd>lua require('hlslens').start()<cr>$/;"	m
+g*	./init.vim	/^noremap g* g*<cmd>lua require('hlslens').start()<cr>$/;"	m
+g*	init.vim	/^noremap g* g*<cmd>lua require('hlslens').start()<cr>$/;"	m
+g:coq_settings	./init.vim	/^let g:coq_settings = { "keymap.recommended": v:false, "keymap.jump_to_mark": "", "auto_start": "/;"	v
+g:coq_settings	init.vim	/^let g:coq_settings = { "keymap.recommended": v:false, "keymap.jump_to_mark": "", "auto_start": "/;"	v
+g:cursorhold_updatetime	./init.vim	/^let g:cursorhold_updatetime = 500$/;"	v
+g:cursorhold_updatetime	init.vim	/^let g:cursorhold_updatetime = 500$/;"	v
+g:gutentags_file_list_command	./init.vim	/^let g:gutentags_file_list_command = {$/;"	v
+g:gutentags_file_list_command	init.vim	/^let g:gutentags_file_list_command = {$/;"	v
+g:gutentags_project_root	./init.vim	/^let g:gutentags_project_root = [".enable_tags"]$/;"	v
+g:gutentags_project_root	init.vim	/^let g:gutentags_project_root = [".enable_tags"]$/;"	v
+g:undotree_WindowLayout	./init.vim	/^let g:undotree_WindowLayout = 3$/;"	v
+g:undotree_WindowLayout	init.vim	/^let g:undotree_WindowLayout = 3$/;"	v
+g:vimtex_view_general_viewer	./init.vim	/^let g:vimtex_view_general_viewer = 'zathura'$/;"	v
+g:vimtex_view_general_viewer	init.vim	/^let g:vimtex_view_general_viewer = 'zathura'$/;"	v
+highlight_yank	./init.vim	/^augroup highlight_yank$/;"	a
+highlight_yank	init.vim	/^augroup highlight_yank$/;"	a
+n	./init.vim	/^noremap <silent> n <cmd>execute('normal! ' . v:count1 . 'n')<cr>$/;"	m
+n	init.vim	/^noremap <silent> n <cmd>execute('normal! ' . v:count1 . 'n')<cr>$/;"	m
+q:	./init.vim	/^nnoremap q: <nop>$/;"	m
+q:	init.vim	/^nnoremap q: <nop>$/;"	m
+toggleterm	./init.vim	/^augroup toggleterm$/;"	a
+toggleterm	init.vim	/^augroup toggleterm$/;"	a

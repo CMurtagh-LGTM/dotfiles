@@ -1,0 +1,461 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/cameron/code/packages/dotfiles/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210905.0/
+#	.config/nvim/init.vim	/^noremap # #<cmd>lua require('hlslens').start()<cr>$/;"	m
+#back-button	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^#back-button {$/;"	i
+#back-button > .toolbarbutton-icon	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^#back-button > .toolbarbutton-icon{$/;"	c
+#forward-button	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^#forward-button {$/;"	i
+#identity-box	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^#tracking-protection-icon-container, #identity-box {$/;"	i
+#logo	.config/Vieb/colors/nord.css	/^#logo {display:none;}$/;"	i
+#navigator-toolbox	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^#navigator-toolbox, toolbaritem {$/;"	i
+#pressed-keys	.config/Vieb/colors/nord.css	/^#repeat-counter, #pressed-keys {line-height:1em;}$/;"	i
+#repeat-counter	.config/Vieb/colors/nord.css	/^#repeat-counter, #pressed-keys {line-height:1em;}$/;"	i
+#sidebar-box	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^#sidebar-box {$/;"	i
+#sidebar-search-container	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^#sidebar-search-container {$/;"	i
+#sidebar-switcher-target	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^#sidebar-switcher-target {$/;"	i
+#tabbrowser-tabs	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^#tabbrowser-tabs {$/;"	i
+#tabs-newtab-button	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^#tabs-newtab-button {$/;"	i
+#titlebar	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^#titlebar {$/;"	i
+#tracking-protection-icon-container	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^#tracking-protection-icon-container, #identity-box {$/;"	i
+#urlbar	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^#urlbar {$/;"	i
+#urlbar-background	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^#urlbar-background {$/;"	i
+#urlbar-input	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^#urlbar-input {$/;"	i
+#urlbar-input:focus	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^#urlbar-input:focus {$/;"	i
+#urlbar-results	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^#urlbar-results {$/;"	i
+('n',	.config/nvim/init.vim	/^        map('n', '<leader>GD', '<cmd>lua require"gitsigns".diffthis("~")<CR>')$/;"	m
+('n',	.config/nvim/init.vim	/^        map('n', '<leader>GR', '<cmd>Gitsigns reset_buffer<CR>')$/;"	m
+('n',	.config/nvim/init.vim	/^        map('n', '<leader>GS', '<cmd>Gitsigns stage_buffer<CR>')$/;"	m
+('n',	.config/nvim/init.vim	/^        map('n', '<leader>Gd', '<cmd>Gitsigns diffthis<CR>')$/;"	m
+('n',	.config/nvim/init.vim	/^        map('n', '<leader>Gp', '<cmd>Gitsigns preview_hunk<CR>')$/;"	m
+('n',	.config/nvim/init.vim	/^        map('n', '<leader>Gr', '<cmd>Gitsigns reset_hunk<CR>')$/;"	m
+('n',	.config/nvim/init.vim	/^        map('n', '<leader>Gs', '<cmd>Gitsigns stage_hunk<CR>')$/;"	m
+('n',	.config/nvim/init.vim	/^        map('n', '<leader>Gt', '<cmd>Gitsigns toggle_deleted<CR>')$/;"	m
+('n',	.config/nvim/init.vim	/^        map('n', '<leader>Gu', '<cmd>Gitsigns undo_stage_hunk<CR>')$/;"	m
+('n',	.config/nvim/init.vim	/^        map('n', '<leader>{', '<cmd>Gitsigns prev_hunk<CR>')$/;"	m
+('n',	.config/nvim/init.vim	/^        map('n', '<leader>}', '<cmd>Gitsigns next_hunk<CR>')$/;"	m
+('v',	.config/nvim/init.vim	/^        map('v', '<leader>Gr', '<cmd>Gitsigns reset_hunk<CR>')$/;"	m
+('v',	.config/nvim/init.vim	/^        map('v', '<leader>Gs', '<cmd>Gitsigns stage_hunk<CR>')$/;"	m
+*	.config/nvim/init.vim	/^noremap * *<cmd>lua require('hlslens').start()<cr>$/;"	m
+.calendar_date	.config/eww/eww.scss	/^.calendar_date {$/;"	c
+.calendar_entry	.config/eww/eww.scss	/^.calendar_entry {$/;"	c
+.cava_bar	.config/eww/eww.scss	/^.cava_bar trough progress {$/;"	c
+.cava_bar	.config/eww/eww.scss	/^.cava_bar trough {$/;"	c
+.cava_bar	.config/eww/eww.scss	/^.cava_bar {$/;"	c
+.close-icon	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^.close-icon, .urlbar-icon {$/;"	c
+.float	.config/eww/eww.scss	/^.float {$/;"	c
+.internet	.config/eww/eww.scss	/^.internet {$/;"	c
+.media_control	.config/eww/eww.scss	/^.media_control {$/;"	c
+.media_control:hover	.config/eww/eww.scss	/^.media_control:hover{$/;"	c
+.megabar[breakout-extend="true"] :not([open="true"] ) > #urlbar-background	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^.megabar[breakout-extend="true"]:not([open="true"]) > #urlbar-background {$/;"	i
+.metric_label	.config/eww/eww.scss	/^.metric_label {$/;"	c
+.metric_progress	.config/eww/eww.scss	/^.metric_progress trough progress {$/;"	c
+.metric_progress	.config/eww/eww.scss	/^.metric_progress trough {$/;"	c
+.metric_progress_red	.config/eww/eww.scss	/^.metric_progress_red trough progress {$/;"	c
+.metric_progress_red	.config/eww/eww.scss	/^.metric_progress_red trough {$/;"	c
+.music_info	.config/eww/eww.scss	/^.music_info {$/;"	c
+.panel-arrowcontent	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^.panel-arrowcontent {$/;"	c
+.search-panel-one-offs-container	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^.urlbarView-url, .search-panel-one-offs-container {$/;"	c
+.sidebar-placesTree	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^.sidebar-placesTree {$/;"	c
+.sinks_button	.config/eww/eww.scss	/^.sinks_button {$/;"	c
+.sinks_button:hover	.config/eww/eww.scss	/^.sinks_button:hover {$/;"	c
+.song_progress	.config/eww/eww.scss	/^.song_progress trough progress {$/;"	c
+.song_progress	.config/eww/eww.scss	/^.song_progress trough {$/;"	c
+.song_progress	.config/eww/eww.scss	/^.song_progress {$/;"	c
+.tab-background	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^.tab-background {$/;"	c
+.tab-background:not[visuallyselected]	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^.tab-background:not[visuallyselected] {$/;"	c
+.tab-background[selected="true"]	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^.tab-background[selected="true"] {$/;"	c
+.tab-icon-sound	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^.tab-icon-sound {$/;"	c
+.tab-label-container:not([textoverflow] )	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^.tab-label-container:not([textoverflow]) {$/;"	s
+.tab-line	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^.tab-line {$/;"	c
+.tab-text	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^.tab-text {$/;"	c
+.tabbrowser-arrowscrollbox	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^.tabbrowser-arrowscrollbox {$/;"	c
+.tabbrowser-tab	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^.tabbrowser-tab {$/;"	c
+.tabbrowser-tab::after	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^.tabbrowser-tab::after,$/;"	c
+.tabbrowser-tab::before	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^.tabbrowser-tab::before {$/;"	c
+.tabbrowser-tab[soundplaying="true"]	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^.tabbrowser-tab[soundplaying="true"] {$/;"	c
+.toolbar-items	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^.toolbar-items {$/;"	c
+.toolbarbutton-icon	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^.toolbarbutton-icon {$/;"	c
+.toolbarbutton-text	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^.toolbarbutton-text {$/;"	c
+.urlbar-icon	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^.close-icon, .urlbar-icon {$/;"	c
+.urlbar-icon	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^.urlbar-icon {$/;"	c
+.urlbar-icon > image	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^.urlbar-icon > image {$/;"	s
+.urlbarView-row[type="bookmark"] > span	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^.urlbarView-row[type="bookmark"] > span{$/;"	s
+.urlbarView-row[type="switchtab"] > span	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^.urlbarView-row[type="switchtab"] > span{$/;"	s
+.urlbarView-url	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^.urlbarView-url, .search-panel-one-offs-container {$/;"	c
+.volume_bar	.config/eww/eww.scss	/^.volume_bar trough progress {$/;"	c
+.volume_bar	.config/eww/eww.scss	/^.volume_bar trough {$/;"	c
+.volume_bar	.config/eww/eww.scss	/^.volume_bar {$/;"	c
+.weather_icon	.config/eww/eww.scss	/^.weather_icon {$/;"	c
+.weather_temp	.config/eww/eww.scss	/^.weather_temp {$/;"	c
+.weather_temp_C	.config/eww/eww.scss	/^.weather_temp_C {$/;"	c
+.wm_layout	.config/eww/eww.scss	/^.wm_layout {$/;"	c
+.ws-button	.config/eww/eww.scss	/^.ws-button, .ws-button-mine, .ws-button-visible, .ws-button-busy {$/;"	c
+.ws-button-busy	.config/eww/eww.scss	/^.ws-button, .ws-button-mine, .ws-button-visible, .ws-button-busy {$/;"	c
+.ws-button-busy	.config/eww/eww.scss	/^.ws-button-busy {$/;"	c
+.ws-button-mine	.config/eww/eww.scss	/^.ws-button, .ws-button-mine, .ws-button-visible, .ws-button-busy {$/;"	c
+.ws-button-mine	.config/eww/eww.scss	/^.ws-button-mine {$/;"	c
+.ws-button-visible	.config/eww/eww.scss	/^.ws-button, .ws-button-mine, .ws-button-visible, .ws-button-busy {$/;"	c
+.ws-button-visible	.config/eww/eww.scss	/^.ws-button-visible {$/;"	c
+:root	.config/Vieb/colors/nord.css	/^:root {$/;"	s
+:root	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^ :root {$/;"	s
+<C-H>	.config/nvim/init.vim	/^inoremap <C-H> <cmd>lua if require("neogen").jumpable() then require("neogen").jump_next() else /;"	m
+<C-H>	.config/nvim/init.vim	/^nnoremap <C-H> <cmd>lua if require("neogen").jumpable() then require("neogen").jump_next() else /;"	m
+<C-W>J	.config/nvim/init.vim	/^map <C-W>J :YodeLayoutShiftWinBottom<CR>$/;"	m
+<C-W>K	.config/nvim/init.vim	/^map <C-W>K :YodeLayoutShiftWinTop<CR>$/;"	m
+<C-W>R	.config/nvim/init.vim	/^map <C-W>R :YodeLayoutShiftWinUp<CR>$/;"	m
+<C-W>r	.config/nvim/init.vim	/^map <C-W>r :YodeLayoutShiftWinDown<CR>$/;"	m
+<C-c>	.config/nvim/init.vim	/^ino <silent><expr> <C-c>   pumvisible() ? "\\<C-e><C-c>" : "\\<C-c>"$/;"	m
+<Esc>	.config/nvim/init.vim	/^ino <silent><expr> <Esc>   pumvisible() ? "\\<C-e><Esc>" : "\\<Esc>"$/;"	m
+<Leader>yc	.config/nvim/init.vim	/^map <Leader>yc      :YodeCreateSeditorFloating<CR>$/;"	m
+<Leader>yd	.config/nvim/init.vim	/^imap <Leader>yd <esc>:YodeBufferDelete<cr>$/;"	m
+<Leader>yd	.config/nvim/init.vim	/^nmap <Leader>yd :YodeBufferDelete<cr>$/;"	m
+<Leader>yr	.config/nvim/init.vim	/^map <Leader>yr :YodeCreateSeditorReplace<CR>$/;"	m
+<S-Tab>	.config/nvim/init.vim	/^ino <silent><expr> <S-Tab> pumvisible() ? "\\<C-p>" : "\\<BS>"$/;"	m
+<Tab>	.config/nvim/init.vim	/^ino <silent><expr> <Tab>   pumvisible() ? "\\<C-n>" : "\\<Tab>"$/;"	m
+<c-z>	.config/nvim/init.vim	/^inoremap <c-z> <Esc>[s1z=``a$/;"	m
+<c-z>	.config/nvim/init.vim	/^nnoremap <c-z> [s1z=``$/;"	m
+<leader>[	.config/nvim/init.vim	/^nnoremap <leader>[ :BufferLineCyclePrev<CR>$/;"	m
+<leader>]	.config/nvim/init.vim	/^nnoremap <leader>] :BufferLineCycleNext<CR>$/;"	m
+<leader>b	.config/nvim/init.vim	/^nnoremap <leader>b <cmd>exe "BufferLineGoToBuffer " . v:count1<cr>$/;"	m
+<leader>d	.config/nvim/init.vim	/^nnoremap <leader>d <cmd>exe "Bdel " . v:count1<cr>$/;"	m
+<leader>f<leader>	.config/nvim/init.vim	/^nnoremap <leader>f<leader> <cmd>Telescope builtin<cr>$/;"	m
+<leader>f<space>	.config/nvim/init.vim	/^nnoremap <leader>f<space> <cmd>Telescope git_files<cr>$/;"	m
+<leader>fB	.config/nvim/init.vim	/^nnoremap <leader>fB <cmd>Telescope bibtex cite<cr>$/;"	m
+<leader>fGg	.config/nvim/init.vim	/^nnoremap <leader>fGg <cmd>Telescope gh gist<cr>$/;"	m
+<leader>fGi	.config/nvim/init.vim	/^nnoremap <leader>fGi <cmd>Telescope gh issues<cr>$/;"	m
+<leader>fGp	.config/nvim/init.vim	/^nnoremap <leader>fGp <cmd>Telescope gh pull_request<cr>$/;"	m
+<leader>fGr	.config/nvim/init.vim	/^nnoremap <leader>fGr <cmd>Telescope gh run<cr>$/;"	m
+<leader>fT	.config/nvim/init.vim	/^nnoremap <leader>fT <cmd>Telescope tags<cr>$/;"	m
+<leader>ff	.config/nvim/init.vim	/^nnoremap <leader>ff <cmd>Telescope file_browser<cr>$/;"	m
+<leader>fg	.config/nvim/init.vim	/^nnoremap <leader>fg <cmd>Telescope git_status<cr>$/;"	m
+<leader>fg	.config/nvim/init.vim	/^nnoremap <leader>fg <cmd>Telescope live_grep<cr>$/;"	m
+<leader>fh	.config/nvim/init.vim	/^nnoremap <leader>fh <cmd>Telescope help_tags<cr>$/;"	m
+<leader>flc	.config/nvim/init.vim	/^nnoremap <leader>flc <cmd>Telescope lsp_code_actions<cr>$/;"	m
+<leader>fld	.config/nvim/init.vim	/^nnoremap <leader>fld <cmd>Telescope lsp_definitions<cr>$/;"	m
+<leader>fli	.config/nvim/init.vim	/^nnoremap <leader>fli <cmd>Telescope lsp_implementations<cr>$/;"	m
+<leader>flp	.config/nvim/init.vim	/^nnoremap <leader>flp <cmd>Telescope diagnostics<cr>$/;"	m
+<leader>flr	.config/nvim/init.vim	/^nnoremap <leader>flr <cmd>Telescope lsp_references<cr>$/;"	m
+<leader>fls	.config/nvim/init.vim	/^nnoremap <leader>fls <cmd>Telescope lsp_document_symbols<cr>$/;"	m
+<leader>flw	.config/nvim/init.vim	/^nnoremap <leader>flw <cmd>Telescope lsp_workspace_symbols<cr>$/;"	m
+<leader>fm	.config/nvim/init.vim	/^nnoremap <leader>fm <cmd>lua require'telescope.builtin'.man_pages({sections={"2", "3", "3p", "4"/;"	m
+<leader>fo	.config/nvim/init.vim	/^nnoremap <leader>fo <cmd>Telescope oldfiles<cr>$/;"	m
+<leader>fp	.config/nvim/init.vim	/^nnoremap <leader>fp <cmd>Telescope planets<cr>$/;"	m
+<leader>fq	.config/nvim/init.vim	/^nnoremap <leader>fq <cmd>Telescope quickfix<cr>$/;"	m
+<leader>ft	.config/nvim/init.vim	/^nnoremap <leader>ft <cmd>Telescope treesitter<cr>$/;"	m
+<leader>fz	.config/nvim/init.vim	/^nnoremap <leader>fz <cmd>lua require('telescope').extensions.dict.synonyms()<cr>$/;"	m
+<leader>h	.config/nvim/init.vim	/^noremap <leader>h :nohlsearch<cr>$/;"	m
+<leader>s	.config/nvim/init.vim	/^nnoremap <leader>s <cmd>lua require('spectre').open()<cr>$/;"	m
+<leader>s	.config/nvim/init.vim	/^vnoremap <leader>s <cmd>lua require('spectre').open_visual()<CR>$/;"	m
+<leader>u	.config/nvim/init.vim	/^nnoremap <leader>u <cmd>UndotreeToggle<cr>$/;"	m
+ACKNOWLEDGEMENT	.local/bin/weather_api.py	/^    ACKNOWLEDGEMENT = "Data courtesy of the Australian Bureau of Meteorology (https:\/\/api.weat/;"	v	class:WeatherApi
+API_BASE	.local/bin/weather_api.py	/^    API_BASE = "https:\/\/api.weather.bom.gov.au\/v1"$/;"	v	class:WeatherApi
+API_FORECAST_3HOURLY	.local/bin/weather_api.py	/^    API_FORECAST_3HOURLY = "forecasts\/3-hourly"$/;"	v	class:WeatherApi
+API_FORECAST_DAILY	.local/bin/weather_api.py	/^    API_FORECAST_DAILY = "forecasts\/daily"$/;"	v	class:WeatherApi
+API_FORECAST_RAIN	.local/bin/weather_api.py	/^    API_FORECAST_RAIN = API_BASE + "forecast\/rain"$/;"	v	class:WeatherApi
+API_OBSERVATIONS	.local/bin/weather_api.py	/^    API_OBSERVATIONS = "observations"$/;"	v	class:WeatherApi
+API_WARNINGS	.local/bin/weather_api.py	/^    API_WARNINGS = API_BASE + "warnings"$/;"	v	class:WeatherApi
+BARS	.config/eww/cava.py	/^BARS = 20$/;"	v
+Bdel	.config/nvim/init.vim	/^    command -count Bdel lua _G.bdel(<count>)$/;"	c
+CMurtagh-LGTM's dotfiles	README.md	/^# CMurtagh-LGTM's dotfiles$/;"	c
+CONFIG	.config/eww/cava.py	/^CONFIG = CONFIG + id$/;"	v
+CONFIG	.config/eww/cava.py	/^CONFIG = os.path.expanduser("~\/.config\/eww\/cava\/")$/;"	v
+Cool Stuff	README.md	/^## Cool Stuff$/;"	s	chapter:CMurtagh-LGTM's dotfiles
+Customizing	.librewolf/er127qw9.default-release/chrome/README.md	/^## Customizing$/;"	s	chapter:minimal-functional-fox
+Dependencies	README.md	/^## Dependencies$/;"	s	chapter:CMurtagh-LGTM's dotfiles
+EOF	.librewolf/er127qw9.default-release/chrome/install.sh	/^    cat <<-'EOF'$/;"	h
+EOF	.local/bin/pmenu.sh	/^pmenu -r 3 << EOF | sh &$/;"	h
+Features	.librewolf/er127qw9.default-release/chrome/README.md	/^## Features$/;"	s	chapter:minimal-functional-fox
+Font	README.md	/^### Font$/;"	S	section:CMurtagh-LGTM's dotfiles""Dependencies
+GDScript	.ctags.d/gdscript.ctags	/^--langdef=GDScript$/;"	l
+Inside Scripts	README.md	/^### Inside Scripts$/;"	S	section:CMurtagh-LGTM's dotfiles""Dependencies
+Installation	.librewolf/er127qw9.default-release/chrome/README.md	/^## Installation$/;"	s	chapter:minimal-functional-fox
+Keybindings	README.md	/^## Keybindings$/;"	s	chapter:CMurtagh-LGTM's dotfiles
+LOCK_FILE	.local/bin/toggle_gaps.py	/^LOCK_FILE = MODE_FILE + ".lock"$/;"	v
+Language servers	README.md	/^#### Language servers$/;"	t	subsection:CMurtagh-LGTM's dotfiles""Dependencies""Neomutt
+MODE_FILE	.local/bin/toggle_gaps.py	/^MODE_FILE = "\/tmp\/leftwm_modes.txt"$/;"	v
+Main	README.md	/^### Main$/;"	S	section:CMurtagh-LGTM's dotfiles""Dependencies
+Manual Install	.librewolf/er127qw9.default-release/chrome/README.md	/^### Manual Install$/;"	S	section:minimal-functional-fox""Installation
+N	.config/nvim/init.vim	/^noremap <silent> N <cmd>execute('normal! ' . v:count1 . 'N')<cr>$/;"	m
+Neomutt	README.md	/^### Neomutt$/;"	S	section:CMurtagh-LGTM's dotfiles""Dependencies
+Neovim	README.md	/^### Neovim$/;"	S	section:CMurtagh-LGTM's dotfiles""Dependencies
+Optional	README.md	/^### Optional$/;"	S	section:CMurtagh-LGTM's dotfiles""Dependencies
+PATH	.config/eww/cava.py	/^PATH = "\/tmp\/eww\/cava"$/;"	v
+PATH	.config/eww/cava.py	/^PATH = PATH + id$/;"	v
+POWERLEVEL9K_DIR_CLASSES=	.p10k.zsh	/^  typeset -g POWERLEVEL9K_DIR_CLASSES=()$/;"	f
+Prerequisites	.librewolf/er127qw9.default-release/chrome/README.md	/^## Prerequisites$/;"	s	chapter:minimal-functional-fox
+Q	.config/nvim/init.vim	/^nnoremap Q <nop>$/;"	m
+Quick Install	.librewolf/er127qw9.default-release/chrome/README.md	/^### Quick Install$/;"	S	section:minimal-functional-fox""Installation
+R_commands	.config/nvim/init.vim	/^augroup R_commands$/;"	a
+Recommended Tweaks	.librewolf/er127qw9.default-release/chrome/README.md	/^## Recommended Tweaks$/;"	s	chapter:minimal-functional-fox
+SEARCH	.local/bin/weather_api.py	/^    SEARCH = "locations?search="$/;"	v	class:WeatherApi
+SKIP	.config/eww/cava.py	/^SKIP = 9$/;"	v
+Setting up Neovim	README.md	/^## Setting up Neovim$/;"	s	chapter:CMurtagh-LGTM's dotfiles
+TAG_COUNT	.local/bin/toggle_gaps.py	/^TAG_COUNT = 20$/;"	v
+TODO	README.md	/^## TODO$/;"	s	chapter:CMurtagh-LGTM's dotfiles
+VFDVuOTf5K98KT4GTZIfo6t2oUeOZ3OQ	.librewolf/er127qw9.default-release/chrome/left-arrow.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	d
+VFDVuOTf5K98KT4GTZIfo6t2oUeOZ3OQ	.librewolf/er127qw9.default-release/chrome/left-arrow.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	i
+WORKSPACE_COUNT	.local/bin/toggle_gaps.py	/^WORKSPACE_COUNT = 3$/;"	v
+WeatherApi	.local/bin/weather_api.py	/^class WeatherApi:$/;"	c
+Y	.config/nvim/init.vim	/^nnoremap Y y\$$/;"	m
+Zim	README.md	/^### Zim$/;"	S	section:CMurtagh-LGTM's dotfiles""Dependencies
+[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)	.librewolf/er127qw9.default-release/chrome/README.md	/^[![License](http:\/\/img.shields.io\/:license-mit-blue.svg)](http:\/\/doge.mit-license.org)$/;"	s	chapter:minimal-functional-fox
+\x1F	.config/nvim/init.vim	/^inoremap  <cmd>WhichKey<cr>$/;"	m
+\x1F	.config/nvim/init.vim	/^nnoremap  <cmd>WhichKey<cr>$/;"	m
+_G.bdel	.config/nvim/init.vim	/^function _G.bdel(num)$/;"	f
+_G.set_terminal_keymaps	.config/nvim/init.vim	/^function _G.set_terminal_keymaps()$/;"	f
+__init__	.local/bin/weather_api.py	/^    def __init__(self, geohash=None, search=None, debug=0):$/;"	m	class:WeatherApi
+__repr__	.local/bin/weather_api.py	/^    def __repr__(self):$/;"	m	class:WeatherApi
+_clipPath_99lNy5iVNzBT4GJ61eRvLV4FbIJfEq2X	.librewolf/er127qw9.default-release/chrome/add.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	d
+_clipPath_99lNy5iVNzBT4GJ61eRvLV4FbIJfEq2X	.librewolf/er127qw9.default-release/chrome/add.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	i
+_clipPath_PSmJUw238rlrF3iVjoZbuIy7ApS18eFZ	.librewolf/er127qw9.default-release/chrome/add.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	i
+_clipPath_eVFSl4zvN5oTHPzyWFXDKL3KvwnaLKzR	.librewolf/er127qw9.default-release/chrome/right-arrow.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	d
+_clipPath_eVFSl4zvN5oTHPzyWFXDKL3KvwnaLKzR	.librewolf/er127qw9.default-release/chrome/right-arrow.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	i
+_clipPath_whDLWxO2Es9F8hEuhZ0p3GS4myfSGk47	.librewolf/er127qw9.default-release/chrome/right-arrow.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	i
+_clipPath_z1ZWMbJsyhiOU2QHbFJoUMhQtGZ43GMW	.librewolf/er127qw9.default-release/chrome/left-arrow.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	d
+_clipPath_z1ZWMbJsyhiOU2QHbFJoUMhQtGZ43GMW	.librewolf/er127qw9.default-release/chrome/left-arrow.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	i
+_fetch_json	.local/bin/weather_api.py	/^    def _fetch_json(self, url):$/;"	m	class:WeatherApi
+_mask_kcpkNUVqAh3jvumwkzpWdE5WZ1TZaYfV	.librewolf/er127qw9.default-release/chrome/add.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	i
+api	.local/bin/weather_api.py	/^    def api(self, api=None, type="locations"):$/;"	m	class:WeatherApi
+args	.config/leftwm/themes/laptop/eww/temperature.py	/^args = parser.parse_args()$/;"	v
+args	.local/bin/download_and_run.py	/^args = parser.parse_args()$/;"	v
+ascii_bold	.config/neofetch/config.conf	/^ascii_bold="on"$/;"	k
+ascii_colors	.config/neofetch/config.conf	/^ascii_colors=(distro)$/;"	k
+ascii_distro	.config/neofetch/config.conf	/^ascii_distro="Arch"$/;"	k
+audio	.config/mopidy/mopidy.conf	/^[audio]$/;"	s
+backend	.config/picom.conf	/^backend = "glx";$/;"	k
+background	.config/picom.conf	/^blur-background = true$/;"	k
+background_color	.config/neofetch/config.conf	/^background_color=$/;"	k
+bar_border	.config/neofetch/config.conf	/^bar_border="on"$/;"	k
+bar_char_elapsed	.config/neofetch/config.conf	/^bar_char_elapsed="="$/;"	k
+bar_char_total	.config/neofetch/config.conf	/^bar_char_total="·"$/;"	k
+bar_color_elapsed	.config/neofetch/config.conf	/^bar_color_elapsed="distro"$/;"	k
+bar_color_total	.config/neofetch/config.conf	/^bar_color_total="distro"$/;"	k
+bar_length	.config/neofetch/config.conf	/^bar_length=15$/;"	k
+battery_display	.config/neofetch/config.conf	/^battery_display="bar"$/;"	k
+block_height	.config/neofetch/config.conf	/^block_height=1$/;"	k
+block_range	.config/neofetch/config.conf	/^block_range=(0 15)$/;"	k
+block_width	.config/neofetch/config.conf	/^block_width=3$/;"	k
+bold	.config/neofetch/config.conf	/^bold="on"$/;"	k
+box.panel-arrowbox	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^box.panel-arrowbox {$/;"	c
+box.panel-arrowcontent	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^box.panel-arrowcontent {$/;"	c
+c	.config/eww/cava.py	/^c = open(CONFIG, "wt")$/;"	v
+calendar	.config/eww/calendar.py	/^calendar = [event.rstrip().split("\\n", 1) for event in calendar_str.split("\\n\\n")]$/;"	v
+calendar	.local/bin/greet.py	/^calendar = [event.rstrip().split("\\n", 1) for event in calendar]$/;"	v
+calendar	.local/bin/greet.py	/^calendar = calendar.split("\\n\\n")$/;"	v
+calendar	.local/bin/greet.py	/^calendar = subprocess.run($/;"	v
+calendar_str	.config/eww/calendar.py	/^calendar_str = subprocess.run($/;"	v
+calendar_yuck	.config/eww/calendar.py	/^calendar_yuck = "(box :orientation 'v' :class 'calendar'"$/;"	v
+cleanup	.config/eww/cava.py	/^def cleanup():$/;"	f
+col_offset	.config/neofetch/config.conf	/^col_offset="auto"$/;"	k
+color_blocks	.config/neofetch/config.conf	/^color_blocks="on"$/;"	k
+colors	.config/neofetch/config.conf	/^colors=(distro)$/;"	k
+config	.config/eww/cava.py	/^config = f"""[general]$/;"	v
+config	.config/leftwm/themes/laptop/eww/toggle.py	/^config = os.path.join(os.path.dirname(os.path.realpath(__file__)), "eww.xml")$/;"	v
+console	.local/bin/greet.py	/^console = Console()$/;"	v
+core	.config/mopidy/mopidy.conf	/^[core]$/;"	s
+corners	.config/picom.conf	/^detect-rounded-corners = true;$/;"	k
+cpu_brand	.config/neofetch/config.conf	/^cpu_brand="off"$/;"	k
+cpu_cores	.config/neofetch/config.conf	/^cpu_cores="logical"$/;"	k
+cpu_display	.config/neofetch/config.conf	/^cpu_display="bar"$/;"	k
+cpu_speed	.config/neofetch/config.conf	/^cpu_speed="on"$/;"	k
+cpu_temp	.config/neofetch/config.conf	/^cpu_temp="on"$/;"	k
+crop_mode	.config/neofetch/config.conf	/^crop_mode="normal"$/;"	k
+crop_offset	.config/neofetch/config.conf	/^crop_offset="center"$/;"	k
+damage	.config/picom.conf	/^use-damage = true$/;"	k
+data	.local/bin/toggle_gaps.py	/^        data = f.readlines()$/;"	v
+de_version	.config/neofetch/config.conf	/^de_version="on"$/;"	k
+default	.config/eww/sinks.py	/^default = default.split(".")[-1][:-1]$/;"	v
+default	.config/eww/sinks.py	/^default = subprocess.run(["pactl", "get-default-sink"], check=True, capture_output=True).stdout./;"	v
+disk_display	.config/neofetch/config.conf	/^disk_display="bar"$/;"	k
+disk_percent	.config/neofetch/config.conf	/^disk_percent="on"$/;"	k
+disk_show	.config/neofetch/config.conf	/^disk_show=('\/')$/;"	k
+disk_subtitle	.config/neofetch/config.conf	/^disk_subtitle="none"$/;"	k
+distro_shorthand	.config/neofetch/config.conf	/^distro_shorthand="off"$/;"	k
+download_mff	.librewolf/er127qw9.default-release/chrome/install.sh	/^download_mff() {$/;"	f
+echoerr	.librewolf/er127qw9.default-release/chrome/install.sh	/^echoerr() { printf "%s\\n" "$*" >&2; }$/;"	f
+email_parser	.local/bin/greet.py	/^email_parser = BytesHeaderParser(policy=email.policy.default)$/;"	v
+enabled	.config/mopidy/mopidy.conf	/^enabled = true$/;"	k	section:file
+enabled	.config/mopidy/mopidy.conf	/^enabled = true$/;"	k	section:spotify
+events	.local/bin/greet.py	/^events = Columns([Panel(event[1], title=event[0][:-1]) for event in calendar])$/;"	v
+exclude	.config/picom.conf	/^blur-background-exclude = [$/;"	k
+fading	.config/picom.conf	/^fading = false$/;"	k
+fd	.local/bin/greet.py	/^        fd = open(mail_path, "rb")$/;"	v
+fetch	.local/bin/greet.py	/^fetch = Text.from_ansi(fetch)$/;"	v
+fetch	.local/bin/greet.py	/^fetch = subprocess.run(["neofetch"], check=True, capture_output=True).stdout.decode($/;"	v
+fifo	.config/eww/cava.py	/^fifo = open(PATH, "rb")$/;"	v
+file	.config/mopidy/mopidy.conf	/^[file]$/;"	s
+filetypedetect	.config/nvim/filetype.vim	/^augroup filetypedetect$/;"	a
+focused	.config/picom.conf	/^mark-ovredir-focused = true;$/;"	k
+focused	.config/picom.conf	/^mark-wmwin-focused = true;$/;"	k
+forecast	.local/bin/weather.py	/^forecast = w.forecasts_daily()[0]$/;"	v
+forecast_rain	.local/bin/weather_api.py	/^    def forecast_rain(self):$/;"	m	class:WeatherApi
+forecasts_3hourly	.local/bin/weather_api.py	/^    def forecasts_3hourly(self):$/;"	m	class:WeatherApi
+forecasts_daily	.local/bin/weather_api.py	/^    def forecasts_daily(self):$/;"	m	class:WeatherApi
+function,function definitions	.ctags.d/gdscript.ctags	/^--regex-GDScript=\/^func[ \\t]+([a-zA-Z0-9_]+)\/\\1\/f,function,function definitions\/$/;"	k	langdef:GDScript
+g#	.config/nvim/init.vim	/^noremap g# g#<cmd>lua require('hlslens').start()<cr>$/;"	m
+g*	.config/nvim/init.vim	/^noremap g* g*<cmd>lua require('hlslens').start()<cr>$/;"	m
+g:coq_settings	.config/nvim/init.vim	/^let g:coq_settings = { "keymap.recommended": v:false, "keymap.jump_to_mark": "", "auto_start": "/;"	v
+g:cursorhold_updatetime	.config/nvim/init.vim	/^let g:cursorhold_updatetime = 500$/;"	v
+g:gutentags_file_list_command	.config/nvim/init.vim	/^let g:gutentags_file_list_command = {$/;"	v
+g:gutentags_project_root	.config/nvim/init.vim	/^let g:gutentags_project_root = [".enable_tags"]$/;"	v
+g:undotree_WindowLayout	.config/nvim/init.vim	/^let g:undotree_WindowLayout = 3$/;"	v
+g:vimtex_view_general_viewer	.config/nvim/init.vim	/^let g:vimtex_view_general_viewer = 'zathura'$/;"	v
+gap	.config/neofetch/config.conf	/^gap=3$/;"	k
+gpu_brand	.config/neofetch/config.conf	/^gpu_brand="off"$/;"	k
+gpu_type	.config/neofetch/config.conf	/^gpu_type="all"$/;"	k
+grouper	.config/eww/calendar.py	/^def grouper(iterable, n, fillvalue=None):$/;"	f
+gtk2	.config/neofetch/config.conf	/^gtk2="off"$/;"	k
+gtk3	.config/neofetch/config.conf	/^gtk3="on"$/;"	k
+gtk_shorthand	.config/neofetch/config.conf	/^gtk_shorthand="off"$/;"	k
+hbox.tab-content[pinned=true] .tab-icon-image	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^hbox.tab-content[pinned=true] .tab-icon-image {$/;"	c
+hbox.tab-content[pinned=true] .tab-text	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^hbox.tab-content[pinned=true] .tab-text {$/;"	c
+highlight_yank	.config/nvim/init.vim	/^augroup highlight_yank$/;"	a
+home	.local/bin/greet.py	/^home = os.environ["HOME"]$/;"	v
+hostname	.config/mopidy/mopidy.conf	/^hostname = 127.0.0.1$/;"	k	section:mpd
+hr6gh2N39iEKGHUEUXPQ1VpI5CnFB6KP	.librewolf/er127qw9.default-release/chrome/add.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	d
+hr6gh2N39iEKGHUEUXPQ1VpI5CnFB6KP	.librewolf/er127qw9.default-release/chrome/add.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	i
+http	.config/mopidy/mopidy.conf	/^[http]$/;"	s
+id	.config/eww/cava.py	/^id = "".join(random.choice(string.ascii_lowercase) for i in range(3))$/;"	v
+image#sidebar-icon	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^image#sidebar-icon {$/;"	i
+image#star-button	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^image#star-button {$/;"	i
+image_backend	.config/neofetch/config.conf	/^image_backend="chafa"$/;"	k
+image_loop	.config/neofetch/config.conf	/^image_loop="off"$/;"	k
+image_size	.config/neofetch/config.conf	/^image_size="16%"$/;"	k
+image_source	.config/neofetch/config.conf	/^image_source="auto"$/;"	k
+indices	.config/eww/sinks.py	/^indices = [i.split("\\t")[0] for i in long]$/;"	v
+instant_prompt_example	.p10k.zsh	/^  function instant_prompt_example() {$/;"	f
+kernel_shorthand	.config/neofetch/config.conf	/^kernel_shorthand="off"$/;"	k
+layout	.local/bin/greet.py	/^layout = Layout()$/;"	v
+leader	.config/picom.conf	/^detect-client-leader = true$/;"	k
+level	.config/picom.conf	/^log-level = "warn";$/;"	k
+loc	.local/bin/weather.py	/^loc = 'newcastle+nsw'$/;"	v
+local	.config/mopidy/mopidy.conf	/^[local]$/;"	s
+local_path	.local/bin/download_and_run.py	/^local_path = path.join("\/tmp", args.file_url.split("\/")[-1].split("?")[0])$/;"	v
+location	.local/bin/weather.py	/^location = w.location()$/;"	v
+location	.local/bin/weather_api.py	/^    def location(self):$/;"	m	class:WeatherApi
+lock	.local/bin/toggle_gaps.py	/^lock = fasteners.InterProcessLock(LOCK_FILE)$/;"	v
+logging	.config/mopidy/mopidy.conf	/^[logging]$/;"	s
+long	.config/eww/sinks.py	/^long = raw.split("\\n")[:-1]$/;"	v
+m	.local/bin/greet.py	/^    m = []$/;"	v
+m3u	.config/mopidy/mopidy.conf	/^[m3u]$/;"	s
+mail	.local/bin/greet.py	/^mail = {}$/;"	v
+mail_accounts	.local/bin/greet.py	/^mail_accounts = [$/;"	v
+mails	.local/bin/greet.py	/^mails = Columns($/;"	v
+media_dir	.config/mopidy/mopidy.conf	/^media_dir = ~\/Documents\/music$/;"	k	section:local
+media_dirs	.config/mopidy/mopidy.conf	/^media_dirs = $/;"	k	section:file
+memory_display	.config/neofetch/config.conf	/^memory_display="bar"$/;"	k
+memory_percent	.config/neofetch/config.conf	/^memory_percent="on"$/;"	k
+memory_unit	.config/neofetch/config.conf	/^memory_unit="mib"$/;"	k
+method	.config/picom.conf	/^blur-method = "dual_kawase"$/;"	k
+minimal-functional-fox	.librewolf/er127qw9.default-release/chrome/README.md	/^# minimal-functional-fox$/;"	c
+mpc_args	.config/neofetch/config.conf	/^mpc_args=()$/;"	k
+mpd	.config/mopidy/mopidy.conf	/^[mpd]$/;"	s
+music_player	.config/neofetch/config.conf	/^music_player="auto"$/;"	k
+my_git_formatter	.p10k.zsh	/^  function my_git_formatter() {$/;"	f
+n	.config/nvim/init.vim	/^noremap <silent> n <cmd>execute('normal! ' . v:count1 . 'n')<cr>$/;"	m
+n	.local/bin/greet.py	/^        n = {}$/;"	v
+names	.config/eww/sinks.py	/^names = [n.split("\\t")[1].split(".")[-1] for n in long]$/;"	v
+ns53ca042b0101	.librewolf/er127qw9.default-release/chrome/right-arrow.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	n	uri:http://www.w3.org/2000/svg
+ns53ca042b0201	.librewolf/er127qw9.default-release/chrome/right-arrow.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	n	uri:http://www.w3.org/2000/svg
+ns53ca042b0301	.librewolf/er127qw9.default-release/chrome/right-arrow.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	n	uri:http://www.w3.org/2000/svg
+ns53ca042b0401	.librewolf/er127qw9.default-release/chrome/right-arrow.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	n	uri:http://www.w3.org/2000/svg
+ns53ca042b0501	.librewolf/er127qw9.default-release/chrome/right-arrow.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	n	uri:http://www.w3.org/2000/svg
+ns53ca042b0601	.librewolf/er127qw9.default-release/chrome/right-arrow.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	n	uri:http://www.w3.org/2000/svg
+ns57807c780101	.librewolf/er127qw9.default-release/chrome/left-arrow.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	n	uri:http://www.w3.org/2000/svg
+ns57807c780201	.librewolf/er127qw9.default-release/chrome/left-arrow.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	n	uri:http://www.w3.org/2000/svg
+ns57807c780301	.librewolf/er127qw9.default-release/chrome/left-arrow.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	n	uri:http://www.w3.org/2000/svg
+ns57807c780401	.librewolf/er127qw9.default-release/chrome/left-arrow.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	n	uri:http://www.w3.org/2000/svg
+ns57807c780501	.librewolf/er127qw9.default-release/chrome/left-arrow.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	n	uri:http://www.w3.org/2000/svg
+ns57807c780601	.librewolf/er127qw9.default-release/chrome/left-arrow.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	n	uri:http://www.w3.org/2000/svg
+nsd992bcbe0101	.librewolf/er127qw9.default-release/chrome/add.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	n	uri:http://www.w3.org/2000/svg
+nsd992bcbe0201	.librewolf/er127qw9.default-release/chrome/add.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	n	uri:http://www.w3.org/2000/svg
+nsd992bcbe0301	.librewolf/er127qw9.default-release/chrome/add.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	n	uri:http://www.w3.org/2000/svg
+nsd992bcbe0401	.librewolf/er127qw9.default-release/chrome/add.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	n	uri:http://www.w3.org/2000/svg
+nsd992bcbe0501	.librewolf/er127qw9.default-release/chrome/add.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	n	uri:http://www.w3.org/2000/svg
+nsd992bcbe0601	.librewolf/er127qw9.default-release/chrome/add.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	n	uri:http://www.w3.org/2000/svg
+observations	.local/bin/weather_api.py	/^    def observations(self):$/;"	m	class:WeatherApi
+opacity	.config/picom.conf	/^detect-client-opacity = true;$/;"	k
+os_arch	.config/neofetch/config.conf	/^os_arch="on"$/;"	k
+output	.config/mopidy/mopidy.conf	/^output = tee name=t ! queue ! autoaudiosink t. ! queue ! audio\/x-raw,rate=44100,channels=2,form/;"	k	section:audio
+p	.config/eww/cava.py	/^p = subprocess.Popen($/;"	v
+package_managers	.config/neofetch/config.conf	/^package_managers="on"$/;"	k
+parsed	.local/bin/greet.py	/^        parsed = email_parser.parse(fd)$/;"	v
+parser	.config/leftwm/themes/laptop/eww/temperature.py	/^parser = argparse.ArgumentParser()$/;"	v
+parser	.local/bin/download_and_run.py	/^parser = argparse.ArgumentParser($/;"	v
+path	.local/bin/download_and_run.py	/^import os.path as path$/;"	I	nameref:module:os.path
+port	.config/mopidy/mopidy.conf	/^port = 6600$/;"	k	section:mpd
+prompt_example	.p10k.zsh	/^  function prompt_example() {$/;"	f
+proxy	.config/mopidy/mopidy.conf	/^[proxy]$/;"	s
+public_ip_host	.config/neofetch/config.conf	/^public_ip_host="http:\/\/ident.me"$/;"	k
+public_ip_timeout	.config/neofetch/config.conf	/^public_ip_timeout=2$/;"	k
+q:	.config/nvim/init.vim	/^nnoremap q: <nop>$/;"	m
+rate	.config/picom.conf	/^refresh-rate = 0$/;"	k
+raw	.config/eww/sinks.py	/^raw = subprocess.run(["pactl", "list", "short", "sinks"], check=True, capture_output=True).stdou/;"	v
+refresh_rate	.config/neofetch/config.conf	/^refresh_rate="off"$/;"	k
+rofi-modi	README.md	/^### rofi-modi$/;"	S	section:CMurtagh-LGTM's dotfiles""Dependencies
+rule	.config/picom.conf	/^opacity-rule = [$/;"	k
+search	.local/bin/weather_api.py	/^    def search(self, search="", select=0):$/;"	m	class:WeatherApi
+separator	.config/neofetch/config.conf	/^separator=":"$/;"	k
+shadow	.config/picom.conf	/^shadow = false$/;"	k
+shell_path	.config/neofetch/config.conf	/^shell_path="off"$/;"	k
+shell_version	.config/neofetch/config.conf	/^shell_version="on"$/;"	k
+sinks_yuck	.config/eww/sinks.py	/^sinks_yuck = "(box :class 'sinks' :orientation 'v'"$/;"	v
+softwaremixer	.config/mopidy/mopidy.conf	/^[softwaremixer]$/;"	s
+song_format	.config/neofetch/config.conf	/^song_format="%artist% - %album% - %title%"$/;"	k
+song_shorthand	.config/neofetch/config.conf	/^song_shorthand="on"$/;"	k
+speed_shorthand	.config/neofetch/config.conf	/^speed_shorthand="on"$/;"	k
+speed_type	.config/neofetch/config.conf	/^speed_type="bios_limit"$/;"	k
+splitter#sidebar-splitter	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^splitter#sidebar-splitter {$/;"	i
+spotify	.config/mopidy/mopidy.conf	/^[spotify]$/;"	s
+stdout	.config/eww/cava.py	/^stdout = p.stdout$/;"	v
+stdout	.config/neofetch/config.conf	/^stdout="off"$/;"	k
+str	.config/eww/cava.py	/^str = ""$/;"	v
+stream	.config/mopidy/mopidy.conf	/^[stream]$/;"	s
+strength	.config/picom.conf	/^blur-strength = 3$/;"	k
+tab.tabbrowser-tab	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^tab.tabbrowser-tab {$/;"	c
+tab.tabbrowser-tab:hover	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^tab.tabbrowser-tab:hover {$/;"	c
+tag	.local/bin/toggle_gaps.py	/^tag = int(tag_workspace[0])$/;"	v
+tag_workspace	.local/bin/toggle_gaps.py	/^tag_workspace = subprocess.check_output(["leftwm-state", "-q", "-t", ".config\/leftwm\/focused_t/;"	v
+thumbnail_dir	.config/neofetch/config.conf	/^thumbnail_dir="${XDG_CACHE_HOME:-${HOME}\/.cache}\/thumbnails\/neofetch"$/;"	k
+timed_layout	.local/bin/greet.py	/^timed_layout = Layout()$/;"	v
+title_fqdn	.config/neofetch/config.conf	/^title_fqdn="off"$/;"	k
+toggleterm	.config/nvim/init.vim	/^augroup toggleterm$/;"	a
+toolbar	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^toolbar {$/;"	s
+toolbar#nav-bar	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^toolbar#nav-bar {$/;"	i
+toolbarbutton	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^toolbarbutton {$/;"	s
+toolbaritem	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^#navigator-toolbox, toolbaritem {$/;"	s
+toolbarseparator	.librewolf/er127qw9.default-release/chrome/userChrome.css	/^toolbarseparator {$/;"	s
+transient	.config/picom.conf	/^detect-transient = true$/;"	k
+underline_char	.config/neofetch/config.conf	/^underline_char="·"$/;"	k
+underline_enabled	.config/neofetch/config.conf	/^underline_enabled="on"$/;"	k
+uptime_shorthand	.config/neofetch/config.conf	/^uptime_shorthand="on"$/;"	k
+usage	.config/leftwm/themes/laptop/eww/cpu.py	/^usage = round(psutil.cpu_percent(interval=1))$/;"	v
+usage	.config/leftwm/themes/laptop/eww/filesystem.py	/^usage = int(psutil.disk_usage("\/")[3])$/;"	v
+usage	.config/leftwm/themes/laptop/eww/memory.py	/^usage = round(psutil.virtual_memory()[2])$/;"	v
+usage	.config/leftwm/themes/laptop/eww/temperature.py	/^usage = round(psutil.sensors_temperatures()[args.source][0][1])$/;"	v
+variable,variable definitions	.ctags.d/gdscript.ctags	/^--regex-GDScript=\/^(export[ \\t]*(.*)?[ \\t]+)?var[ \\t]+([a-zA-Z0-9_]+)\/\\3\/v,variable,varia/;"	k	langdef:GDScript
+variable,variable definitions	.ctags.d/gdscript.ctags	/^--regex-GDScript=\/^(onready[ \\t]+)?var[ \\t]+([a-zA-Z0-9_]+)\/\\2\/v,variable,variable definit/;"	k	langdef:GDScript
+vsync	.config/picom.conf	/^vsync = true$/;"	k
+w	.local/bin/weather.py	/^w = WeatherApi(search=loc, debug=0)$/;"	v
+warning	.local/bin/weather_api.py	/^    def warning(self, id=None):$/;"	m	class:WeatherApi
+warnings	.local/bin/weather_api.py	/^    def warnings(self):$/;"	m	class:WeatherApi
+win	.config/picom.conf	/^use-ewmh-active-win = true$/;"	k
+windows	.config/leftwm/themes/laptop/eww/toggle.py	/^windows = ($/;"	v
+windows	.local/bin/toggle_dash.py	/^windows = ($/;"	v
+wintypes	.config/picom.conf	/^wintypes:$/;"	k
+workspace	.local/bin/toggle_gaps.py	/^workspace = int(tag_workspace[1])$/;"	v
+xlink	.librewolf/er127qw9.default-release/chrome/add.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	n	uri:http://www.w3.org/1999/xlink
+xlink	.librewolf/er127qw9.default-release/chrome/left-arrow.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	n	uri:http://www.w3.org/1999/xlink
+xlink	.librewolf/er127qw9.default-release/chrome/right-arrow.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	n	uri:http://www.w3.org/1999/xlink
+xoffset	.config/neofetch/config.conf	/^xoffset=0$/;"	k
+yoffset	.config/neofetch/config.conf	/^yoffset=0$/;"	k
+ypa27OiaF8P4AvdUhn4W059B0fCNWPt7	.librewolf/er127qw9.default-release/chrome/right-arrow.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	d
+ypa27OiaF8P4AvdUhn4W059B0fCNWPt7	.librewolf/er127qw9.default-release/chrome/right-arrow.svg	/^<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="h/;"	i

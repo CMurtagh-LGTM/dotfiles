@@ -95,6 +95,9 @@ Plug 'norcalli/nvim-colorizer.lua'
 " Tex
 Plug 'lervag/vimtex'
 
+" orgmode
+Plug 'nvim-orgmode/orgmode'
+
 " sxhkd highlighting
 Plug 'kovetskiy/sxhkd-vim'
 
@@ -216,6 +219,7 @@ require("coq_3p") {
     { src = "nvimlua", short_name = "nLUA", conf_only = true },
     { src = "vimtex", short_name = "vTEX" },
     { src = "bc", short_name = "MATH", precision = 6 },
+    { src = "orgmode", short_name = "ORG" },
 }
 EOF
 
@@ -263,19 +267,14 @@ end
 vim.api.nvim_set_keymap('i', '<bs>', 'v:lua.MUtils.BS()', { expr = true, noremap = true })
 
 -- Tresitter
-local parser_configs = require('nvim-treesitter.parsers').get_parser_configs()
-parser_configs.norg = {
-    install_info = {
-        url = "https://github.com/vhyrro/tree-sitter-norg",
-        files = { "src/parser.c", "src/scanner.cc" },
-        branch = "main"
-    },
-}
+require('orgmode').setup_ts_grammar()
 
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = {"python", "cpp", "latex", "lua", "r", "vim", "java", "gdscript", "godot_resource", "markdown"},
+    ensure_installed = {"python", "cpp", "latex", "lua", "r", "vim", "java", "gdscript", "godot_resource", "markdown", "org"},
     highlight = {
         enable = true,
+        disable = {'org'}, -- Remove this to use TS highlighter for some of the highlights (Experimental)
+        additional_vim_regex_highlighting = {'org'}, -- Required since TS highlighter doesn't support all syntax features (conceal)
     },
     indent = {
         enable = true,
@@ -300,6 +299,10 @@ require'nvim-treesitter.configs'.setup {
         --     },
         -- },
     },
+}
+
+-- Orgmode TODO
+require('orgmode').setup{
 }
 
 -- lsp

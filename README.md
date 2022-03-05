@@ -67,6 +67,7 @@ Incomplete list
 - pearl
 - lazygit
 - github-cli
+- a clipboard, eg xclip
 
 ### Neomutt
 - mutt-wizard

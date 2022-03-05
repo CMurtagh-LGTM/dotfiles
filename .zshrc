@@ -124,8 +124,6 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 # }}} End configuration added by Zim install
 
-python ~/.local/bin/greet.py
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -138,6 +136,7 @@ alias ls='exa --header --icons --git'
 alias clear='cbonsai -p'
 alias status='python ~/.local/bin/greet.py'
 alias calendar='calcurse && calcurse --export=ical >| Documents/calendar.ics'
+alias matlab='docker run -it --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro --shm-size=512M mathworks/matlab:latest'
 
 # Dotfile repo
 alias dotfile='/usr/bin/git --git-dir=$HOME/Documents/dotfiles/ --work-tree=$HOME'
