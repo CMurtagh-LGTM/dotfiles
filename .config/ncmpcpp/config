@@ -16,4 +16,4 @@ lines_scrolled = 1
 external_editor = nvim
 use_console_editor = yes
 
-execute_on_song_change = mpc albumart $(mpc --format %file% current) >| /tmp/dunst_art && dunstify -I /tmp/dunst_art "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
+execute_on_song_change = { mpc albumart $(mpc --format %file% current) > /tmp/dunst_art && dunstify -I /tmp/dunst_art "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"; } 2>/dev/null
