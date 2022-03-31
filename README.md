@@ -118,7 +118,7 @@ Key 					| Action
 ------------------------|-----------------------
 mod4+p					| open rofi drun
 mod4+o					| toggle eww dashboard
-mod4+i                  | rofi todo
+mod4+i                  | rofi ddgr-search
 mod4+l                  | rofi pass
 mod4+alt+p              | rofi powermenu
 mod4+return     		| open Alacritty
@@ -170,7 +170,6 @@ media keys				| todo
     - Sync with iCalendar standard?
 - rofi modi
     - browser bookmarks
-    - browser seach ddgr
     - rofi steam?
     - rofi spotify?
 - Add lock screen slock or xscreensaver

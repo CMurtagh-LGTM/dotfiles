@@ -27,11 +27,11 @@ super + e
 
 # Process viewer
 super + t
-	alacritty -e htop
+	alacritty -e btop
 
 # Web search
-# super + shift + k
-#	rofi -lines 5 -eh 3 -show search
+super + i
+	rofi -eh 3 -show search -modi "search:ddgr_search.py"
 
 # Passwords
 super + l
