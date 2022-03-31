@@ -39,6 +39,7 @@ Incomplete list
     - mopidy-spotify
 - mpd-notification
 - ncmpcc
+- xcwd
 
 ### Inside Scripts
 - python
@@ -114,13 +115,14 @@ Incomplete list
 
 ## Keybindings
 Key 					| Action
-------------------------|----------------------
+------------------------|-----------------------
 mod4+p					| open rofi drun
 mod4+o					| toggle eww dashboard
 mod4+i                  | rofi todo
 mod4+l                  | rofi pass
 mod4+alt+p              | rofi powermenu
 mod4+return     		| open Alacritty
+mod4+alt+return     	| open Alacritty in xcwd
 rightclick on desktop   | open pmenu
 
 Key 					| Action

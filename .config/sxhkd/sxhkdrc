@@ -6,6 +6,9 @@
 super + Return
 	alacritty
 
+super + alt + Return
+	alacritty --working-directory $(xcwd)
+
 # eww
 super + o
 	toggle_dash.py
