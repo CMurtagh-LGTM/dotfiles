@@ -101,6 +101,7 @@ Incomplete list
 
 ### Font
 - Hack Nerd Font
+- Julia Mono (as a fallback for mathematics symbols)
 
 ### Optional
 - spotify for the eww widget

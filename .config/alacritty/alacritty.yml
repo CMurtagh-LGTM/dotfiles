@@ -15,9 +15,21 @@ env:
 
 # Font configuration
 font:
-  # Normal (roman) font face
   normal:
-    family: Hack Nerd Font
+    family: monospace
+    style: Regular
+
+  bold:
+    family: monospace
+    style: Bold
+
+  italic:
+    family: monospace
+    style: Italic
+
+  bold_italic:
+    family: monospace
+    style: Bold Italic
 
   # Point size
   size: 12.0
