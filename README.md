@@ -40,6 +40,7 @@ Incomplete list
 - mpd-notification
 - ncmpcc
 - xcwd
+- rofimoji
 
 ### Inside Scripts
 - python
@@ -121,6 +122,9 @@ mod4+p					| open rofi drun
 mod4+o					| toggle eww dashboard
 mod4+i                  | rofi ddgr-search
 mod4+l                  | rofi pass
+mod4+t                  | btop
+mod4+e                  | emoji
+mod4+alt+e              | mathematics symbols
 mod4+alt+p              | rofi powermenu
 mod4+return     		| open Alacritty
 mod4+alt+return     	| open Alacritty in xcwd

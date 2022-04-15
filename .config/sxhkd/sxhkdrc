@@ -21,9 +21,12 @@ super + p
 super + k
 	rofi -show window -theme nord_icons
 
-# File manager
+# emoji
 super + e
-	thunar
+	rofimoji --action clipboard --max=0
+
+super + alt + e
+	rofimoji --action clipboard --max=0 --files=math
 
 # Process viewer
 super + t
