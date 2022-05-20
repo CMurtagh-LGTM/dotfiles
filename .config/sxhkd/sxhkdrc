@@ -25,8 +25,14 @@ super + k
 super + e
 	rofimoji --action clipboard --max=0
 
+super + shift + e
+	rofimoji --action clipboard --max=0 --files=math --prompt "⇒"
+
 super + alt + e
-	rofimoji --action clipboard --max=0 --files=math
+	rofimoji --action clipboard --max=0 --files=all --prompt "∀"
+
+super + shift + alt + e
+	rofimoji --action clipboard --max=0 --files=nerd_font --prompt ""
 
 # Process viewer
 super + t

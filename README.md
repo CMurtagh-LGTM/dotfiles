@@ -123,8 +123,10 @@ mod4+o					| toggle eww dashboard
 mod4+i                  | rofi ddgr-search
 mod4+l                  | rofi pass
 mod4+t                  | btop
-mod4+e                  | emoji
-mod4+alt+e              | mathematics symbols
+mod4+e                  | emoji picker
+mod4+shift+e            | mathematics symbols
+mod4+alt+e              | rofimoji all
+mod4+shift+alt+e        | nerd font picker
 mod4+alt+p              | rofi powermenu
 mod4+return     		| open Alacritty
 mod4+alt+return     	| open Alacritty in xcwd

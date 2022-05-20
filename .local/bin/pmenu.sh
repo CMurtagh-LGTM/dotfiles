@@ -15,5 +15,5 @@ pmenu -r 3 << EOF | sh &
 
 		gtk-launch steam
 		alacritty -e ncmpcpp & disown
-		gtk-launch spotify
+		gtk-launch net.lutris.Lutris
 EOF
