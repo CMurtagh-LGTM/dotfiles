@@ -38,6 +38,7 @@ Incomplete list
 - ncmpcc
 - xcwd
 - rofimoji
+- syncthing
 
 ### Inside Scripts
 - python
