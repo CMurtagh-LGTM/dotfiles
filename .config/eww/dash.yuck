@@ -13,35 +13,6 @@
           (button :class "media_control" :onclick "mpc next" "")))
       (progress :value song_percent :class "song_progress" :orientation "h"))))
 
-(defwidget audio_bar [variable index]
-  (progress :value {variable[index]} :orientation "v" :class "cava_bar" :flipped true))
-
-(defwidget cava_widget []
-  (box :class "float"
-    (audio_bar :variable cava :index 0)
-    (audio_bar :variable cava :index 1)
-    (audio_bar :variable cava :index 2)
-    (audio_bar :variable cava :index 3)
-    (audio_bar :variable cava :index 4)
-    (audio_bar :variable cava :index 5)
-    (audio_bar :variable cava :index 6)
-    (audio_bar :variable cava :index 7)
-    (audio_bar :variable cava :index 8)
-    (audio_bar :variable cava :index 9)
-    (audio_bar :variable cava :index 10)
-    (audio_bar :variable cava :index 11)
-    (audio_bar :variable cava :index 12)
-    (audio_bar :variable cava :index 13)
-    (audio_bar :variable cava :index 14)
-    (audio_bar :variable cava :index 15)
-    (audio_bar :variable cava :index 16)
-    (audio_bar :variable cava :index 17)
-    (audio_bar :variable cava :index 18)
-    (audio_bar :variable cava :index 19)))
-
-(defwidget calendar_widget []
-  (box :class "float" (literal :content calendar)))
-
 (defwidget sys_widget[]
   (box :class "float"
     (box :orientation "v" :space-evenly false :halign "center" :valign "center"
@@ -88,12 +59,6 @@
 (defpoll song_percent :interval "1s"
   "mpc status '%percenttime%' | sed 's/.$//' | sed 's/^.//'")
 
-(deflisten cava :inital "[0, 0, 0, 0, 0, 0, 0]"
-  "python ~/.config/eww/cava.py")
-
-(defpoll calendar :interval "300s"
-  "python ~/.config/eww/calendar.py")
-
 (defpoll temperature :interval "1s"
   "python ~/.config/eww/temperature.py")
 
@@ -107,12 +72,6 @@
 
 (defwindow music_dash :monitor 2 :geometry (geometry :x 150 :y 100 :width 510 :height 170) :wm-ignore true
   (music_widget))
-
-(defwindow cava_dash :monitor 2 :geometry (geometry :x 670 :y 100 :width 630 :height 170) :wm-ignore true
-  (cava_widget))
-
-(defwindow calendar_dash :monitor 2 :geometry (geometry :x 150 :y 460 :width 510 :height 320) :wm-ignore true
-  (calendar_widget))
 
 (defwindow sys_dash :monitor 2 :geometry (geometry :x 1310 :y 280 :width 250 :height 170) :wm-ignore true
   (sys_widget))

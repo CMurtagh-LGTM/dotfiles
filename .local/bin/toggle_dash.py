@@ -9,7 +9,7 @@ windows = (
     .split("\n")
 )[:-1]
 
-subprocess.run("leftwm-command \"ToggleScratchPad Notes\"", shell=True)
+# subprocess.run("leftwm-command \"ToggleScratchPad Notes\"", shell=True)
 
 for window in windows:
     if "dash" in window:

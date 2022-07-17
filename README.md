@@ -26,7 +26,6 @@ Incomplete list
 - neomutt
 - neofetch
     - chafa
-- calcurse
 - pmenu
 - Thunar
     - Tumbler
@@ -34,9 +33,7 @@ Incomplete list
     - popler-glib
     - catfish mlocate
     - Thunar-media-tags-plugin
-- mopidy
-    - mopidy-mpd (my patch)
-    - mopidy-spotify
+- mpd
 - mpd-notification
 - ncmpcc
 - xcwd
@@ -55,7 +52,6 @@ Incomplete list
     - imagemagick
 - eww
     - wmctrl
-    - cava
     - liquid-bin rust crate
 
 ### rofi-modi
@@ -103,9 +99,6 @@ Incomplete list
 ### Font
 - Hack Nerd Font
 - Julia Mono (as a fallback for mathematics symbols)
-
-### Optional
-- spotify for the eww widget
 
 ## Setting up Neovim
 - `:PlugInstall`
