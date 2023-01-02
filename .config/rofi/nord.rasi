@@ -26,6 +26,8 @@
 	nord13: #ebcb8b;
 	nord14: #a3be8c;
 	nord15: #b48ead;
+    
+    foreground: @nord0;
 
     background-color: transparent;
     highlight: underline bold #eceff4;
